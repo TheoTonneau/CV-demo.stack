@@ -1,0 +1,4 @@
+region         = "eu-west-3"
+bucket         = "perso-tonneau-tfstates-test"
+key            = "cv-demo/terraform.tfstate"
+encrypt        = true

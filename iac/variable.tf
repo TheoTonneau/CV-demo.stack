@@ -10,3 +10,9 @@ variable "account_name" {
   type        = string
 }
 
+
+
+variable "environment" {
+  description = "Account name / environment"
+  type        = string
+}

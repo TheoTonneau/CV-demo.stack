@@ -4,8 +4,8 @@ data "aws_iam_policy_document" "cloudfront_access_s3" {
       type        = "Service"
       identifiers = ["cloudfront.amazonaws.com"]
     }
-    effect = "allow"
-    actions = ["s3:GetObject"]
+    effect    = "allow"
+    actions   = ["s3:GetObject"]
     resources = ["${aws_s3_bucket.cv-demo.arn}/*"]
     condition {
       test     = "StringEquals"

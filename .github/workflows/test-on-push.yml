@@ -1,0 +1,24 @@
+name: CONTINUOUS INTEGRATION
+run-name: 'CONTINUOUS INTEGRATION'
+
+env:
+  environment: 'test'
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  terraform-fmt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Run terraform check actions"
+        uses: ./.github/actions/check-terraform
+        with:
+          GH_TOKEN: ${{ secrets.PERSONNAL_ACCESS_TOKEN }}
+          WORKING_DIR: ./iac/

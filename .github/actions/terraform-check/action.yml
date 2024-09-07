@@ -1,0 +1,38 @@
+name: "check terraform"
+description: "Check format and validate terraform stack"
+inputs:
+  GH_TOKEN:
+    required: true
+    description: "Github access token to pull private repo"
+  WORKING_DIR:
+    required: true
+    description: "Working directory to run terraform command"
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Set up Terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: 1.4.5
+    
+    - name: Git config
+      run: git config --global url."https://${{ inputs.GH_TOKEN }}@github.com/TheoTonneau/".insteadOf "https://github.com/TheoTonneau/"
+      shell: bash
+    
+    - name: Terraform init
+      working-directory: ${{ inputs.WORKING_DIR }}
+      run: terraform init -backend=false
+      shell: bash
+    
+    - name: "Terraform fmt"
+      working-directory: ${{ inputs.WORKING_DIR }}
+      run: terraform fmt -check -recursive
+      shell: bash
+    
+    - name: "Terraform validate"
+      working-directory: ${{ inputs.WORKING_DIR }}
+      run: terraform validate -no-color
+      shell: bash

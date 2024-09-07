@@ -1,5 +1,5 @@
-name              : 'MANUAL DEPLOYMENT'
-run-name          : 'Manual deployment on environment ${{ inputs.environment }} from branch ${{github.ref_name}} execute by @${{ github.actor }}'
+name: 'MANUAL DEPLOYMENT'
+run-name: 'Manual deployment on environment ${{ inputs.environment }} from branch ${{github.ref_name}} execute by @${{ github.actor }}'
 
 on:
   workflow_dispatch:
@@ -14,11 +14,41 @@ on:
           - prod
 
 jobs:
-  init:
-    runs-on: ubuntu-latest    
-    environment: 
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./iac/
+    environment:
       name: ${{ github.event.inputs.environment }}
       url: "cv-demo-${{ github.event.inputs.environment }}.theo-tonneau.com"
     steps:
-      - run: echo "success"
+
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: configure terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.4.5
+
+      - name: configure credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-3
+
+      - name: init terraform
+        run: terraform init -backend-config=./var/${{ github.event.inputs.environment }}/backend.tfbackend -reconfigure
+        shell: bash
+
+      - name: plan terraform
+        run: |
+          echo "::notice::"
+          terraform plan -var-file="./var/${{ github.event.inputs.environment }}/values.tfvars"
+        shell: bash
+
+      - name: apply terraform
+        run: terraform apply -var-file="./var/${{ github.event.inputs.environment }}/values.tfvars" -auto-approve
         shell: bash

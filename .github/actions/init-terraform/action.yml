@@ -22,6 +22,9 @@ runs:
   using: "composite"
   steps:
 
+    - name: checkout
+      uses: actions/checkout@v4
+
     - name: change directory
       run: |
         cd ${{inputs.WORKING_DIRECTORY}}

@@ -1,9 +1,9 @@
 resource "aws_lambda_function" "lambda_cv_demo" {
   filename         = "../lambda/build/index.zip"
   function_name    = "cv-demo-${var.environment}-email-management"
-  role             = data.aws_iam_policy_document.lambda_cv_demo.json
+  role             = aws_iam_role.cv_demo.arn
   handler          = "index.handler"
-  source_code_hash = filebase64sha256("../../lambda/build/index.zip")
+  source_code_hash = filebase64sha256("../lambda/build/index.zip")
   runtime          = "nodejs20.x"
   timeout          = 900
 

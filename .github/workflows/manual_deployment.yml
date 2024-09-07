@@ -13,36 +13,61 @@ on:
           - test
           - prod
 
+env:
+  NODE_VERSION: 20
+
 jobs:
-  
+
+  setup-environment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: "setup-node"
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: "Manage cache"
+        uses: ./.github/actions/manage-cache/
+        with:
+          NODE_VERSION: ${{ env.NODE_VERSION }}
+          LOCK_PATH: "**/package-lock.json"
+
+      - name: "Install dependencies"
+        run: |
+          npm ci
+          npm run build
+          zip lambda/build/index.zip lambda/build/index.js
+        shell: bash
+
   plan:
+    needs:
+      - setup-environment
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./iac/
     environment:
       name: ${{ github.event.inputs.environment }}
-      url: "https://cv-demo-${{ github.event.inputs.environment }}.theo-tonneau.com"
     steps:
 
       - name: checkout
         uses: actions/checkout@v4
 
-      - name: configure terraform
-        uses: hashicorp/setup-terraform@v3
+      - name: "Terraform init"
+        uses: ./.github/actions/init-terraform/
         with:
-          terraform_version: 1.4.5
+          ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          ENVIRONMENT: ${{ github.event.inputs.environment }}
 
-      - name: configure credentials
-        uses: aws-actions/configure-aws-credentials@v4
+      - name: "Manage cache"
+        uses: ./.github/actions/manage-cache/
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-west-3
-
-      - name: init terraform
-        run: terraform init -backend-config=./var/${{ github.event.inputs.environment }}/backend.tfbackend -reconfigure
-        shell: bash
+          NODE_VERSION: ${{ env.NODE_VERSION }}
+          LOCK_PATH: "**/package-lock.json"
 
       - name: plan terraform
         run: |
@@ -54,7 +79,7 @@ jobs:
         shell: bash
   
   deploy:
-    needs: 
+    needs:
       - plan
     runs-on: ubuntu-latest
     defaults:
@@ -68,21 +93,18 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - name: configure terraform
-        uses: hashicorp/setup-terraform@v3
+      - name: "Terraform init"
+        uses: ./.github/actions/init-terraform/
         with:
-          terraform_version: 1.4.5
+          ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          ENVIRONMENT: ${{ github.event.inputs.environment }}
 
-      - name: configure credentials
-        uses: aws-actions/configure-aws-credentials@v4
+      - name: "Manage cache"
+        uses: ./.github/actions/manage-cache/
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-west-3
-
-      - name: init terraform
-        run: terraform init -backend-config=./var/${{ github.event.inputs.environment }}/backend.tfbackend -reconfigure
-        shell: bash
+          NODE_VERSION: ${{ env.NODE_VERSION }}
+          LOCK_PATH: "**/package-lock.json"
 
       - name: apply terraform
         run: terraform apply -var-file="./var/${{ github.event.inputs.environment }}/values.tfvars" -auto-approve

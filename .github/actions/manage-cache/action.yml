@@ -1,0 +1,35 @@
+name: "cache management"
+description: "Manage cache and nodejs"
+
+
+inputs:
+  NODE_VERSION:
+    required: true
+    description: "Nodejs version to use"
+  LOCK_PATH:
+    required: true
+    description: "Lock"
+
+
+outputs:
+  cache-hit:
+    description: "cache-hit"
+    value: ${{ steps.cache-node-modules.outputs.cache-hit }}
+
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.NODE_VERSION }}
+
+    - name: "Cache node modules"
+      id: cache-node-modules
+      uses: actions/cache@v3
+      env:
+        cache-name: cache-node-modules
+      with:
+        path: |
+          ./build/index.zip
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('${{ inputs.LOCK_PATH }}') }}

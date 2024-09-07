@@ -1,8 +1,8 @@
-resource "aws_cloudfront_distribution" "cv-demo" {
+resource "aws_cloudfront_distribution" "cv_demo" {
 
   origin {
-    domain_name              = aws_s3_bucket.cv-demo.bucket_regional_domain_name
-    origin_id                = aws_s3_bucket.cv-demo.id
+    domain_name              = aws_s3_bucket.cv_demo.bucket_regional_domain_name
+    origin_id                = aws_s3_bucket.cv_demo.id
     origin_access_control_id = aws_cloudfront_origin_access_control.cv-demo.id
   }
 
@@ -16,7 +16,7 @@ resource "aws_cloudfront_distribution" "cv-demo" {
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     cached_methods   = ["GET", "HEAD"]
-    target_origin_id = aws_s3_bucket.cv-demo.id
+    target_origin_id = aws_s3_bucket.cv_demo.id
 
     forwarded_values {
       query_string = false
@@ -42,7 +42,7 @@ resource "aws_cloudfront_distribution" "cv-demo" {
 
   viewer_certificate {
     cloudfront_default_certificate = true
-    acm_certificate_arn            = data.aws_acm_certificate.cv-demo.arn
+    acm_certificate_arn            = data.aws_acm_certificate.cv_demo.arn
     ssl_support_method             = "sni-only"
     minimum_protocol_version       = "TLSv1.2_2021"
   }

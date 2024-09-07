@@ -1,0 +1,34 @@
+name: "init terraform"
+description: "terraform init & credentials"
+
+
+inputs:
+  ACCESS_KEY:
+    required: true
+    description: "aws access key"
+  SECRET_ACCESS_KEY:
+    required: true
+    description: "aws secret access key"
+  ENVIRONMENT:
+    required: true
+    description: "env"
+
+
+runs:
+  using: "composite"
+  steps:
+    - name: configure terraform
+      uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: 1.4.5
+    
+    - name: configure credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ inputs.ACCESS_KEY }}
+        aws-secret-access-key: ${{ inputs.SECRET_ACCESS_KEY }}
+        aws-region: eu-west-3
+    
+    - name: init terraform
+      run: terraform init -backend-config=./var/${{ inputs.ENVIRONMENT }}/backend.tfbackend -reconfigure
+      shell: bash

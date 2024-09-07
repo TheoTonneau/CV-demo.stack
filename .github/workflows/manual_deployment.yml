@@ -49,6 +49,8 @@ jobs:
     defaults:
       run:
         working-directory: ./iac/
+    environment:
+      name: ${{ github.event.inputs.environment }}
     steps:
 
       - name: checkout

@@ -14,7 +14,8 @@ on:
           - prod
 
 jobs:
-  deploy:
+  
+  plan:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -50,6 +51,35 @@ jobs:
           echo '```' >> $GITHUB_STEP_SUMMARY
           echo "$output" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
+        shell: bash
+  
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./iac/
+    environment:
+      name: ${{ github.event.inputs.environment }}
+      url: "https://cv-demo-${{ github.event.inputs.environment }}.theo-tonneau.com"
+    steps:
+
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: configure terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.4.5
+
+      - name: configure credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-3
+
+      - name: init terraform
+        run: terraform init -backend-config=./var/${{ github.event.inputs.environment }}/backend.tfbackend -reconfigure
         shell: bash
 
       - name: apply terraform

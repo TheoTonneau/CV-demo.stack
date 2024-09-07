@@ -45,7 +45,7 @@ jobs:
 
       - name: plan terraform
         run: |
-          output=$(terraform plan -var-file="./var/${{ github.event.inputs.environment }}/values.tfvars")
+          output=$(terraform plan -var-file="./var/${{ github.event.inputs.environment }}/values.tfvars" -no-color)
           echo "## Terraform Plan Output" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
           echo "$output" >> $GITHUB_STEP_SUMMARY

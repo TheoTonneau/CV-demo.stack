@@ -29,6 +29,6 @@ data "aws_iam_policy_document" "lambda_cv_demo" {
       "logs:CreateLogStream",
       "logs:CreateLogGroup"
     ]
-    Resource = "arn:aws:logs:eu-west-3:${var.account_name}:*"
+    Resource = aws_cloudwatch_log_group.cv_demo_log_group.arn
   }
 }

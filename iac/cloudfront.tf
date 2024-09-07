@@ -1,8 +1,8 @@
 resource "aws_cloudfront_distribution" "cv-demo" {
 
   origin {
-    domain_name = aws_s3_bucket.cv-demo.bucket_regional_domain_name
-    origin_id   = aws_s3_bucket.cv-demo.id
+    domain_name              = aws_s3_bucket.cv-demo.bucket_regional_domain_name
+    origin_id                = aws_s3_bucket.cv-demo.id
     origin_access_control_id = aws_cloudfront_origin_access_control.cv-demo.id
   }
 

@@ -45,14 +45,22 @@ jobs:
         shell: bash
 
       - name: plan terraform
+        id: terraform_plan
         run: |
           output=$(terraform plan -var-file="./var/${{ github.event.inputs.environment }}/values.tfvars" -no-color)
+          echo "::set-output name=plan_output::$output"
+        shell: bash
+
+      - name: Display Notice with Terraform output
+        if: always()
+        run: |
           echo "## Terraform Plan Output" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
-          echo "$output" >> $GITHUB_STEP_SUMMARY
+          echo "${{ steps.terraform_plan.outputs.plan_output }}" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
         shell: bash
-  
+
+
   deploy:
     needs: 
       - plan

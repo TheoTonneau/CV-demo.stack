@@ -62,6 +62,7 @@ jobs:
           ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
           SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           ENVIRONMENT: ${{ github.event.inputs.environment }}
+          WORKING_DIRECTORY: ./iac/
 
       - name: "Manage cache"
         uses: ./.github/actions/manage-cache/
@@ -99,6 +100,7 @@ jobs:
           ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
           SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           ENVIRONMENT: ${{ github.event.inputs.environment }}
+          WORKING_DIRECTORY: ./iac/
 
       - name: "Manage cache"
         uses: ./.github/actions/manage-cache/

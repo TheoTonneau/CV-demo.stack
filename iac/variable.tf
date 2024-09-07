@@ -5,6 +5,11 @@ variable "aws_region" {
   type        = string
 }
 
+variable "aws_region_global" {
+  description = "global region"
+  type        = string
+}
+
 variable "account_name" {
   description = "Account where to deploy VPC"
   type        = string

@@ -64,8 +64,8 @@ jobs:
       - name: configure credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ inputs.ACCESS_KEY }}
-          aws-secret-access-key: ${{ inputs.SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-3
 
       - name: "Manage cache"
@@ -75,7 +75,7 @@ jobs:
           LOCK_PATH: "**/package-lock.json"
 
       - name: init terraform
-        run: terraform init -backend-config=./var/${{ inputs.ENVIRONMENT }}/backend.tfbackend -reconfigure
+        run: terraform init -backend-config=./var/${{ github.event.inputs.environment }}/backend.tfbackend -reconfigure
         shell: bash
 
       - name: plan terraform
@@ -110,8 +110,8 @@ jobs:
       - name: configure credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ inputs.ACCESS_KEY }}
-          aws-secret-access-key: ${{ inputs.SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-3
           
       - name: "Manage cache"
@@ -121,7 +121,7 @@ jobs:
           LOCK_PATH: "**/package-lock.json"
 
       - name: init terraform
-        run: terraform init -backend-config=./var/${{ inputs.ENVIRONMENT }}/backend.tfbackend -reconfigure
+        run: terraform init -backend-config=./var/${{ github.event.inputs.environment }}/backend.tfbackend -reconfigure
         shell: bash
 
       - name: apply terraform

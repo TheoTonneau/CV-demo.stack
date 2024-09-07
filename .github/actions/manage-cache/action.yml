@@ -31,5 +31,5 @@ runs:
         cache-name: cache-node-modules
       with:
         path: |
-          ./build/index.zip
+          ./lambda/build/index.zip
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('${{ inputs.LOCK_PATH }}') }}

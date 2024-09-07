@@ -15,8 +15,10 @@ on:
 
 jobs:
   init:
-    runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.environment }}
+    runs-on: ubuntu-latest    
+    environment: 
+      name: ${{ github.event.inputs.environment }}
+      url: "cv-demo-${{ github.event.inputs.environment }}.theo-tonneau.com"
     steps:
       - run: echo "success"
         shell: bash

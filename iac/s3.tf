@@ -1,4 +1,5 @@
 resource "aws_s3_bucket" "cv-demo" {
+  bucket = "cv-demo-tonneau-${var.environment}"
 }
 
 resource "aws_s3_bucket_policy" "cv-demo" {

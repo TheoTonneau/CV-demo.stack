@@ -2,7 +2,6 @@ data "aws_iam_policy_document" "cloudfront_access_s3" {
   statement {
     principals {
       type        = "Service"
-      identifiers = ["cloudfront.amazonaws.com"]
     }
     effect    = "Allow"
     actions   = ["s3:GetObject"]

@@ -1,2 +1,22 @@
 name              : 'MANUAL DEPLOYMENT'
 run-name          : 'Manual deployment on environment ${{ inputs.environment }} from branch ${{github.ref_name}} execute by @${{ github.actor }}'
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to run tests against'
+        required: true
+        type: choice
+        default: test
+        options:
+          - test
+          - prod
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+    steps:
+      - run: echo "success"
+        shell: bash

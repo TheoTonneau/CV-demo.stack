@@ -19,9 +19,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: "Run terraform check actions"
-        uses: ./.github/actions/check-terraform
+        uses: ./.github/actions/terraform-check
         with:
           GH_TOKEN: ${{ secrets.PERSONNAL_ACCESS_TOKEN }}
           WORKING_DIR: ./iac/

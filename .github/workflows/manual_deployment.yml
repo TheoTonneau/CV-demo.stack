@@ -45,8 +45,8 @@ jobs:
 
       - name: plan terraform
         run: |
-          echo "::notice::"
-          terraform plan -var-file="./var/${{ github.event.inputs.environment }}/values.tfvars"
+          echo '::notice::$(terraform plan -var-file="./var/${{ github.event.inputs.environment }}/values.tfvars")'
+          
         shell: bash
 
       - name: apply terraform

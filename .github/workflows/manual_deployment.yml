@@ -54,6 +54,8 @@ jobs:
         shell: bash
   
   deploy:
+    needs: 
+      - plan
     runs-on: ubuntu-latest
     defaults:
       run:

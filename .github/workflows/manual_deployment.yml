@@ -45,27 +45,14 @@ jobs:
         shell: bash
 
       - name: plan terraform
-        id: terraform_plan
         run: |
-          # Exécuter Terraform Plan et sauvegarder la sortie dans un fichier temporaire
-          terraform plan -var-file="./var/${{ github.event.inputs.environment }}/values.tfvars" -no-color > plan_output.txt
-
-          # Sauvegarder la sortie dans une variable GitHub Actions
-          plan_output=$(cat plan_output.txt)
-          echo "::set-output name=plan_output::$plan_output"
-        shell: bash
-
-      - name: Display Notice with Terraform output
-        if: always()
-        run: |
-          # Ajouter le résumé de l'étape dans le GITHUB_STEP_SUMMARY
+          output=$(terraform plan -var-file="./var/${{ github.event.inputs.environment }}/values.tfvars" -no-color)
           echo "## Terraform Plan Output" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
-          cat plan_output.txt >> $GITHUB_STEP_SUMMARY
+          echo "$output" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
         shell: bash
-
-
+  
   deploy:
     needs: 
       - plan

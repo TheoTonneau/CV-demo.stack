@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: "Run terraform check actions"
+      - name: "Run terraform fmt check actions"
         uses: ./.github/actions/terraform-check
         with:
           GH_TOKEN: ${{ secrets.PERSONNAL_ACCESS_TOKEN }}

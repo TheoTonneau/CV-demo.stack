@@ -23,7 +23,7 @@ data "aws_acm_certificate" "cv_demo" {
 
 data "aws_iam_policy_document" "lambda_cv_demo" {
   statement {
-    effect  = "Allow"
+    effect = "Allow"
     actions = [
       "logs:PutLogEvents",
       "logs:CreateLogStream",

@@ -1,4 +1,4 @@
-name: CONTINUOUS INTEGRATION
+name    : CONTINUOUS INTEGRATION
 run-name: 'CONTINUOUS INTEGRATION'
 
 env:
@@ -22,6 +22,15 @@ jobs:
 
       - name: "Run terraform fmt check actions"
         uses: ./.github/actions/terraform-check
+        id: check-terraform
         with:
           GH_TOKEN: ${{ secrets.PERSONNAL_ACCESS_TOKEN }}
           WORKING_DIR: ./iac/
+
+      - run: |
+          {
+            echo "### :rocket: Workflow status"
+            echo "| Arg                 | Value |"
+            echo "| ------------------- | ----- |"
+            echo "| Check Terraform            |  ${{ steps.check-terraform.outcome }} |"
+          } >> $GITHUB_STEP_SUMMARY

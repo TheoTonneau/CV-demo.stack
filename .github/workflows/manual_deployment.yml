@@ -1,0 +1,2 @@
+name              : 'MANUAL DEPLOYMENT'
+run-name          : 'Manual deployment on environment ${{ inputs.environment }} from branch ${{github.ref_name}} execute by @${{ github.actor }}'

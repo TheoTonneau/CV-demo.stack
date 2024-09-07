@@ -21,7 +21,7 @@ jobs:
         working-directory: ./iac/
     environment:
       name: ${{ github.event.inputs.environment }}
-      url: "cv-demo-${{ github.event.inputs.environment }}.theo-tonneau.com"
+      url: "https://cv-demo-${{ github.event.inputs.environment }}.theo-tonneau.com"
     steps:
 
       - name: checkout
@@ -45,8 +45,8 @@ jobs:
 
       - name: plan terraform
         run: |
-          echo '::notice::$(terraform plan -var-file="./var/${{ github.event.inputs.environment }}/values.tfvars")'
-          
+          output=$(terraform plan -var-file="./var/${{ github.event.inputs.environment }}/values.tfvars")
+          echo "::notice:: $output"
         shell: bash
 
       - name: apply terraform

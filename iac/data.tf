@@ -21,6 +21,19 @@ data "aws_acm_certificate" "cv_demo" {
   domain   = "cv-demo-${var.environment}.theo-tonneau.com"
 }
 
+data "aws_iam_policy_document" "cv_demo_assume_role" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["lambda.amazonaws.com"]
+    }
+
+    actions = ["sts:AssumeRole"]
+  }
+}
+
 data "aws_iam_policy_document" "lambda_cv_demo" {
   statement {
     effect = "Allow"
@@ -33,7 +46,20 @@ data "aws_iam_policy_document" "lambda_cv_demo" {
   }
 }
 
-resource "aws_iam_role" "cv_demo" {
-  name               = "iam_for_lambda"
-  assume_role_policy = data.aws_iam_policy_document.lambda_cv_demo.json
+resource "aws_iam_policy" "cv_demo" {
+  name        = "lambda_logging"
+  path        = "/"
+  description = "IAM policy for logging from a lambda"
+  policy      = data.aws_iam_policy_document.lambda_cv_demo.json
+}
+
+resource "aws_iam_role" "cv_demo_role" {
+  name               = "cv-demo-role"
+  assume_role_policy = data.aws_iam_policy_document.cv_demo_assume_role.json
+}
+
+
+resource "aws_iam_role_policy_attachment" "cv_demo" {
+  role       = aws_iam_role.cv_demo_role.name
+  policy_arn = aws_iam_policy.cv_demo.arn
 }

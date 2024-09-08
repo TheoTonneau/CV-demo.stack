@@ -17,16 +17,24 @@ exports.handler = async (event: APIGatewayEvent, context: Context): Promise<APIG
         } else {
             body = JSON.parse(event.body);
         }
+        
+        console.log("email: ", body.email);
+        console.log("fName: ", body.fName);
+        console.log("name: ", body.name);
+        console.log("company: ", body.company);
+        console.log("message: ", body.message);
 
-        if (!body.value) {
-            throw new Error("La clé 'value' est manquante dans le corps de la requête");
+
+
+        if (!body.email) {
+            throw new Error("La clé 'email' est manquante dans le corps de la requête");
         }
 
-        const value: string = body.value;
+        const value: string = body.email;
         
         const params = {
-            Message: 'Hello from Lambda!',
-            Subject: 'Test SNS from Lambda',
+            Message: `Message from ${body.fName} ${body.name} (email: ${body.email}) from ${body.company} :\n${body.message}`,
+            Subject: `MAIL FROM CV WEBSITE FROM COMPANY ${body.company}`,
             TopicArn: SUCCESS_TOPIC_ARN
         };
         try {

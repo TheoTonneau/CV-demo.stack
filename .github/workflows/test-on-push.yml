@@ -4,6 +4,10 @@ run-name: 'CONTINUOUS INTEGRATION'
 env:
   environment: 'test'
 
+defaults: 
+  run: 
+    shell: bash
+
 on:
   push:
     branches:
@@ -24,7 +28,6 @@ jobs:
         run: |
           npm ci
           npm run build
-        shell: bash
 
       - name: "Run terraform fmt check actions"
         uses: ./.github/actions/terraform-check
@@ -33,7 +36,9 @@ jobs:
           GH_TOKEN: ${{ secrets.PERSONNAL_ACCESS_TOKEN }}
           WORKING_DIR: ./iac/
 
-      - run: |
+      - name: create step summary 
+        if: always()
+        run: |
           {
             echo "### :rocket: Workflow status"
             echo "| Arg                 | Value |"

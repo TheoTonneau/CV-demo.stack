@@ -1,6 +1,6 @@
 import { APIGatewayEvent, Context, APIGatewayProxyResult } from 'aws-lambda';
 
-exports.handler = async (event: APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> => {
+export const handler = async (event: APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> => {
     try {
         if (!event.body) {
             throw new Error("Le corps de la requête est vide");

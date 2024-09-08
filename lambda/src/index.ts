@@ -18,14 +18,6 @@ exports.handler = async (event: APIGatewayEvent, context: Context): Promise<APIG
             body = JSON.parse(event.body);
         }
         
-        console.log("email: ", body.email);
-        console.log("fName: ", body.fName);
-        console.log("name: ", body.name);
-        console.log("company: ", body.company);
-        console.log("message: ", body.message);
-
-
-
         if (!body.email) {
             throw new Error("La clé 'email' est manquante dans le corps de la requête");
         }

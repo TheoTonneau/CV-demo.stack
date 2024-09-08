@@ -1,6 +1,10 @@
-import { APIGatewayEvent, Context, APIGatewayProxyResult } from 'aws-lambda';
+import {APIGatewayEvent, Context, APIGatewayProxyResult} from 'aws-lambda';
+import { SNSClient, PublishCommand } from "@aws-sdk/client-sns";
+const snsClient = new SNSClient({});
+const {SUCCESS_TOPIC_ARN, FAILURE_TOPIC_ARN} = process.env;
 
-export const handler = async (event: APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> => {
+
+exports.handler = async (event: APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> => {
     try {
         if (!event.body) {
             throw new Error("Le corps de la requête est vide");
@@ -19,6 +23,18 @@ export const handler = async (event: APIGatewayEvent, context: Context): Promise
         }
 
         const value: string = body.value;
+        
+        const params = {
+            Message: 'Hello from Lambda!',
+            Subject: 'Test SNS from Lambda',
+            TopicArn: SUCCESS_TOPIC_ARN
+        };
+        try {
+            const data = await snsClient.send(new PublishCommand(params));
+            console.log('Message published to SNS topic', data);
+        } catch (err) {
+            console.error('Error publishing message to SNS topic', err);
+        }
 
         const response: APIGatewayProxyResult = {
             statusCode: 200,
@@ -30,7 +46,7 @@ export const handler = async (event: APIGatewayEvent, context: Context): Promise
                 value: value
             })
         };
-
+        
         return response;
 
     } catch (error) {
@@ -45,6 +61,18 @@ export const handler = async (event: APIGatewayEvent, context: Context): Promise
             })
         };
 
+        const params = {
+            Message: error.message,
+            Subject: 'Test SNS from Lambda error',
+            TopicArn: FAILURE_TOPIC_ARN
+        };
+        try {
+            const data = await snsClient.send(new PublishCommand(params));
+            console.log('Message published to SNS topic', data);
+        } catch (err) {
+            console.error('Error publishing message to SNS topic', err);
+        }
+        
         return response;
     }
 };

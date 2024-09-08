@@ -36,7 +36,7 @@ data "aws_iam_policy_document" "cv_demo_assume_role" {
 
 data "aws_iam_policy_document" "lambda_cv_demo" {
   statement {
-    effect = "Allow"
+    effect  = "Allow"
     actions = [
       "logs:PutLogEvents",
       "logs:CreateLogStream",
@@ -53,13 +53,20 @@ resource "aws_iam_policy" "cv_demo" {
   policy      = data.aws_iam_policy_document.lambda_cv_demo.json
 }
 
-resource "aws_iam_role" "cv_demo_role" {
-  name               = "cv-demo-role"
-  assume_role_policy = data.aws_iam_policy_document.cv_demo_assume_role.json
-}
-
-
-resource "aws_iam_role_policy_attachment" "cv_demo" {
-  role       = aws_iam_role.cv_demo_role.name
-  policy_arn = aws_iam_policy.cv_demo.arn
+resource "aws_iam_policy" "lambda_sqs_sns_policy" {
+  name        = "lambda_sqs_sns_policy"
+  description = "Lambda policy to access SNS"
+  policy      = jsonencode({
+    Version   = "2012-10-17"
+    Statement = [
+      {
+        Effect   = "Allow"
+        Action   = "sns:Publish"
+        Resource = [
+          aws_sns_topic.cv_demo.arn,
+          aws_sns_topic.cv_demo_error.arn
+        ]
+      }
+    ]
+  })
 }

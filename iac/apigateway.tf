@@ -155,8 +155,8 @@ resource "aws_api_gateway_integration" "integration_cors" {
 
 resource "aws_api_gateway_integration_response" "cv_demo" {
   rest_api_id = aws_api_gateway_rest_api.cv_demo.id
-  resource_id = aws_api_gateway_resource.cv_demo.id  # Use cv_demo resource
-  http_method = aws_api_gateway_method.cv_demo.http_method  # Use POST method for cv_demo
+  resource_id = aws_api_gateway_resource.cv_demo.id        # Use cv_demo resource
+  http_method = aws_api_gateway_method.cv_demo.http_method # Use POST method for cv_demo
   status_code = 200
 
   response_parameters = {
@@ -167,8 +167,8 @@ resource "aws_api_gateway_integration_response" "cv_demo" {
 
   depends_on = [
     aws_api_gateway_method_response.cv_demo,
-    aws_api_gateway_resource.cv_demo,  # Correctly refer to cv_demo resource
-    aws_api_gateway_method.cv_demo,    # Correctly refer to POST method
+    aws_api_gateway_resource.cv_demo, # Correctly refer to cv_demo resource
+    aws_api_gateway_method.cv_demo,   # Correctly refer to POST method
     aws_api_gateway_integration.cv_demo,
   ]
 }

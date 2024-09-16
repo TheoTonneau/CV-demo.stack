@@ -54,3 +54,5 @@ node_modules/
 *.zip
 .env
 *.sh
+
+/src/js

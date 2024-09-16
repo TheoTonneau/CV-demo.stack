@@ -1,0 +1,1 @@
+let currentPage: string = 'home';

@@ -56,4 +56,5 @@ node_modules/
 *.sh
 
 /src/js
-.DS_Store
+**/**/.DS_Store
+**/.DS_Store

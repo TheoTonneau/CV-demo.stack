@@ -17,10 +17,8 @@ export function updateNav(): void {
 
     if (getCookie('lang') !== "") {
         languageSelected = getCookie('lang');
-        console.log("cookie");
     } else{
         languageSelected = currentLang;
-        console.log("no cookie");
     }
 
     if (nav) {
@@ -37,6 +35,7 @@ export function updateNav(): void {
 
             a.textContent = header[page][languageSelected];
             a.setAttribute('href', '#');
+            a.setAttribute('class', 'pageNav');
             a.setAttribute('pageSelected', page);
             
             li.appendChild(a);

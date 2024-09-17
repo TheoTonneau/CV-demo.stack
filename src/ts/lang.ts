@@ -1,5 +1,6 @@
 import {updateNav} from './header';
 import {setCookie} from './cookie';
+import {navigate, currentPage} from './navigate';
 export const langButtons: NodeListOf<Element> = document.querySelectorAll('.buttonLanguage');
 export let currentLang: string = 'fr';
 
@@ -10,5 +11,6 @@ langButtons.forEach((button: Element) => {
         currentLang = this.id;
         setCookie('lang', currentLang , 10);
         updateNav();
+        navigate(currentPage, currentLang);
     });
 });

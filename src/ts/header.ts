@@ -1,5 +1,6 @@
-import {currentLang} from './lang';
+import {currentLang, langButtons} from './lang';
 import {getCookie} from './cookie';
+import {navigate, setCurrentPage} from './navigate';
 
 const header = {
     home: {fr: 'À propos', en: 'About me'},
@@ -34,12 +35,21 @@ export function updateNav(): void {
             const a: HTMLElement = document.createElement('a');
 
             a.textContent = header[page][languageSelected];
-            a.setAttribute('href', '#');
             a.setAttribute('class', 'pageNav');
-            a.setAttribute('pageSelected', page);
+            a.setAttribute('data-pageselected', page);
             
             li.appendChild(a);
             ul.appendChild(li);
         });
     }
+
+    const pageNavButtons: NodeListOf<Element> = document.querySelectorAll('.pageNav');
+
+    pageNavButtons.forEach((button: Element) => {
+        button.addEventListener('click', function (this: HTMLElement): void {
+            let newPage: string = this.dataset.pageselected;
+            setCurrentPage(newPage);
+            navigate(newPage, currentLang);
+        });
+    });
 }

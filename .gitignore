@@ -59,3 +59,4 @@ node_modules/
 **/**/.DS_Store
 **/.DS_Store
 /src/ts/informations.ts
+/src/ts/encrypt.ts

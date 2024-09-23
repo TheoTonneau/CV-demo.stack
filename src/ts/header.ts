@@ -1,6 +1,8 @@
 import {currentLang, langButtons} from './lang';
 import {getCookie} from './cookie';
 import {navigate, setCurrentPage} from './navigate';
+import {data, key} from './encrypt';
+import {decrypt} from './decrypt';
 
 const header = {
     home: {fr: 'À propos', en: 'About me'},
@@ -37,7 +39,8 @@ export function updateNav(): void {
             a.textContent = header[page][languageSelected];
             a.setAttribute('class', 'pageNav');
             a.setAttribute('data-pageselected', page);
-            
+            a.setAttribute('style', 'color:white');
+
             li.appendChild(a);
             ul.appendChild(li);
         });
@@ -52,4 +55,5 @@ export function updateNav(): void {
             navigate(newPage, currentLang);
         });
     });
+    
 }

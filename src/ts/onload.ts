@@ -1,7 +1,7 @@
 import {updateNav} from './header';
 import {getCookie} from './cookie';
 import {langButtons} from './lang';
-import {navigate, setupPageNavigation} from './navigate';
+import {navigate} from './navigate';
 
 function updateActiveButton(selectedLang: string): void {
     langButtons.forEach((button: Element) => {

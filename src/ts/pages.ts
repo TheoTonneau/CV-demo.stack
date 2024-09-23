@@ -63,29 +63,29 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                     ${badgefr}
                 </div>
             </aside>
+            
             <div class="divDroite">
+                
+
+            <form id="formEmail">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required><br><br>
-            
+                
                 <label for="firstName">Prénom:</label>
                 <input type="text" id="firstName" name="firstName"><br><br>
-            
+                
                 <label for="name">Nom:</label>
                 <input type="text" id="name" name="name" required><br><br>
-            
+                
                 <label for="company">Company:</label>
                 <input type="text" id="company" name="company" required><br><br>
-            
+                
                 <label for="message">Message:</label><br>
                 <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
-            
-                <!-- Utilisation de l'input avec type="button" -->
-                <input type="button" id="submitButton" value="Envoyer" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                
+                <button type="submit" id="submitButton">Envoyer</button>
+            </form>
             </div>
-    
-
-
-
             
         `,
         en: `

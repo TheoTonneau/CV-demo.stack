@@ -6,27 +6,13 @@ const {SUCCESS_TOPIC_ARN, FAILURE_TOPIC_ARN} = process.env;
 
 exports.handler = async (event: APIGatewayEvent, context: Context): Promise<APIGatewayProxyResult> => {
     try {
-        if (!event.body) {
-            throw new Error("Le corps de la requête est vide");
+        const value: string = event.email;
+        if (event.email == '') {
+            throw new Error(`La clé 'email' est manquante dans le corps de la requête`);
         }
-
-        let body: any;
-
-        if (event.isBase64Encoded) {
-            body = JSON.parse(Buffer.from(event.body, 'base64').toString('utf-8'));
-        } else {
-            body = JSON.parse(event.body);
-        }
-        
-        if (!body.email) {
-            throw new Error("La clé 'email' est manquante dans le corps de la requête");
-        }
-
-        const value: string = body.email;
-        
         const params = {
-            Message: `Message from ${body.fName} ${body.name} (email: ${body.email}) from ${body.company} :\n${body.message}`,
-            Subject: `MAIL FROM CV WEBSITE FROM COMPANY ${body.company}`,
+            Message: `Message from ${event.fName} ${event.name} (email: ${event.email}) from ${event.company} :\n${event.message}`,
+            Subject: `MAIL FROM CV WEBSITE FROM COMPANY ${event.company}`,
             TopicArn: SUCCESS_TOPIC_ARN
         };
         try {
@@ -49,7 +35,7 @@ exports.handler = async (event: APIGatewayEvent, context: Context): Promise<APIG
                 value: value
             })
         };
-        
+
         return response;
 
     } catch (error) {
@@ -78,7 +64,7 @@ exports.handler = async (event: APIGatewayEvent, context: Context): Promise<APIG
         } catch (err) {
             console.error('Error publishing message to SNS topic', err);
         }
-        
+
         return response;
     }
 };

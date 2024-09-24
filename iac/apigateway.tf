@@ -68,12 +68,6 @@ resource "aws_api_gateway_resource" "cv_demo" {
   parent_id   = aws_api_gateway_rest_api.cv_demo.root_resource_id
   path_part   = "cv_demo"
 }
-/*
-resource "aws_api_gateway_resource" "resource_cors" {
-  rest_api_id = aws_api_gateway_rest_api.cv_demo.id
-  parent_id   = aws_api_gateway_rest_api.cv_demo.root_resource_id
-  path_part   = "{proxy+}"
-}*/
 
 ###################################################################################################################################
 ##  END -- REGION RESOURCE                                                                                                       ##
@@ -124,6 +118,7 @@ resource "aws_api_gateway_method_response" "method_response_cors" {
     "method.response.header.Access-Control-Allow-Origin"  = true
   }
 }
+
 
 ###################################################################################################################################
 ##  END -- REGION METHOD                                                                                                         ##
@@ -180,8 +175,8 @@ resource "aws_api_gateway_integration_response" "cv_demo" {
 
   depends_on = [
     aws_api_gateway_method_response.cv_demo,
-    aws_api_gateway_resource.cv_demo, # Correctly refer to cv_demo resource
-    aws_api_gateway_method.cv_demo,   # Correctly refer to POST method
+    aws_api_gateway_resource.cv_demo,
+    aws_api_gateway_method.cv_demo,
     aws_api_gateway_integration.cv_demo,
   ]
 }
@@ -207,7 +202,6 @@ resource "aws_api_gateway_integration_response" "integration_response_cors" {
   ]
 
 }
-
 ###################################################################################################################################
 ##  END -- REGION RESPONSES                                                                                                      ##
 ###################################################################################################################################

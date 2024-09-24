@@ -39,7 +39,10 @@ exports.handler = async (event: APIGatewayEvent, context: Context): Promise<APIG
         const response: APIGatewayProxyResult = {
             statusCode: 200,
             headers: {
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'OPTIONS,POST',
+                'Access-Control-Allow-Headers': '*'
             },
             body: JSON.stringify({
                 message: "Valeur reçue avec succès",
@@ -53,7 +56,10 @@ exports.handler = async (event: APIGatewayEvent, context: Context): Promise<APIG
         const response: APIGatewayProxyResult = {
             statusCode: error.message.includes('corps de la requête') ? 400 : 500,
             headers: {
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'OPTIONS,POST',
+                'Access-Control-Allow-Headers': '*'
             },
             body: JSON.stringify({
                 message: "Erreur",

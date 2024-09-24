@@ -68,12 +68,12 @@ resource "aws_api_gateway_resource" "cv_demo" {
   parent_id   = aws_api_gateway_rest_api.cv_demo.root_resource_id
   path_part   = "cv_demo"
 }
-
+/*
 resource "aws_api_gateway_resource" "resource_cors" {
   rest_api_id = aws_api_gateway_rest_api.cv_demo.id
   parent_id   = aws_api_gateway_rest_api.cv_demo.root_resource_id
   path_part   = "{proxy+}"
-}
+}*/
 
 ###################################################################################################################################
 ##  END -- REGION RESOURCE                                                                                                       ##
@@ -93,7 +93,7 @@ resource "aws_api_gateway_method" "cv_demo" {
 
 resource "aws_api_gateway_method" "method_cors" {
   rest_api_id      = aws_api_gateway_rest_api.cv_demo.id
-  resource_id      = aws_api_gateway_resource.resource_cors.id
+  resource_id      = aws_api_gateway_resource.cv_demo.id
   http_method      = "OPTIONS"
   authorization    = "NONE"
   api_key_required = false
@@ -114,7 +114,7 @@ resource "aws_api_gateway_method_response" "cv_demo" {
 
 resource "aws_api_gateway_method_response" "method_response_cors" {
   rest_api_id = aws_api_gateway_rest_api.cv_demo.id
-  resource_id = aws_api_gateway_resource.resource_cors.id
+  resource_id = aws_api_gateway_resource.cv_demo.id
   http_method = aws_api_gateway_method.method_cors.http_method
   status_code = 200
 
@@ -138,7 +138,7 @@ resource "aws_api_gateway_integration" "cv_demo" {
   resource_id             = aws_api_gateway_resource.cv_demo.id
   http_method             = aws_api_gateway_method.cv_demo.http_method
   integration_http_method = "POST"
-  type                    = "AWS_PROXY"
+  type                    = "AWS"
   uri                     = aws_lambda_function.lambda_cv_demo.invoke_arn
 
   depends_on = [
@@ -148,7 +148,7 @@ resource "aws_api_gateway_integration" "cv_demo" {
 
 resource "aws_api_gateway_integration" "integration_cors" {
   rest_api_id      = aws_api_gateway_rest_api.cv_demo.id
-  resource_id      = aws_api_gateway_resource.resource_cors.id
+  resource_id      = aws_api_gateway_resource.cv_demo.id
   http_method      = aws_api_gateway_method.method_cors.http_method
   content_handling = "CONVERT_TO_TEXT"
   type             = "MOCK"
@@ -173,8 +173,8 @@ resource "aws_api_gateway_integration_response" "cv_demo" {
   status_code = 200
 
   response_parameters = {
-    "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-    "method.response.header.Access-Control-Allow-Methods" = "'POST,OPTIONS'"
+    "method.response.header.Access-Control-Allow-Headers" = "'*'"
+    "method.response.header.Access-Control-Allow-Methods" = "'OPTIONS,POST'"
     "method.response.header.Access-Control-Allow-Origin"  = "'*'"
   }
 
@@ -190,18 +190,18 @@ resource "aws_api_gateway_integration_response" "cv_demo" {
 resource "aws_api_gateway_integration_response" "integration_response_cors" {
 
   rest_api_id = aws_api_gateway_rest_api.cv_demo.id
-  resource_id = aws_api_gateway_resource.resource_cors.id
+  resource_id = aws_api_gateway_resource.cv_demo.id
   http_method = aws_api_gateway_method.method_cors.http_method
   status_code = 200
 
   response_parameters = {
-    "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
-    "method.response.header.Access-Control-Allow-Methods" = "'POST,OPTIONS'"
+    "method.response.header.Access-Control-Allow-Headers" = "'*'"
+    "method.response.header.Access-Control-Allow-Methods" = "'OPTIONS,POST'"
     "method.response.header.Access-Control-Allow-Origin"  = "'*'"
   }
 
   depends_on = [
-    aws_api_gateway_resource.resource_cors,
+    aws_api_gateway_resource.cv_demo,
     aws_api_gateway_method.method_cors,
     aws_api_gateway_integration.integration_cors,
   ]

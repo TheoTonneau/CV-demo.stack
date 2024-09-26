@@ -104,4 +104,108 @@ h2 {
     padding: 15px;
     text-align: justify;
     border-radius: 10px;
+    margin-right: 20px;
+    min-height: 500px; /* Même hauteur que divDroite */
+    box-sizing: border-box; /* Pour inclure le padding et border dans la hauteur totale */
 }
+
+/* Style du divDroite */
+.divDroite {
+    background-color: #D3D3D3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 75%;
+    max-height: 500px;
+    overflow-y: auto;
+    margin-left: 22%; /* Espace à gauche pour aside */
+    margin-right: 2%;
+    min-height: 500px; /* Même hauteur que l'aside */
+    box-sizing: border-box; /* Pour inclure le padding et border dans la hauteur totale */
+}
+
+/* Style du formulaire */
+#formEmail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Groupement des champs côte à côte */
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Chaque champ prend 50% de l'espace dans une rangée */
+.form-row .half-width {
+    width: 50%;
+}
+
+/* Style des labels */
+#formEmail label {
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Style des inputs et textarea */
+#formEmail input, #formEmail textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style du bouton avec couleur #008CBA */
+#submitButton {
+    width: 100px; /* Largeur du bouton */
+    background-color: #008CBA; /* Couleur définie */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 0 auto; /* Centre le bouton horizontalement */
+    display: block; /* Pour que le bouton soit un bloc centré */
+    text-align: center; /* Centre le texte dans le bouton */
+}
+
+/* Hover du bouton */
+#submitButton:hover {
+    background-color: #007bb5; /* Légèrement plus foncé au hover */
+}
+
+
+/* Media Queries pour adaptation mobile */
+/*
+@media (max-width: 800px) {
+    .aside, .divDroite {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+
+    .divDroite {
+        max-width: 100%;
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-row .half-width {
+        width: 100%;
+    }
+}*/

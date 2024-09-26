@@ -1,4 +1,4 @@
-import {link, badgefr} from './informations';
+import {link, badgefr, badgeen} from './informations';
 import {currentLang} from './lang';
 
 let shortLang: string = currentLang == 'fr' ? 'fr_FR' : 'en_US';
@@ -56,9 +56,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                 <br>
                 Ou via <i class="fa fa-linkedin-square"></i> LinkedIn
                 <br>
-                <br>
                 <hr>
-                <br>
                 <div>
                     ${badgefr}
                 </div>
@@ -68,28 +66,91 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                 
 
             <form id="formEmail">
+        <!-- Première rangée: Email et Company -->
+        <div class="form-row">
+            <div class="half-width">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
-                
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="half-width">
+                <label for="company">Entreprise:</label>
+                <input type="text" id="company" name="company" required>
+            </div>
+        </div>
+
+        <!-- Deuxième rangée: Prénom et Nom -->
+        <div class="form-row">
+            <div class="half-width">
                 <label for="firstName">Prénom:</label>
-                <input type="text" id="firstName" name="firstName"><br><br>
-                
+                <input type="text" id="firstName" name="firstName">
+            </div>
+            <div class="half-width">
                 <label for="name">Nom:</label>
-                <input type="text" id="name" name="name" required><br><br>
-                
-                <label for="company">Company:</label>
-                <input type="text" id="company" name="company" required><br><br>
-                
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
-                
-                <button type="submit" id="submitButton">Envoyer</button>
-            </form>
+                <input type="text" id="name" name="name" required>
+            </div>
+        </div>
+
+        <!-- Rangée pour le message -->
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+
+        <!-- Bouton d'envoi -->
+        <button type="submit" id="submitButton">Envoyer</button>
+    </form>
             </div>
             
         `,
         en: `
             <h2>How to get in touch ?</h2>
+            <br>
+            <aside class="aside">
+                <i class="fa fa-envelope icon"></i> By filling the following form with your contact details, then I can get back
+                <br>
+                <br>
+                Or on <i class="fa fa-linkedin-square"></i> LinkedIn
+                <br>
+                <hr>
+                <div>
+                    ${badgeen}
+                </div>
+            </aside>
+            
+            <div class="divDroite">
+                
+
+            <form id="formEmail">
+        <!-- Première rangée: Email et Company -->
+        <div class="form-row">
+            <div class="half-width">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="half-width">
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company" required>
+            </div>
+        </div>
+
+        <!-- Deuxième rangée: Prénom et Nom -->
+        <div class="form-row">
+            <div class="half-width">
+                <label for="firstName">First name:</label>
+                <input type="text" id="firstName" name="firstName">
+            </div>
+            <div class="half-width">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            </div>
+    
+            <!-- Rangée pour le message -->
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+    
+            <!-- Bouton d'envoi -->
+            <button type="submit" id="submitButton">Submit</button>
+        </form>
+            </div>
         `
     }
 };

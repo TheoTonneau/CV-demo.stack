@@ -58,7 +58,44 @@ export function navigate(page: string, lang: string): void {
                         alert('Error submitting form.');
                     });
             });
+
+            
         }
+
+        const openModalButtons: NodeListOf<Element> = document.querySelectorAll('.more-info-btn');
+        const closeModalButtons: NodeListOf<Element> = document.querySelectorAll('.close-btn');
+
+        openModalButtons.forEach((button: Element) => {
+            button.addEventListener('click', () => {
+                const modalId: string | null = button.getAttribute('data-modal');
+                if (modalId) {
+                    const modal: HTMLElement | null = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = 'flex';
+                    }
+                }
+            });
+        });
+
+        closeModalButtons.forEach((button: Element) => {
+            button.addEventListener('click', () => {
+                const modalId: string | null = button.getAttribute('data-close');
+                if (modalId) {
+                    const modal: HTMLElement | null = document.getElementById(modalId);
+                    if (modal) {
+                        modal.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        window.addEventListener('click', (event: MouseEvent) => {
+            const target = event.target as HTMLElement;
+            if (target.classList.contains('modal')) {
+                target.style.display = 'none';
+            }
+        });
+        
         
     }
 }

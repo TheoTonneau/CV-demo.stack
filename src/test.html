@@ -3,37 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon CV Multilingue</title>
-    <link rel="stylesheet" href="css/test.css">
-</head>
+    <title>Trait Diagonal Dynamique</title>
+<style>
+    body {
+        position: relative;
+        height: 100vh; /* Hauteur de la fenêtre */
+        margin: 0;
+        overflow: hidden; /* Pour éviter le défilement */
+    }
+
+    span {
+        position: absolute;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        z-index: 1;
+    }
+
+    .top-right {
+        top: 20px;
+        right: 20px; /* Positionnement en haut à droite */
+    }
+
+    .middle {
+        top: 50%; /* Positionnement vertical au milieu */
+        left: 50%; /* Positionnement horizontal au milieu */
+        transform: translate(-50%, -50%); /* Centrer */
+    }
+
+    .diagonal-line {
+        position: absolute;
+        height: 2px; /* Épaisseur du trait */
+        background-color: black; /* Couleur du trait */
+        z-index: 0;
+    }
+
+</style>
+    </head>
 <body>
+<span class="top-right">Haut Droite</span>
+<span class="middle">Milieu</span>
+<div class="diagonal-line"></div>
 
-<header>
-    <nav>
-        <ul>
-            <li><a href="#" data-page="home">Accueil</a></li>
-            <li><a href="#" data-page="experience">Expérience</a></li>
-            <li><a href="#" data-page="education">Formation</a></li>
-            <li><a href="#" data-page="skills">Compétences</a></li>
-            <li><a href="#" data-page="contact">Contact</a></li>
-        </ul>
-    </nav>
-    <div class="language-switch">
-        <button id="fr" class="lang-btn active">Français</button>
-        <button id="en" class="lang-btn">English</button>
-    </div>
-    <div class="clock" id="clock"></div>
-</header>
+<script>
+    function drawLine() {
+        const line = document.querySelector('.diagonal-line');
+        const topRight = document.querySelector('.top-right');
+        const middle = document.querySelector('.middle');
 
-<main id="content">
-    <!-- Le contenu dynamique sera injecté ici -->
-</main>
+        // Obtenir les positions et dimensions des éléments
+        const rect1 = topRight.getBoundingClientRect();
+        const rect2 = middle.getBoundingClientRect();
 
-<footer>
-    <p data-lang="fr">© 2024 - Tous droits réservés</p>
-    <p data-lang="en" style="display: none;">© 2024 - All rights reserved</p>
-</footer>
+        console.log(rect1);
+        console.log(rect2);
 
-<script src="js/index.js" type="text/javascript"></script>
+        // Calculer les coordonnées des points de début et de fin
+        const x1 = rect1.x ;
+        const y1 = rect1.y + rect1.height/2; // Centrer verticalement au milieu du span top-right
+        const x2 = rect2.x ;
+        const y2 = rect2.y + rect2.height/2;
+
+        // Calculer la distance entre les deux points
+        const length = Math.hypot(x2 - x1, y2 - y1);
+
+        // Appliquer les styles pour créer le trait
+        line.style.width = length + 'px';
+        line.style.left = x2-(rect2.width)/2 + 'px';
+        line.style.top = y2-2*(rect2.top+rect2.height+rect2.bottom)/10 + 'px';
+
+        // Calculer l'angle de rotation
+        const angle = Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
+        line.style.transform = `rotate(${angle}deg)`;
+    }
+
+    // Dessiner la ligne lors du chargement de la page
+    window.onload = drawLine;
+
+    // Redessiner la ligne si la fenêtre est redimensionnée
+    window.onresize = drawLine;
+
+
+</script>
 </body>
 </html>

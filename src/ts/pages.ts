@@ -16,15 +16,217 @@ export const pages: { [key: string]: { [key: string]: string } } = {
     },
     experience: {
         fr: `
-            <h2>Experience pro</h2>
+            <h2>Expériences Professionnelles</h2>
+            <section class="timeline-container">
+              <div class="timeline-track">
+              
+                <span id="point" class="point-1" style="left: 25%;"></span>
+                <span id="point" class="point-2" style="left: 50%;"></span>
+                <span id="point" class="point-3" style="left: 73%;"></span>
+                <span id="point" class="point-4" style="left: 80%;"></span>
+
+                <span class="year" style="left: 10%;">
+                  <h3>2021</h3>
+                </span>
+                <span class="year" style="left: 35%;">
+                  <h3>2022</h3>
+                </span>
+                <span class="year" style="left: 60%;">
+                  <h3>2023</h3>
+                </span>
+                <span class="year" style="left: 85%;">
+                  <h3>2024</h3>
+                </span>
+              </div>
+            
+              <div class="timeline-item top experience experience-1">
+                <div class="content-box">
+                    <div class="timeline-header">
+                        <span>
+                            <h3>2021</h3>
+                            <p>Juillet</p>
+                            <p>-</p>
+                            <p>Ao&ucirc;t</p>
+                        </span>
+                    </div>
+                    <span class="description">
+                        <h4>Zed Multim&eacute;dia - Travail saisonnier</h4>
+                        <p>Installation de salle de cin&eacute;ma priv&eacute;, salle de projection</p>
+                        <p>Syst&egrave;me audiovisuel, sonorisation d'un restaurant</p>
+                    </span>
+                </div>
+              </div>
+            
+              <div class="timeline-item bottom experience experience-2">
+                <div class="content-box">
+                    <div class="timeline-header">
+                        <span>
+                            <h3>2022</h3>
+                            <p>Avril</p>
+                            <p>-</p>
+                            <p>Juin</p>
+                        </span>
+                    </div>
+                    <span class="description">
+                        <h4>Adour Gestion Informatique (AGI) - Stagiaire</h4>
+                        <p>R&eacute;seau & maintenance</p>
+                        <p>D&eacute;veloppement progiciel monitoring en HTML/CCS/PHP/SQL/Python/Powershell</p>
+                    </span>                  
+                </div>
+              </div>
+            
+              <div class="timeline-item top experience experience-3">
+                <div class="content-box">
+                    <div class="timeline-header">
+                        <span>
+                            <h3>2023</h3>
+                            <p>Juillet</p>
+                            <p>-</p>
+                            <p>Ao&ucirc;t</p>
+                        </span>
+                    </div>
+                    <span class="description">
+                        <h4>Cr&eacute;dit Agricole - Travail Saisonnier</h4>
+                        <p>H&ocirc;te d'accueil</p>
+                        <p>R&eacute;ception et gestion des ch&egrave;ques et cartes client</p>
+                    </span>      
+                </div>
+              </div>
+            
+              <div class="timeline-item bottom experience experience-4">
+                <div class="content-box">
+                    <div class="timeline-header">
+                        <span>
+                            <h3>2023 - 2024</h3>
+                            <p>Septembre</p>
+                            <p>-</p>
+                            <p>Aujourd'hui</p>
+                        </span>
+                    </div>
+                    <span class="description">
+                        <h4>Soregies - Alternant DevOps</h4>
+                        <p>Cr&eacute;ation de pipeline CICD en YAML sur GitHub</p>
+                        <p>Gestion des ressources AWS en Terraform</p>
+                        <p>Bash, Javascript, JSON</p>
+                    </span>      
+                </div>
+              </div>
+              
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+            <div class="line line-4"></div>
+            </section>
+
         `,
         en: `
-            <h2>professional</h2>
+            <h2>Professional Experiences</h2>
+            <section class="timeline-container">
+              <div class="timeline-track">
+              
+                <span id="point" class="point-1" style="left: 25%;"></span>
+                <span id="point" class="point-2" style="left: 50%;"></span>
+                <span id="point" class="point-3" style="left: 73%;"></span>
+                <span id="point" class="point-4" style="left: 80%;"></span>
+                
+                <span class="year" style="left: 10%;">
+                  <h3>2021</h3>
+                </span>
+                <span class="year" style="left: 35%;">
+                  <h3>2022</h3>
+                </span>
+                <span class="year" style="left: 60%;">
+                  <h3>2023</h3>
+                </span>
+                <span class="year" style="left: 85%;">
+                  <h3>2024</h3>
+                </span>
+              </div>
+            
+              <div class="timeline-item top experience experience-1">
+                <div class="content-box">
+                    <div class="timeline-header">
+                        <span>
+                            <h3>2021</h3>
+                            <p>July</p>
+                            <p>-</p>
+                            <p>August</p>
+                        </span>
+                    </div>
+                    <span class="description">
+                        <h4>Zed Multim&eacute;dia - Season Worker</h4>
+                        <p>Installation Private theater, Projection room</p>
+                        <p>Audiovisual system, Restaurant sound system</p>
+                    </span>
+                </div>
+              </div>
+            
+              <div class="timeline-item bottom experience experience-2">
+                <div class="content-box">
+                    <div class="timeline-header">
+                        <span>
+                            <h3>2022</h3>
+                            <p>April</p>
+                            <p>-</p>
+                            <p>June</p>
+                        </span>
+                    </div>
+                    <span class="description">
+                        <h4>Adour Gestion Informatique (AGI) - Intern</h4>
+                        <p>Network & Maintenance</p>
+                        <p>Monitoring software development in HTML/CCS/PHP/SQL/Python/Powershell</p>
+                    </span>                  
+                </div>
+              </div>
+            
+              <div class="timeline-item top experience experience-3">
+                <div class="content-box">
+                    <div class="timeline-header">
+                        <span>
+                            <h3>2023</h3>
+                            <p>July</p>
+                            <p>-</p>
+                            <p>August</p>
+                        </span>
+                    </div>
+                    <span class="description">
+                        <h4>Cr&eacute;dit Agricole - Season Worker</h4>
+                        <p>Receptionist</p>
+                        <p>Customer checks and bank card management</p>
+                    </span>      
+                </div>
+              </div>
+            
+              <div class="timeline-item bottom experience experience-4">
+                <div class="content-box">
+                    <div class="timeline-header">
+                        <span>
+                            <h3>2023 - 2024</h3>
+                            <p>September</p>
+                            <p>-</p>
+                            <p>Present</p>
+                        </span>
+                    </div>
+                    <span class="description">
+                        <h4>Soregies - DevOps by Apprenticeship</h4>
+                        <p>Create CICD pipeline with YAML on GitHub</p>
+                        <p>Manage AWS resources with Terraform</p>
+                        <p>Bash, Javascript, JSON</p>
+                    </span>      
+                </div>
+              </div>
+              
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+            <div class="line line-4"></div>
+            </section>
+
         `
     },
     education: {
         fr: `
-            <h2>Formation</h2>
+            <h2>Formations</h2>
             <br>
             <div>
             
@@ -42,7 +244,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                     </div>
                     <div>
                         <h3>
-                            <span id="educationDate">Septembre 2022 - Juin 2023</span>
+                            <span id="educationDate">Septembre 2022 - June 2023</span>
                             <span id="educationSchool">Lyc&eacute;e Touchard-Washington</span>
                             <span id="educationLocation">Le Mans</span>
                         </h3>
@@ -211,7 +413,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
             </div>
         `,
         en: `
-            <h2>Education</h2>
+            <h2>Educations</h2>
             <br>
             <div>
             
@@ -401,9 +603,136 @@ export const pages: { [key: string]: { [key: string]: string } } = {
     skills: {
         fr: `
             <h2>Comp&eacute;tences</h2>
+            <br>
+            <section class="container">
+                <div class="left-section">
+                    <h3>Certifications</h3>
+                    <br>
+                    <div class="certification-item">
+                        <iframe name="acclaim-badge" allowtransparency="true" frameborder="0" id="embedded-badge-235a8d70-918c-494b-8ca7-5a697ea7b3b4" scrolling="no" src="https://www.credly.com/embedded_badge/235a8d70-918c-494b-8ca7-5a697ea7b3b4" style="height: 270px; width: 100%" title="View my verified achievement on Credly."></iframe>
+                    </div>
+                    <br>
+                    <h4>Liste des certifications :</h4>
+                    <p>AWS Cloud Practitioner</p>
+                </div>
+        
+                <div class="center-section">
+                    <h3>Compétences IT</h3>
+                    <br>
+                    <ul class="skills-list">
+                        <li>
+                            <h4>Syst&egrave;mes d'exploitations</h4>
+                            <p>MacOS, Windows, Linux</p>
+                        </li>
+                        <li>
+                            <h4>Outils</h4>
+                            <p>AWS, GitHub</p>
+                        </li>
+                        <li>
+                            <h4>Langages de Programmation</h4>
+                            <div class="li-container">
+                                <div>
+                                    <h5>AWS</h5>
+                                    <p>Terraform</p>
+                                </div>
+                                <div>
+                                    <h5>GitHub</h5>
+                                    <p>YAML</p>
+                                </div>
+                                <div>
+                                    <h5>Connaissances Scolaires</h5>
+                                    <p>C, Java, Python</p>
+                                </div>
+                                <div>
+                                    <h5>Site Internet</h5>
+                                    <p>Javascript, HTML, CSS, PHP, SQL</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        
+                <div class="right-section">
+                    <h3>Langues</h3>
+                    <br>
+                    <ul class="languages-list">
+                        <li>Français : Langue maternelle</li>
+                        <li>Anglais : Niveau B2 – TOEIC 870 points</li>
+                    </ul>
+                    <br>
+                    <div class="certification-item">
+                        <h4>TOEIC</h4>
+                    <a href="./img/certification/TOEIC.pdf" target="_blank">Voir le certificat TOEIC</a>
+                    </div>
+                </div>
+            </section>
         `,
         en: `
             <h2>Skills</h2>
+            <br>
+            <section class="container">
+                <div class="left-section">
+                    <h3>Certifications</h3>
+                    <br>
+                    <div class="certification-item">
+                        <iframe name="acclaim-badge" allowtransparency="true" frameborder="0" id="embedded-badge-235a8d70-918c-494b-8ca7-5a697ea7b3b4" scrolling="no" src="https://www.credly.com/embedded_badge/235a8d70-918c-494b-8ca7-5a697ea7b3b4" style="height: 270px; width: 100%" title="View my verified achievement on Credly."></iframe>
+                    </div>
+                    <br>
+                    <h4>List of certifications :</h4>
+                    <p>AWS Cloud Practitioner</p>
+                </div>
+        
+                <!-- Section des compétences IT au centre -->
+                <div class="center-section">
+                    <h3>IT Skills</h3>
+                    <br>
+                    <ul class="skills-list">
+                        <li>
+                            <h4>Operating Systems</h4>
+                            <p>MacOS, Windows, Linux</p>
+                        </li>
+                        <li>
+                            <h4>Tools</h4>
+                            <p>AWS, GitHub</p>
+                        </li>
+                        <li>
+                            <h4>Programming Languages</h4>
+                            <div class="li-container">
+                                <div>
+                                    <h5>AWS</h5>
+                                    <p>Terraform</p>
+                                </div>
+                                <div>
+                                    <h5>GitHub</h5>
+                                    <p>YAML</p>
+                                </div>
+                                <div>
+                                    <h5>School Knowledge</h5>
+                                    <p>C, Java, Python</p>
+                                </div>
+                                <div>
+                                    <h5>Website</h5>
+                                    <p>Javascript, HTML, CSS, PHP, SQL</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        
+                <div class="right-section">
+                    <h3>Languages</h3>
+                    <br>
+                    <ul class="languages-list">
+                        <li>French : native langugae</li>
+                        <li>English : B2 Level – TOEIC 870 points</li>
+                    </ul>
+                    <br>
+                    <div class="certification-item">
+                        <h4>TOEIC</h4>
+                    <a href="./img/certification/TOEIC.pdf" target="_blank">TOEIC certificate</a>
+                    </div>
+                </div>
+            </section>
         `
     },
     website: {
@@ -522,6 +851,5 @@ export const pages: { [key: string]: { [key: string]: string } } = {
         `
     }
 };
-
 
 

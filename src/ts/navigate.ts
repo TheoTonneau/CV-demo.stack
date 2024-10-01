@@ -95,11 +95,45 @@ export function navigate(page: string, lang: string): void {
                 target.style.display = 'none';
             }
         });
-        
-        
+
+        drawAllLines();
+        window.onresize = drawAllLines;
+
+
     }
 }
 
+function drawLine(pointSelector: string, divSelector: string, lineSelector: string): void {
+    const point: Element | null = document.querySelector(pointSelector);
+    const experienceDiv: Element | null = document.querySelector(divSelector);
+    const line: HTMLElement | null = document.querySelector(lineSelector);
+
+    if (point && experienceDiv && line) {
+        const pointRect: DOMRect = point.getBoundingClientRect();
+        const divRect: DOMRect = experienceDiv.getBoundingClientRect();
+
+        const x1 = pointRect.x ;
+        const y1 = pointRect.y + pointRect.height/2;
+        const x2 = divRect.x ;
+        const y2 = divRect.y + divRect.height/2;
+
+        const length: number = Math.hypot(x2 - x1, y2 - y1);
+
+        line.style.width = length + 'px';
+        line.style.left = x1-(pointRect.width)*3/4 + 'px';
+        line.style.top = y1-195*(pointRect.top+pointRect.height+pointRect.bottom)/1000 + 'px';
+
+        const angle: number = Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
+        line.style.transform = `rotate(${angle}deg)`;
+    }
+}
+
+function drawAllLines(): void {
+    drawLine('.point-1', '.experience-1', '.line-1');
+    drawLine('.point-2', '.experience-2', '.line-2');
+    drawLine('.point-3', '.experience-3', '.line-3');
+    drawLine('.point-4', '.experience-4', '.line-4');
+}
 
 export function setCurrentPage(page: string): void {
     currentPage = page;

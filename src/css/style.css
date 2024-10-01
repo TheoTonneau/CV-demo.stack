@@ -384,3 +384,263 @@ nav ul li {
     width: 100%; /* S'assure que la carte prend toute la largeur disponible */
     border-radius: 5px; /* Coins arrondis pour la carte */
 }
+
+
+
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section gauche - Certifications */
+.left-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.left-section p{
+    text-align: center;
+}
+
+.certification-item {
+    margin-bottom: 20px;
+}
+
+.certification-item h3, .certification-item p {
+    text-align: center;
+}
+
+.certification-item a {
+    display: block;
+    text-align: center;
+    color: #008CBA;
+    text-decoration: none;
+}
+
+/* Section centrale - Compétences IT */
+.center-section {
+    flex: 2;
+    padding: 20px;
+    background-color: #fff;
+    margin: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.center-section ul li h4{
+    text-align: left;
+}
+
+.center-section ul li p{
+    text-align: center;
+}
+
+.center-section ul li h5{
+    font-weight: bold;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-list li {
+    margin: 10px 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Section droite - Langues */
+.right-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.languages-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.languages-list li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.li-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.li-container div {
+    padding: 10px;
+}
+
+
+
+
+
+.timeline-container {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Hauteur réduite */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.timeline-track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #ccc;
+    z-index: 1;
+}
+
+.timeline-track .year {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+
+.timeline-track .year h3 {
+    margin: 0;
+    background-color: snow;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#point {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    background-color: #008CBA; /* Couleur des points */
+    border-radius: 50%;
+}
+
+.timeline-item {
+    position: relative;
+    width: 500px;
+    z-index: 2;
+}
+
+.timeline-item.top {
+    align-self: flex-start;
+}
+
+.timeline-item.bottom {
+    align-self: flex-end;
+}
+
+.timeline-item .timeline-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-right: 1px dashed #000;
+    padding-right: 10px;
+}
+
+.timeline-item span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.timeline-item span h3 {
+    margin-bottom: 0;
+}
+
+.timeline-item span p {
+    margin: 0;
+}
+
+.timeline-item span p:first-of-type {
+    margin: 5px 0;
+}
+
+.content-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+}
+
+.content-box .description {
+    text-align: center;
+}
+
+/* Arrows to link with the timeline */
+.timeline-item.top::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #fff transparent transparent transparent;
+    transform: translateX(-50%);
+}
+
+.timeline-item.bottom::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #fff transparent;
+    transform: translateX(-50%);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .timeline-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .timeline-item {
+        width: 100%;
+    }
+    .content-box {
+        width: 95%; /* Augmente la largeur sur mobile */
+    }
+    .timeline-track {
+        display: none;
+    }
+}
+
+
+.line {
+    position: absolute;
+    height: 2px;
+    background-color: #008CBA; /* Couleur des lignes */
+    transform-origin: left center;
+}

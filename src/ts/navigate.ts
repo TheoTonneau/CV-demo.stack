@@ -117,13 +117,13 @@ function drawLine(pointSelector: string, divSelector: string, lineSelector: stri
         const x2 = divRect.x ;
         const y2 = divRect.y + divRect.height/2;
 
-        const length: number = Math.hypot(x2 - x1, y2 - y1);
+        const length: number = Math.hypot(x1 - x2, y1 - y2);
 
         line.style.width = length + 'px';
-        line.style.left = x1-(pointRect.width)*3/4 + 'px';
-        line.style.top = y1-195*(pointRect.top+pointRect.height+pointRect.bottom)/1000 + 'px';
+        line.style.left = x1 - pointRect.width + 'px';
+        line.style.top = '50%';
 
-        const angle: number = Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
+        const angle: number = Math.atan2(y1 - y2, x1 - x2) * (180 / Math.PI)+180;
         line.style.transform = `rotate(${angle}deg)`;
     }
 }

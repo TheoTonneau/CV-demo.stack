@@ -7,11 +7,88 @@ export const pages: { [key: string]: { [key: string]: string } } = {
     home: {
         fr: `
             <h2>Bienvenue sur mon CV</h2>
-            <p>Ceci est une démo interactive de mon CV multilingue. Vous pouvez naviguer à travers différentes sections pour voir mon parcours.</p>
+            <br>
+            <div class="homeContainer">
+                <div class="column left">
+                    ${badgefr}
+                </div>
+            
+                <div class="column middle">
+                    <h3 style="margin-bottom: 20px">Théo Tonneau</h3>
+                    <p>
+                        &Eacute;tudiant en <strong>ing&eacute;nierie DevOps</strong> par apprentissage, 
+                        je travaille actuellement chez <strong>Soregies</strong>, 
+                        o&ugrave; je g&egrave;re des <strong>infrastructures AWS</strong> 
+                        et mets en place des <strong>pipelines CICD</strong>.
+                        <br>
+                        Passionn&eacute; par l'optimisation des ressources, 
+                        je cherche &agrave; contribuer &agrave; des projets innovants et durables. 
+                        <strong>Organis&eacute;</strong>, <strong>curieux</strong> 
+                        et <strong>orient&eacute; solutions</strong>, 
+                        je suis toujours pr&ecirc;t &agrave; relever de nouveaux d&eacute;fis dans le domaine du cloud et des technologies DevOps.
+                    </p>
+                </div>
+            
+                <div class="column right">
+                    <div class="github-section">
+                        <h4>GitHub</h4>
+                        <br>
+                        <a href="https://github.com/TheoTonneau" class="github-button" style="color: #fff">Mon GitHub</a>
+                        <br>
+                        <br>
+                       
+                        <a href="https://github.com/TheoTonneau/CV-demo.stack" class="github-button" style="color: #fff">Le repo GitHub de ce site</a>
+                    </div>
+                    <br>
+                    <div class="certification-section">
+                        <h4 style="margin-top: 20px">Dernière Certification</h4>
+                        <br>
+                        <iframe name="acclaim-badge" allowtransparency="true" frameborder="0" id="embedded-badge-235a8d70-918c-494b-8ca7-5a697ea7b3b4" scrolling="no" src="https://www.credly.com/embedded_badge/235a8d70-918c-494b-8ca7-5a697ea7b3b4" style="height: 270px; width: 100%" title="View my verified achievement on Credly."></iframe>
+                    </div>
+                </div>
+            </div>
+
         `,
         en: `
             <h2>Welcome to my Resume</h2>
-            <p>This is an interactive demo of my multilingual resume. You can navigate through different sections to see my journey.</p>
+            <br>
+            <div class="homeContainer">
+                <div class="column left">
+                    ${badgeen}
+                </div>
+            
+                <div class="column middle">
+                    <h3 style="margin-bottom: 20px">Théo Tonneau</h3>
+                    <p>
+                        Studying for the <strong>DevOps engineering</strong> diploma by apprenticeship, 
+                        I'm currently working at Soregies, where I manage <strong>AWS infrastructures</strong> 
+                        and set up <strong>CICD pipelines.</strong>
+                        <br>
+                        Passionate about optimizing resources, 
+                        I'm looking to contribute to innovative and sustainable projects. 
+                        <strong>Organized</strong>, <strong>curious</strong> and <strong>solutions-oriented</strong>, 
+                        I'm always up for new challenges in cloud and DevOps technologies. 
+                    </p>
+                </div>
+            
+                <div class="column right">
+                    <div class="github-section">
+                        <h4>GitHub</h4>
+                        <br>
+                        <a href="https://github.com/TheoTonneau" class="github-button" style="color: #fff">My GitHub account</a>
+                        <br>
+                        <br>
+                       
+                        <a href="https://github.com/TheoTonneau/CV-demo.stack" class="github-button" style="color: #fff">This site's GitHub repo</a>
+                    </div>
+                    <br>
+                    <div class="certification-section">
+                        <h4 style="margin-top: 20px">Dernière Certification</h4>
+                        <br>
+                        <iframe name="acclaim-badge" allowtransparency="true" frameborder="0" id="embedded-badge-235a8d70-918c-494b-8ca7-5a697ea7b3b4" scrolling="no" src="https://www.credly.com/embedded_badge/235a8d70-918c-494b-8ca7-5a697ea7b3b4" style="height: 270px; width: 100%" title="View my verified achievement on Credly."></iframe>
+                    </div>
+                </div>
+            </div>
         `
     },
     experience: {
@@ -763,7 +840,6 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                 
 
             <form id="formEmail">
-        <!-- Première rangée: Email et Company -->
         <div class="form-row">
             <div class="half-width">
                 <label for="email">Email:</label>
@@ -775,7 +851,6 @@ export const pages: { [key: string]: { [key: string]: string } } = {
             </div>
         </div>
 
-        <!-- Deuxième rangée: Prénom et Nom -->
         <div class="form-row">
             <div class="half-width">
                 <label for="firstName">Prénom:</label>
@@ -787,11 +862,9 @@ export const pages: { [key: string]: { [key: string]: string } } = {
             </div>
         </div>
 
-        <!-- Rangée pour le message -->
         <label for="message">Message:</label>
         <textarea id="message" name="message" rows="4" cols="50" required></textarea>
 
-        <!-- Bouton d'envoi -->
         <button type="submit" id="submitButton">Envoyer</button>
     </form>
             </div>
@@ -816,7 +889,6 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                 
 
             <form id="formEmail">
-        <!-- Première rangée: Email et Company -->
         <div class="form-row">
             <div class="half-width">
                 <label for="email">Email:</label>
@@ -828,7 +900,6 @@ export const pages: { [key: string]: { [key: string]: string } } = {
             </div>
         </div>
 
-        <!-- Deuxième rangée: Prénom et Nom -->
         <div class="form-row">
             <div class="half-width">
                 <label for="firstName">First name:</label>
@@ -840,11 +911,9 @@ export const pages: { [key: string]: { [key: string]: string } } = {
             </div>
             </div>
     
-            <!-- Rangée pour le message -->
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" cols="50" required></textarea>
     
-            <!-- Bouton d'envoi -->
             <button type="submit" id="submitButton">Submit</button>
         </form>
             </div>

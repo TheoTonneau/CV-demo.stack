@@ -3,87 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trait Diagonal Dynamique</title>
-<style>
-    body {
-        position: relative;
-        height: 100vh; /* Hauteur de la fenêtre */
-        margin: 0;
-        overflow: hidden; /* Pour éviter le défilement */
-    }
+    <title>Présentation Personnelle</title>
 
-    span {
-        position: absolute;
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px;
-        z-index: 1;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .top-right {
-        top: 20px;
-        right: 20px; /* Positionnement en haut à droite */
-    }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .middle {
-        top: 50%; /* Positionnement vertical au milieu */
-        left: 50%; /* Positionnement horizontal au milieu */
-        transform: translate(-50%, -50%); /* Centrer */
-    }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            height: 80vh;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-    .diagonal-line {
-        position: absolute;
-        height: 2px; /* Épaisseur du trait */
-        background-color: black; /* Couleur du trait */
-        z-index: 0;
-    }
+        .column {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-basis: 30%;
+            text-align: center;
+        }
 
-</style>
-    </head>
+        .left {
+            border-right: 2px solid #eee;
+            padding-right: 20px;
+        }
+
+        .middle {
+            padding: 0 20px;
+        }
+
+        .right {
+            border-left: 2px solid #eee;
+            padding-left: 20px;
+        }
+
+        .linkedin-badge {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .linkedin-link {
+            color: #0077b5;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .linkedin-link:hover {
+            text-decoration: underline;
+        }
+
+        .middle h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .middle p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        .github-section {
+            margin-bottom: 20px;
+        }
+
+        .github-button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .github-button:hover {
+            background-color: #0077b5;
+            color: #fff;
+        }
+
+        .certification-section h2 {
+            font-size: 1.5em;
+            color: #0077b5;
+            margin-bottom: 10px;
+        }
+
+        .certification-section p {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+    </style>
+
+</head>
 <body>
-<span class="top-right">Haut Droite</span>
-<span class="middle">Milieu</span>
-<div class="diagonal-line"></div>
 
-<script>
-    function drawLine() {
-        const line = document.querySelector('.diagonal-line');
-        const topRight = document.querySelector('.top-right');
-        const middle = document.querySelector('.middle');
+<div class="container">
+    <!-- Colonne gauche (Badge LinkedIn) -->
+    <div class="column left">
+        <img src="URL_DU_BADGE_LINKEDIN" alt="Badge LinkedIn" class="linkedin-badge">
+        <a href="https://www.linkedin.com/in/TON_PROFIL" class="linkedin-link">Mon Profil LinkedIn</a>
+    </div>
 
-        // Obtenir les positions et dimensions des éléments
-        const rect1 = topRight.getBoundingClientRect();
-        const rect2 = middle.getBoundingClientRect();
+    <!-- Colonne du milieu (Description personnelle) -->
+    <div class="column middle">
+        <h1>Ton Nom Complet</h1>
+        <p>
+            Je suis un développeur passionné, spécialisé dans <strong>technologie principale 1</strong>, <strong>technologie principale 2</strong>,
+            et <strong>technologie principale 3</strong>. Avec plusieurs années d'expérience, je travaille sur des projets innovants
+            et je cherche toujours à apprendre de nouvelles technologies pour rester à jour dans l'industrie.
+        </p>
+    </div>
 
-        console.log(rect1);
-        console.log(rect2);
+    <!-- Colonne droite (Certification et lien GitHub) -->
+    <div class="column right">
+        <div class="github-section">
+            <a href="https://github.com/TON_GITHUB" class="github-button">Mon GitHub</a>
+        </div>
+        <div class="certification-section">
+            <h2>Dernière Certification</h2>
+            <p><strong>Titre de la Certification</strong></p>
+            <p>Certifié par : <strong>Nom de l'organisme</strong></p>
+            <p>Date d'obtention : <strong>Mois, Année</strong></p>
+        </div>
+    </div>
+</div>
 
-        // Calculer les coordonnées des points de début et de fin
-        const x1 = rect1.x ;
-        const y1 = rect1.y + rect1.height/2; // Centrer verticalement au milieu du span top-right
-        const x2 = rect2.x ;
-        const y2 = rect2.y + rect2.height/2;
-
-        // Calculer la distance entre les deux points
-        const length = Math.hypot(x2 - x1, y2 - y1);
-
-        // Appliquer les styles pour créer le trait
-        line.style.width = length + 'px';
-        line.style.left = x2-(rect2.width)/2 + 'px';
-        line.style.top = y2-2*(rect2.top+rect2.height+rect2.bottom)/10 + 'px';
-
-        // Calculer l'angle de rotation
-        const angle = Math.atan2(y2 - y1, x2 - x1) * (180 / Math.PI);
-        line.style.transform = `rotate(${angle}deg)`;
-    }
-
-    // Dessiner la ligne lors du chargement de la page
-    window.onload = drawLine;
-
-    // Redessiner la ligne si la fenêtre est redimensionnée
-    window.onresize = drawLine;
-
-
-</script>
 </body>
 </html>

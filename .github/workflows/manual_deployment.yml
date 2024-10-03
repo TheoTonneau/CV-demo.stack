@@ -100,14 +100,12 @@ jobs:
 
       - name: "Get informations files"
         run: |
-          echo "${{ secrets.INFORMATIONS }}" > ../src/ts/informations.ts
           echo "${{ secrets.ENCRYPT }}" > ../src/ts/encrypt.ts
         shell: bash
 
       - name: "Compile and build webpage"
         run: |
           npm install
-          npx ts-node ../src/ts/encrypt.ts
           npm run build-app
         shell: bash
 

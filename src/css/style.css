@@ -690,7 +690,7 @@ nav ul li {
 }
 
 .linkedin-link {
-    color: #0077b5;
+    color: #008CBA;
     text-decoration: none;
     font-size: 1.2em;
     font-weight: bold;
@@ -724,17 +724,59 @@ nav ul li {
 }
 
 .github-button:hover {
-    background-color: #0077b5;
+    background-color: #008CBA;
     color: #fff;
 }
 
 .certification-section h2 {
     font-size: 1.5em;
-    color: #0077b5;
+    color: #008CBA;
     margin-bottom: 10px;
 }
 
 .certification-section p {
     font-size: 1.1em;
     margin-bottom: 5px;
+}
+
+
+
+
+
+
+.info-table {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.info-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 10px;
+}
+
+.technologies ul, .cicd ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.technologies ul li, .cicd ul li {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+.schema {
+    text-align: center;
+}
+
+.schema img {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
 }

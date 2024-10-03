@@ -14,7 +14,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                 </div>
             
                 <div class="column middle">
-                    <h3 style="margin-bottom: 20px">Théo Tonneau</h3>
+                    <h3 style="margin-bottom: 20px">Th&eacute;o Tonneau</h3>
                     <p>
                         &Eacute;tudiant en <strong>ing&eacute;nierie DevOps</strong> par apprentissage, 
                         je travaille actuellement chez <strong>Soregies</strong>, 
@@ -35,8 +35,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                         <br>
                         <a href="https://github.com/TheoTonneau" class="github-button" style="color: #fff">Mon GitHub</a>
                         <br>
-                        <br>
-                       
+                        <br>                       
                         <a href="https://github.com/TheoTonneau/CV-demo.stack" class="github-button" style="color: #fff">Le repo GitHub de ce site</a>
                     </div>
                     <br>
@@ -58,7 +57,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                 </div>
             
                 <div class="column middle">
-                    <h3 style="margin-bottom: 20px">Théo Tonneau</h3>
+                    <h3 style="margin-bottom: 20px">Th&eacute;o Tonneau</h3>
                     <p>
                         Studying for the <strong>DevOps engineering</strong> diploma by apprenticeship, 
                         I'm currently working at Soregies, where I manage <strong>AWS infrastructures</strong> 
@@ -78,7 +77,6 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                         <a href="https://github.com/TheoTonneau" class="github-button" style="color: #fff">My GitHub account</a>
                         <br>
                         <br>
-                       
                         <a href="https://github.com/TheoTonneau/CV-demo.stack" class="github-button" style="color: #fff">This site's GitHub repo</a>
                     </div>
                     <br>
@@ -93,7 +91,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
     },
     experience: {
         fr: `
-            <h2>Expériences Professionnelles</h2>
+            <h2>Exp&eacute;riences Professionnelles</h2>
             <section class="timeline-container">
               <div class="timeline-track">
               
@@ -315,7 +313,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                             <span id="educationLocation">Poitiers</span>
                         </h3>
                         <descript id="educationDescription" class="description-container">
-                            <p>Diplôme d'ingénieur en alternance au poste de DevOps</p>
+                            <p>Diplôme d'ing&eacute;nieur en alternance au poste de DevOps</p>
                             <button class="more-info-btn" data-modal="modal1">En savoir plus &rarr;</button>
                         </descript>
                     </div>
@@ -513,7 +511,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                             <span id="educationLocation">Le Mans</span>
                         </h3>
                         <descript id="educationDescription" class="description-container">
-                            <p>Preparatory Class for the French Grandes Écoles</p>
+                            <p>Preparatory Class for the French Grandes &eacute;coles</p>
                             <button class="more-info-btn" data-modal="modal2">Find out more &rarr;</button>
                         </descript>
                     </div>
@@ -694,7 +692,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                 </div>
         
                 <div class="center-section">
-                    <h3>Compétences IT</h3>
+                    <h3>Comp&eacute;tences IT</h3>
                     <br>
                     <ul class="skills-list">
                         <li>
@@ -759,7 +757,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                     <p>AWS Cloud Practitioner</p>
                 </div>
         
-                <!-- Section des compétences IT au centre -->
+                <!-- Section des comp&eacute;tences IT au centre -->
                 <div class="center-section">
                     <h3>IT Skills</h3>
                     <br>
@@ -815,9 +813,66 @@ export const pages: { [key: string]: { [key: string]: string } } = {
     website: {
         fr: `
             <h2>Ce site web</h2>
+            <section class="info-table">
+                <div class="info-card technologies">
+                    <h3>Technologies Utilis&eacute;es</h3>
+                    <ul>
+                        <li><strong>AWS</strong> : H&eacute;bergement et gestion du backend</li>
+                        <li><strong>GitHub Actions</strong> : Int&eacute;gration et D&eacute;ploiement Continu (CI/CD)</li>
+                        <li><strong>Typescript</strong> : Langage pour le d&eacute;veloppement frontend et backend</li>
+                        <li><strong>HTML/CSS</strong> : Structure et styles de la page web</li>
+                    </ul>
+                </div>
+    
+                <div class="info-card cicd">
+                    <h3>Pipeline CI/CD avec GitHub Actions</h3>
+                    <p>Les GitHub Actions permettent d'automatiser le processus de build, test, et d&eacute;ploiement. Voici un aperçu bref des workflows utilis&eacute;s :</p>
+                    <ul>
+                        <li><strong>Build:</strong> Compile le code Typescript en Javascript.</li>
+                        <li><strong>Test:</strong> Lancement des tests unitaires et des tests d'int&eacute;gration.</li>
+                        <li><strong>D&eacute;ploiement:</strong> D&eacute;ploiement automatique sur AWS après validation.</li>
+                    </ul>
+                    <a href="https://github.com/TheoTonneau/CV-demo.stack" class="github-button" style="color: #fff">Le repo GitHub de ce site</a>
+                </div>
+            </section>
+    
+            <section class="schema">
+                <h3>Sch&eacute;ma de l'infrastructure</h3>
+                <img src="./img/website/infrastructure.png" alt="INFRASTRUCTURE" />
+            </section>
         `,
         en: `
             <h2>This website</h2>
+            <section class="info-table">
+                <div class="info-card technologies">
+                    <h3>Technologies Used</h3>
+                    <ul>
+                        <li><strong>AWS</strong> : Hosting and Backend Management</li>
+                        <li><strong>GitHub Actions</strong> : Continuous Integration et Continuous Deployment (CI/CD)</li>
+                        <li><strong>Typescript</strong> : Programming Language for frontend and backend</li>
+                        <li><strong>HTML/CSS</strong> : Webpage structure and styles</li>
+                    </ul>
+                </div>
+    
+                <div class="info-card cicd">
+                    <h3>CI/CD pipelines with GitHub Actions</h3>
+                    <p>
+                        GitHub Actions automate the build, test and deployment process. 
+                        Here's an overview of the workflows used :
+                    </p>
+                    <ul>
+                        <li><strong>Build:</strong> Build Typescript code in Javascript.</li>
+                        <li><strong>Test:</strong> Launch unit and integration tests.</li>
+                        <li><strong>Deployment:</strong> Automatic deployment on AWS after validation.</li>
+                    </ul>
+                    <a href="https://github.com/TheoTonneau/CV-demo.stack" class="github-button" style="color: #fff">This site's GitHub repo</a>
+                </div>
+            </section>
+    
+            <section class="schema">
+                <h3>Infrastructure diagram</h3>
+                <img src="./img/website/infrastructure.png" alt="INFRASTRUCTURE" />
+            </section>
         `
     },
     contact: {
@@ -825,7 +880,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
             <h2>Comment me contacter ?</h2>
             <br>
             <aside class="aside">
-                <i class="fa fa-envelope icon"></i> En remplissant le formulaire suivant avec vos coordonnées afin que je vous recontacte
+                <i class="fa fa-envelope icon"></i> En remplissant le formulaire suivant avec vos coordonn&eacute;es afin que je vous recontacte
                 <br>
                 <br>
                 Ou via <i class="fa fa-linkedin-square"></i> LinkedIn
@@ -853,7 +908,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
 
         <div class="form-row">
             <div class="half-width">
-                <label for="firstName">Prénom:</label>
+                <label for="firstName">Pr&eacute;nom:</label>
                 <input type="text" id="firstName" name="firstName">
             </div>
             <div class="half-width">

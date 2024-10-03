@@ -92,7 +92,6 @@ jobs:
         shell: bash
 
       - name: "Terraform output"
-        working-directory: ./iac
         run: |
           mkdir -p ../src/js/
           touch ../src/js/config.json
@@ -107,6 +106,7 @@ jobs:
 
       - name: "Compile and build webpage"
         run: |
+          npm ci
           npm run build-app
         shell: bash
 

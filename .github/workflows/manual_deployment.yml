@@ -96,6 +96,8 @@ jobs:
         run: |
           mkdir -p ../src/js
           terraform output -json > ../src/js/config.json
+          ls ../src/
+          ls ../src/js/
         shell: bash
 
 
@@ -116,7 +118,7 @@ jobs:
 
       - name: "Install dependencies"
         run: |
-          ls 
+          ls src/
           npm ci
         shell: bash
 

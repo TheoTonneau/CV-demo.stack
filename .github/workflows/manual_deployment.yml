@@ -91,6 +91,13 @@ jobs:
           echo '```' >> $GITHUB_STEP_SUMMARY
         shell: bash
 
+      - name: "Terraform output"
+        working-directory: ./iac
+        run: |
+          terraform output -json > ../src/js/config.json
+        shell: bash
+
+
   build-app:
     needs:
       - plan
@@ -101,18 +108,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - name: configure terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.4.5
-
-      - name: configure credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-west-3
-
       - name: "setup-node"
         uses: actions/setup-node@v3
         with:
@@ -121,12 +116,6 @@ jobs:
       - name: "Install dependencies"
         run: |
           npm ci
-        shell: bash
-
-      - name: "Terraform output"
-        working-directory: ./iac
-        run: |
-          terraform output -json > ../src/js/config.json
         shell: bash
 
       - name: "Get informations files"

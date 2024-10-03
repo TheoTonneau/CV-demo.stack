@@ -1,4 +1,4 @@
-import {link, badgefr, badgeen} from './informations';
+import {badgefr, badgeen} from './informations';
 import {currentLang} from './lang';
 
 let shortLang: string = currentLang == 'fr' ? 'fr_FR' : 'en_US';

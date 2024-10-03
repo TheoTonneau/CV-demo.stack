@@ -114,16 +114,17 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      - name: "Install dependencies"
+        run: |
+          mkdir -p ./src/js
+          npm ci
+        shell: bash
+
       - name: "Manage cache"
         uses: ./.github/actions/manage-cache/
         with:
           NODE_VERSION: ${{ env.NODE_VERSION }}
           LOCK_PATH: "**/package-lock.json"
-
-      - name: "Install dependencies"
-        run: |
-          npm ci
-        shell: bash
 
       - name: "Get informations files"
         run: |

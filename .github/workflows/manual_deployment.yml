@@ -72,6 +72,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-3
 
+      - name: "Manage cache web"
+        uses: ./.github/actions/manage-cache-web/
+        with:
+          NODE_VERSION: ${{ env.NODE_VERSION }}
+          LOCK_PATH: "**/package-lock.json"
+
       - name: "Manage cache"
         uses: ./.github/actions/manage-cache/
         with:
@@ -136,6 +142,15 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-3
+
+      - run: mkdir -p ../src/js/
+        shell: bash
+
+      - name: "Manage cache web"
+        uses: ./.github/actions/manage-cache-web/
+        with:
+          NODE_VERSION: ${{ env.NODE_VERSION }}
+          LOCK_PATH: "**/package-lock.json"
 
       - name: "Manage cache"
         uses: ./.github/actions/manage-cache/

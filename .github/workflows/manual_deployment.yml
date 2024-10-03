@@ -116,7 +116,6 @@ jobs:
 
       - name: "Install dependencies"
         run: |
-          mkdir -p ./src/js
           npm ci
         shell: bash
 

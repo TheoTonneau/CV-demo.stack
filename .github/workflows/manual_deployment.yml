@@ -94,6 +94,7 @@ jobs:
       - name: "Terraform output"
         working-directory: ./iac
         run: |
+          mkdir -p ../src/js
           terraform output -json > ../src/js/config.json
         shell: bash
 

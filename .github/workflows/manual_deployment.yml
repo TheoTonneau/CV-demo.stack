@@ -95,11 +95,13 @@ jobs:
         working-directory: ./iac
         run: |
           mkdir -p ../src/js/
+          touch ../src/js/config.json
           terraform output -json > ../src/js/config.json
         shell: bash
 
       - name: "Get informations files"
         run: |
+          touch ./src/ts/informations.ts ./src/ts/encrypt.ts
           echo "${{ secrets.INFORMATIONS }}" > ./src/ts/informations.ts
           echo "${{ secrets.ENCRYPT }}" > ./src/ts/encrypt.ts
         shell: bash

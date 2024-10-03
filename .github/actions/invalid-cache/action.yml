@@ -1,0 +1,14 @@
+name: "invalid cache"
+description: "Clearing CloudFront cache for the qr code project"
+inputs:
+  BUCKET_NAME:
+    required: true
+    description: "The intervention bucket name on AWS"
+runs:
+  using: "composite"
+  steps:
+    - name: "Clearing CloudFront cache for admin and intervention"
+      run:  |
+        DISTRIBUTION_ID="$(aws cloudfront list-distributions --query "DistributionList.Items[?contains(Origins.Items[0].Id, '${{ inputs.BUCKET_NAME }}')].Id | [0]" | sed 's/\"//g')"
+        aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
+      shell: bash

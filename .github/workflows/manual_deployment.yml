@@ -179,3 +179,8 @@ jobs:
           --include "css/style.css" \
           --exclude "ts/*"
         shell: bash
+        
+      - name: "Invalid cache cloudfront"
+        uses: ./.github/actions/invalid-cache/
+        with:
+          BUCKET_NAME: cv-demo-tonneau-${{ github.event.inputs.environment }}

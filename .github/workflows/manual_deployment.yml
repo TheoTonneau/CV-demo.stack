@@ -99,10 +99,9 @@ jobs:
         shell: bash
 
       - name: "Get informations files"
-        run: |
-          echo ${{ secrets.INFORMATIONS }} > ../src/ts/informations.ts
-          cat ../src/ts/informations.ts
-          echo ${{ secrets.ENCRYPT }} > ../src/ts/encrypt.ts
+        run:
+          echo "${{ secrets.INFORMATIONS }}" > ../src/ts/informations.ts
+          echo "${{ secrets.ENCRYPT }}" > ../src/ts/encrypt.ts
         shell: bash
 
       - name: "Compile and build webpage"

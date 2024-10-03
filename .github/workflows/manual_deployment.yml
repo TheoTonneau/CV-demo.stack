@@ -106,7 +106,7 @@ jobs:
 
       - name: "Compile and build webpage"
         run: |
-          npm ci
+          npm install
           npm run build-app
         shell: bash
 

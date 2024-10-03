@@ -134,6 +134,7 @@ jobs:
       - name: "Compile and build webpage"
         run: |
           ls ./src/
+          ls ./lambda/build/
           ls ./src/js/
           npm run build-app
         shell: bash

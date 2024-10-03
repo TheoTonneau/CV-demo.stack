@@ -235,7 +235,6 @@ nav ul li {
 
 
 
-/* Media Queries pour adaptation mobile */
 /*
 @media (max-width: 800px) {
     .aside, .divDroite {
@@ -344,19 +343,19 @@ nav ul li {
 }
 
 .modal-body {
-    display: flex; /* Aligne les éléments horizontalement */
-    justify-content: space-between; /* Espacement entre les éléments */
+    display: flex;
+    justify-content: space-between;
 }
 
 .info-left {
-    flex: 0 0 65%; /* Prend 65% de l'espace */
-    padding: 20px; /* Ajoute du rembourrage */
+    flex: 0 0 65%;
+    padding: 20px;
 }
 
 .info-left ul {
-    list-style-type: disc; /* Retire les puces par défaut si nécessaire */
-    padding: 0; /* Supprime le padding par défaut */
-    margin: 0; /* Supprime la marge par défaut */
+    list-style-type: disc;
+    padding: 0;
+    margin: 0;
 }
 
 .info-left ul li {
@@ -368,21 +367,21 @@ nav ul li {
 
 
 .aside-right {
-    flex: 0 0 30%; /* Prend 30% de l'espace */
-    padding: 20px; /* Ajoute du rembourrage */
-    background-color: #f9f9f9; /* Fond léger pour l'aside */
-    border-radius: 5px; /* Coins arrondis */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    flex: 0 0 30%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .aside-right img {
-    max-width: 100%; /* S'assure que l'image ne dépasse pas la largeur de l'aside */
-    border-radius: 5px; /* Coins arrondis pour l'image */
+    max-width: 100%;
+    border-radius: 5px;
 }
 
 .map img {
-    width: 100%; /* S'assure que la carte prend toute la largeur disponible */
-    border-radius: 5px; /* Coins arrondis pour la carte */
+    width: 100%;
+    border-radius: 5px;
 }
 
 
@@ -495,7 +494,7 @@ nav ul li {
 .timeline-container {
     position: relative;
     width: 100%;
-    height: 70vh; /* Hauteur réduite */
+    height: 70vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -532,7 +531,7 @@ nav ul li {
     transform: translateY(-50%);
     width: 14px;
     height: 14px;
-    background-color: #008CBA; /* Couleur des points */
+    background-color: #008CBA;
     border-radius: 50%;
 }
 
@@ -593,7 +592,7 @@ nav ul li {
     text-align: center;
 }
 
-/* Arrows to link with the timeline */
+
 .timeline-item.top::after {
     content: '';
     position: absolute;
@@ -621,6 +620,7 @@ nav ul li {
 }
 
 /* Responsive Design */
+/*
 @media screen and (max-width: 768px) {
     .timeline-container {
         flex-direction: column;
@@ -630,18 +630,18 @@ nav ul li {
         width: 100%;
     }
     .content-box {
-        width: 95%; /* Augmente la largeur sur mobile */
+        width: 95%;
     }
     .timeline-track {
         display: none;
     }
 }
-
+*/
 
 .line {
     position: absolute;
     height: 2px;
-    background-color: #008CBA; /* Couleur des lignes */
+    background-color: #008CBA;
     transform-origin: left center;
 }
 

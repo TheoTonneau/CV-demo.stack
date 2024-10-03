@@ -18,7 +18,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
   
   check-code:
     runs-on: ubuntu-latest

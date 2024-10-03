@@ -38,6 +38,10 @@ jobs:
       - name: "Install dependencies"
         run: |
           npm ci
+        shell: bash
+
+      - name: "Compile and build lambda"
+        run: |
           npm run build
           zip lambda/build/index.zip lambda/build/index.js
         shell: bash
@@ -86,10 +90,53 @@ jobs:
           echo "$output" >> $GITHUB_STEP_SUMMARY
           echo '```' >> $GITHUB_STEP_SUMMARY
         shell: bash
-  
+
+  build-app:
+    needs:
+      - plan
+      - setup-environment
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: configure terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.4.5
+
+      - name: "setup-node"
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: "Install dependencies"
+        run: |
+          npm ci
+        shell: bash
+
+      - name: "Terraform output"
+        working-directory: ./iac
+        run: |
+          terraform output -json > ../src/js/config.json
+        shell: bash
+
+      - name: "Get informations files"
+        run: |
+          echo "${{ secrets.INFORMATIONS }}" > informations.ts
+          echo "${{ secrets.ENCRYPT }}" > encrypt.ts
+        shell: bash
+
+      - name: "Compile and build webpage"
+        run: |
+          npm run build-app
+        shell: bash
+
   deploy:
     needs:
       - plan
+      - build-app
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -126,4 +173,18 @@ jobs:
 
       - name: apply terraform
         run: terraform apply -var-file="./var/${{ github.event.inputs.environment }}/values.tfvars" -auto-approve
+        shell: bash
+
+      - name: sync-s3
+        run: |
+          aws s3 cp ./src/ s3://cv-demo-tonneau-test/ --recursive \
+          --exclude "*" \
+          --include "index.html" \
+          --include "img/*" \
+          --include "img/certification/*" \
+          --include "img/education/*" \
+          --include "img/website/*" \
+          --include "js/index.js" \
+          --include "css/style.css" \
+          --exclude "ts/*"
         shell: bash

@@ -32,4 +32,5 @@ runs:
       with:
         path: |
           ./lambda/build/index.zip
+          ./src/js/index.js
         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('${{ inputs.LOCK_PATH }}') }}

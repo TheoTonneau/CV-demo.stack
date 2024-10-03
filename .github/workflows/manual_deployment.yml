@@ -116,6 +116,7 @@ jobs:
 
       - name: "Install dependencies"
         run: |
+          ls 
           npm ci
         shell: bash
 

@@ -107,6 +107,7 @@ jobs:
       - name: "Compile and build webpage"
         run: |
           npm install
+          npx ts-node ../src/ts/encrypt.ts
           npm run build-app
         shell: bash
 

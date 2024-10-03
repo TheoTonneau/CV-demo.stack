@@ -96,8 +96,6 @@ jobs:
         run: |
           mkdir -p ../src/js
           terraform output -json > ../src/js/config.json
-          ls ../src/
-          ls ../src/js/
         shell: bash
 
 
@@ -116,9 +114,14 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      - name: "Manage cache"
+        uses: ./.github/actions/manage-cache/
+        with:
+          NODE_VERSION: ${{ env.NODE_VERSION }}
+          LOCK_PATH: "**/package-lock.json"
+
       - name: "Install dependencies"
         run: |
-          ls src/
           npm ci
         shell: bash
 

@@ -94,7 +94,6 @@ jobs:
       - name: "Terraform output"
         working-directory: ./iac
         run: |
-          mkdir -p ../src/js
           terraform output -json > ../src/js/config.json
         shell: bash
 
@@ -116,7 +115,6 @@ jobs:
 
       - name: "Install dependencies"
         run: |
-          mkdir -p ./src/js
           npm ci
         shell: bash
 
@@ -167,7 +165,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-3
-          
+
       - name: "Manage cache"
         uses: ./.github/actions/manage-cache/
         with:

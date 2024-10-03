@@ -94,35 +94,9 @@ jobs:
       - name: "Terraform output"
         working-directory: ./iac
         run: |
+          mkdir -p ../src/js/
           terraform output -json > ../src/js/config.json
         shell: bash
-
-
-  build-app:
-    needs:
-      - plan
-      - setup-environment
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: checkout
-        uses: actions/checkout@v4
-
-      - name: "setup-node"
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: "Install dependencies"
-        run: |
-          npm ci
-        shell: bash
-
-      - name: "Manage cache"
-        uses: ./.github/actions/manage-cache/
-        with:
-          NODE_VERSION: ${{ env.NODE_VERSION }}
-          LOCK_PATH: "**/package-lock.json"
 
       - name: "Get informations files"
         run: |
@@ -132,11 +106,9 @@ jobs:
 
       - name: "Compile and build webpage"
         run: |
-          ls ./src/
-          ls ./lambda/build/
-          ls ./src/js/
           npm run build-app
         shell: bash
+
 
   deploy:
     needs:

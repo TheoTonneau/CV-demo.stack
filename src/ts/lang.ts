@@ -14,3 +14,7 @@ langButtons.forEach((button: Element) => {
         navigate(currentPage, currentLang);
     });
 });
+
+export function setCurrentLang (actualLang: string): void{
+    currentLang = actualLang;
+}

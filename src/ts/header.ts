@@ -1,4 +1,4 @@
-import {currentLang, langButtons} from './lang';
+import {currentLang, langButtons, setCurrentLang} from './lang';
 import {getCookie} from './cookie';
 import {navigate, setCurrentPage} from './navigate';
 import {data, key} from './encrypt';
@@ -23,6 +23,8 @@ export function updateNav(): void {
     } else{
         languageSelected = currentLang;
     }
+
+    setCurrentLang(languageSelected);
 
     if (nav) {
         let ul: HTMLElement | null = nav.querySelector('ul');

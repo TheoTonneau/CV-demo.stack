@@ -997,4 +997,67 @@ nav ul li {
         justify-content: center;
     }
 
+
+
+    .modal-content {
+        width: 100%;
+    }
+
+    .modal-body {
+        flex-direction: column-reverse;
+    }
+
+
+    .modal-content {
+        width: 100%;
+        max-width: none;
+    }
+
+    .modal-body {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .info-left {
+        flex: none;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .aside-right {
+        flex: none;
+        width: 100%;
+        padding: 10px;
+        box-shadow: none;
+        background-color: transparent;
+    }
+
+    .aside-right .imgContainer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .aside-right img, .map img {
+        width: 48%;
+    }
+
+    .aside-right h4 {
+        display: none;
+    }
+
+    .info-left ul li {
+        margin-left: 0;
+    }
+
+    .modal-content {
+        padding: 10px;
+    }
+
+    .aside-right img, .map img {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}
+
 }

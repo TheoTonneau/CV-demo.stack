@@ -374,10 +374,12 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                             <p>J'ai &eacute;galement pu appronfondir mes connaissances sur la physique des signaux avec les CAN, CNA ou encore sur la technologie Lifi</p>
                         </div>
                         <aside class="aside-right">
-                            <img src="./img/education/esigelec.jpg" alt="ESIGELEC" />
-                            <h4>Localisation</h4>
-                            <div class="map">
-                                <img src="./img/education/poitiers.jpg" alt="Poitiers" />
+                            <div class="imgContainer">
+                                <img src="./img/education/esigelec.jpg" alt="ESIGELEC" />
+                                <h4>Localisation</h4>
+                                <div class="map">
+                                    <img src="./img/education/poitiers.jpg" alt="Poitiers" />
+                                </div>
                             </div>
                             <hr>
                             <i class="fa fa-linkedin-square"></i> <a href="https://www.linkedin.com/school/esigelec/posts/?feedView=all">LinkedIn de l'&eacute;cole</a>
@@ -406,10 +408,12 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                             <p>C'est suite &agrave; la r&eacute;ussite du concours de fin de classe pr&eacute;paratoire, que j'int&egrave;gre une &eacute;cole d'ing&eacute;nieur</p>
                         </div>
                         <aside class="aside-right">
-                            <img src="./img/education/touchard.jpg" alt="TOUCHARD-WASHINGTON" />
-                            <h4>Localisation</h4>
-                            <div class="map">
-                                <img src="./img/education/leMans.jpg" alt="LE MANS" />
+                            <div class="imgContainer">
+                                <img src="./img/education/touchard.jpg" alt="TOUCHARD-WASHINGTON" />
+                                <h4>Localisation</h4>
+                                <div class="map">
+                                    <img src="./img/education/leMans.jpg" alt="LE MANS" />
+                                </div>
                             </div>
                             <hr>
                             <i class="fa fa-linkedin-square"></i> <a href="https://www.linkedin.com/company/touchard-washington/">LinkedIn de l'&eacute;cole</a>
@@ -444,10 +448,12 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                             <p>D&eacute;sireux d'un apprendre plus sur l'univers programmatique, je souhaite poursuivre vers un dipl&ocirc;me d'ing&eacute;nieur, en int&eacute;grant au pr&eacute;alable une classe pr&eacute;paratoire de mise &agrave; niveau</p>
                         </div>
                         <aside class="aside-right">
-                            <img src="./img/education/iut.jpg" alt="IUT" />
-                            <h4>Localisation</h4>
-                            <div class="map">
-                                <img src="./img/education/montDeMarsan.jpg" alt="MONT DE MARSAN" />
+                            <div class="imgContainer">
+                                <img src="./img/education/iut.jpg" alt="IUT" />
+                                <h4>Localisation</h4>
+                                <div class="map">
+                                    <img src="./img/education/montDeMarsan.jpg" alt="MONT DE MARSAN" />
+                                </div>
                             </div>
                             <hr>
                             <i class="fa fa-linkedin-square"></i> <a href="https://www.linkedin.com/school/university-of-pau/posts/?feedView=all/">LinkedIn de l'&eacute;cole</a>
@@ -475,10 +481,12 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                             <p>C'est avec toutes ces connaissances que j'ai souhait&eacute; m'orienter vers un dipl&ocirc;me universitaire dans les r&eacute;seaux et les t&eacute;l&eacute;communications</p>
                         </div>
                         <aside class="aside-right">
-                            <img src="./img/education/chevrollier.jpg" alt="LYCEE CHEVROLLIER" />
-                            <h4>Localisation</h4>
-                            <div class="map">
-                                <img src="./img/education/angers.jpg" alt="ANGERS" />
+                            <div class="imgContainer">
+                                <img src="./img/education/chevrollier.jpg" alt="LYCEE CHEVROLLIER" />
+                                <h4>Localisation</h4>
+                                <div class="map">
+                                    <img src="./img/education/angers.jpg" alt="ANGERS" />
+                                </div>
                             </div>
                             <hr>
                             <i class="fa fa-linkedin-square"></i> <a href="https://www.linkedin.com/school/chevrollier/">LinkedIn de l'&eacute;cole</a>
@@ -561,10 +569,12 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                             <p>I also grow my knowledge on signal physics with ADC, DAC or Lifi.</p>
                         </div>
                         <aside class="aside-right">
-                            <img src="./img/education/esigelec.jpg" alt="ESIGELEC" />
-                            <h4>Localisation</h4>
-                            <div class="map">
-                                <img src="./img/education/poitiers.jpg" alt="Poitiers" />
+                            <div class="imgContainer">
+                                <img src="./img/education/esigelec.jpg" alt="ESIGELEC" />
+                                <h4>Localisation</h4>
+                                <div class="map">
+                                    <img src="./img/education/poitiers.jpg" alt="Poitiers" />
+                                </div>
                             </div>
                             <hr>
                             <i class="fa fa-linkedin-square"></i> <a href="https://www.linkedin.com/school/esigelec/posts/?feedView=all">LinkedIn of the school</a>
@@ -593,10 +603,12 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                             <p>After passing the competitive entrance exam at the end of the year, I entered an engineering school.</p>
                         </div>
                         <aside class="aside-right">
-                            <img src="./img/education/touchard.jpg" alt="TOUCHARD-WASHINGTON" />
-                            <h4>Localisation</h4>
-                            <div class="map">
-                                <img src="./img/education/leMans.jpg" alt="LE MANS" />
+                            <div class="imgContainer">
+                                <img src="./img/education/touchard.jpg" alt="TOUCHARD-WASHINGTON" />
+                                <h4>Localisation</h4>
+                                <div class="map">
+                                    <img src="./img/education/leMans.jpg" alt="LE MANS" />
+                                </div>
                             </div>
                             <hr>
                             <i class="fa fa-linkedin-square"></i> <a href="https://www.linkedin.com/company/touchard-washington/">LinkedIn of the school</a>
@@ -631,10 +643,12 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                             <p>Wanting to learn more about programming languages, I did like to continue to get an Master degree in Engineering, by first enrolling a preparatory class.</p>
                         </div>
                         <aside class="aside-right">
-                            <img src="./img/education/iut.jpg" alt="IUT" />
-                            <h4>Localisation</h4>
-                            <div class="map">
-                                <img src="./img/education/montDeMarsan.jpg" alt="MONT DE MARSAN" />
+                            <div class="imgContainer">
+                                <img src="./img/education/iut.jpg" alt="IUT" />
+                                <h4>Localisation</h4>
+                                <div class="map">
+                                    <img src="./img/education/montDeMarsan.jpg" alt="MONT DE MARSAN" />
+                                </div>
                             </div>
                             <hr>
                             <i class="fa fa-linkedin-square"></i> <a href="https://www.linkedin.com/school/university-of-pau/posts/?feedView=all/">LinkedIn of the school</a>
@@ -662,10 +676,12 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                             <p>Then, I decide to study in University to get a bachelor diploma in Network and Telecommunications</p>
                         </div>
                         <aside class="aside-right">
-                            <img src="./img/education/chevrollier.jpg" alt="LYCEE CHEVROLLIER" />
-                            <h4>Localisation</h4>
-                            <div class="map">
-                                <img src="./img/education/angers.jpg" alt="ANGERS" />
+                            <div class="imgContainer">
+                                <img src="./img/education/chevrollier.jpg" alt="LYCEE CHEVROLLIER" />
+                                <h4>Localisation</h4>
+                                <div class="map">
+                                    <img src="./img/education/angers.jpg" alt="ANGERS" />
+                                </div>
                             </div>
                             <hr>
                             <i class="fa fa-linkedin-square"></i> <a href="https://www.linkedin.com/school/chevrollier/">LinkedIn of the school</a>

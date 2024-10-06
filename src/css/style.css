@@ -101,6 +101,7 @@ nav ul li {
     bottom: 0;
 }
 
+
 .aside {
     width: 20%;
     background-color: #D3D3D3;
@@ -235,28 +236,6 @@ nav ul li {
 
 
 
-/*
-@media (max-width: 800px) {
-    .aside, .divDroite {
-        float: none;
-        width: 100%;
-        margin: 0;
-    }
-
-    .divDroite {
-        max-width: 100%;
-        margin-top: 20px;
-        padding: 15px;
-    }
-
-    .form-row {
-        flex-direction: column;
-    }
-
-    .form-row .half-width {
-        width: 100%;
-    }
-}*/
 
 
 
@@ -499,6 +478,7 @@ nav ul li {
     justify-content: space-around;
     align-items: center;
     padding: 20px 0;
+    overflow: scroll;
 }
 
 .timeline-track {
@@ -619,24 +599,8 @@ nav ul li {
     transform: translateX(-50%);
 }
 
-/* Responsive Design */
-/*
-@media screen and (max-width: 768px) {
-    .timeline-container {
-        flex-direction: column;
-        padding: 20px;
-    }
-    .timeline-item {
-        width: 100%;
-    }
-    .content-box {
-        width: 95%;
-    }
-    .timeline-track {
-        display: none;
-    }
-}
-*/
+
+
 
 .line {
     position: absolute;
@@ -779,4 +743,179 @@ nav ul li {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-top: 5px;
+}
+
+.menuToggle {
+    display: none;
+}
+
+/* --- Réorganisation générale pour mobile --- */
+@media (max-width: 1024px) {
+    .headerContainer {
+        display: contents;
+    }
+
+    .switchLanguage {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: #333;
+        width: auto;
+        padding: 5px;
+        z-index: 101;
+    }
+
+    .buttonLanguage {
+        padding: 10px;
+        margin: 0;
+        width: 100px;
+        text-align: center;
+    }
+
+    .homeContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left, .middle, .right {
+        flex-basis: 100%;
+        border: none;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .left {
+        border-bottom: 2px solid #eee;
+    }
+
+    .right {
+        border-top: 2px solid #eee;
+    }
+
+    .main {
+        padding: 10px;
+    }
+
+    .menuToggle {
+        display: block;
+        background-color: transparent;
+        border: none;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+    }
+
+    #navBar {
+        display: none;
+        flex-direction: column;
+        background-color: transparent;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        transition: background-color 0.3s ease;
+    }
+
+    #navBar.active {
+        display: flex;
+        background-color: #555;
+    }
+
+    #navBar ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        justify-items: center;
+    }
+
+    #navBar ul li{
+        padding: 20px;
+    }
+
+    .navPage {
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        display: block;
+    }
+
+    .navPage:hover {
+        background-color: #444;
+    }
+
+
+    .timeline-item .content-box h4 {
+        font-size: 16px;
+    }
+
+    .timeline-item .content-box p {
+        font-size: 12px;
+    }
+
+    .content-box {
+        padding: 10px;
+        width: 500px;
+    }
+
+    .timeline-item {
+        width: auto;
+        max-width: 400px;
+    }
+
+    .content-box {
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-left: 600px;
+
+    }
+
+    .timeline-container {
+        position: relative;
+        width: 100%;
+        max-width: 2000px;
+        margin: 0 auto;
+        height: 70vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 0;
+        overflow-x: auto;
+    }
+
+    .timeline-track {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: #ccc;
+        z-index: 1;
+        width: 2000px;
+    }
+
+    #point {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        background-color: #008CBA;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .line {
+        position: absolute;
+        height: 4px;
+        background-color: #008CBA;
+        transform-origin: left center;
+    }
+
+
 }

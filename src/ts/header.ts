@@ -56,5 +56,12 @@ export function updateNav(): void {
             navigate(newPage, currentLang);
         });
     });
-    
+
+    document.getElementById('menuToggle')!.addEventListener('click', function() {
+        const navBar: HTMLElement | null = document.getElementById('navBar');
+        if (navBar) {
+            navBar.classList.toggle('active');
+        }
+    });
+
 }

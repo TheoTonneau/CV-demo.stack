@@ -918,4 +918,16 @@ nav ul li {
     }
 
 
+    .container {
+        flex-direction: column;
+    }
+
+    .left-section,
+    .center-section,
+    .right-section {
+        margin: 10px 0;
+        flex: none;
+    }
+
+
 }

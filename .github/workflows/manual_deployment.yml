@@ -97,24 +97,6 @@ jobs:
           echo '```' >> $GITHUB_STEP_SUMMARY
         shell: bash
 
-      - name: "Terraform output"
-        run: |
-          mkdir -p ../src/js/
-          touch ../src/js/config.json
-          terraform output -json > ../src/js/config.json
-        shell: bash
-
-      - name: "Get informations files"
-        run: |
-          echo "${{ secrets.ENCRYPT }}" > ../src/ts/encrypt.ts
-        shell: bash
-
-      - name: "Compile and build webpage"
-        run: |
-          npm install
-          npm run build-app
-        shell: bash
-
 
   deploy:
     needs:
@@ -164,6 +146,24 @@ jobs:
 
       - name: apply terraform
         run: terraform apply -var-file="./var/${{ github.event.inputs.environment }}/values.tfvars" -auto-approve
+        shell: bash
+
+      - name: "Terraform output"
+        run: |
+          mkdir -p ../src/js/
+          touch ../src/js/config.json
+          terraform output -json > ../src/js/config.json
+        shell: bash
+
+      - name: "Get informations files"
+        run: |
+          echo "${{ secrets.ENCRYPT }}" > ../src/ts/encrypt.ts
+        shell: bash
+
+      - name: "Compile and build webpage"
+        run: |
+          npm install
+          npm run build-app
         shell: bash
 
       - name: sync-s3

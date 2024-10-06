@@ -735,6 +735,7 @@ nav ul li {
 
 .schema {
     text-align: center;
+    overflow: scroll;
 }
 
 .schema img {
@@ -929,5 +930,24 @@ nav ul li {
         flex: none;
     }
 
+
+    .info-table {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-card {
+        margin: 10px 0;
+        max-width: none;
+        width: 90%;
+    }
+
+    .schema img {
+        width: 1200px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 5px;
+    }
 
 }

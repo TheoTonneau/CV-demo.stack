@@ -1,7 +1,7 @@
 output "apiUrl" {
-  value       = "${aws_api_gateway_deployment.cv_demo.invoke_url}/v1/cv_demo/"
+  value       = "${aws_api_gateway_deployment.cv_demo.invoke_url}v1/cv_demo/"
   description = "API's URL"
-  sensitive   = true
+  sensitive   = false
 }
 
 output "apiKey" {

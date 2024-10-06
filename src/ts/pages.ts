@@ -883,7 +883,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                 <i class="fa fa-envelope icon"></i> En remplissant le formulaire suivant avec vos coordonn&eacute;es afin que je vous recontacte
                 <br>
                 <br>
-                Ou via <i class="fa fa-linkedin-square"></i> LinkedIn
+                Ou via <a href="https://www.linkedin.com/in/theo-tonneau/?locale=fr_FR" style="color: #008CBA"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
                 <br>
                 <hr>
                 <div>
@@ -932,7 +932,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                 <i class="fa fa-envelope icon"></i> By filling the following form with your contact details, so I can get back to you
                 <br>
                 <br>
-                Or on <i class="fa fa-linkedin-square"></i> LinkedIn
+                Or on <a href="https://www.linkedin.com/in/theo-tonneau/?locale=en_US" style="color: #008CBA"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
                 <br>
                 <hr>
                 <div>

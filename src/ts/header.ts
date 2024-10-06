@@ -1,7 +1,6 @@
 import {currentLang, langButtons, setCurrentLang} from './lang';
 import {getCookie} from './cookie';
 import {navigate, setCurrentPage} from './navigate';
-import {data, key} from './encrypt';
 import {decrypt} from './decrypt';
 
 const header = {

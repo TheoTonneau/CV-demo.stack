@@ -950,4 +950,51 @@ nav ul li {
         margin-top: 5px;
     }
 
+
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .aside {
+        width: 100%;
+        background-color: #D3D3D3;
+        padding: 15px;
+        text-align: justify;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+
+    .divDroite {
+        background-color: #D3D3D3;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .form-row {
+        display: grid;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .form-row .half-width,
+    .form-row .full-width {
+        width: 200%;
+    }
+
+    #formEmail {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
 }

@@ -362,7 +362,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                         <div class="info-left">
                             <p>Pour ce cursus ing&eacute;nieur, j'ai choisi de le faire en alternance au poste de DevOps.</p>
                             <br>
-                            <p>&Agrave; travers cette premi&egrave;re ann&eacute; et ce d&egrave;but de seconde, j'ai pu appronfondir mes connaissances en :</p>
+                            <p>&Agrave; travers cette premi&egrave;re ann&eacute;e et ce d&egrave;but de seconde, j'ai pu appronfondir mes connaissances en :</p>
                             <ul>
                                 <li>R&eacute;seaux</li>
                                 <li>DevOps avec CI/CD & GitHub </li>

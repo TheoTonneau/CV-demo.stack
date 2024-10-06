@@ -1055,7 +1055,7 @@ nav ul li {
     }
 
     .aside-right img, .map img {
-        width: 80%;
+        width: 50%;
         margin-bottom: 10px;
     }
 }

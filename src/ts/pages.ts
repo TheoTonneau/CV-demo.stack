@@ -126,7 +126,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                     </div>
                     <span class="description">
                         <h4>Zed Multim&eacute;dia - Travail saisonnier</h4>
-                        <p>Installation de salle de cin&eacute;ma priv&eacute;, salle de projection</p>
+                        <p>Installation de salle de cin&eacute;ma priv&eacute;e, salle de projection</p>
                         <p>Syst&egrave;me audiovisuel, sonorisation d'un restaurant</p>
                     </span>
                 </div>
@@ -145,7 +145,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                     <span class="description">
                         <h4>Adour Gestion Informatique (AGI) - Stagiaire</h4>
                         <p>R&eacute;seau & maintenance</p>
-                        <p>D&eacute;veloppement progiciel monitoring en HTML/CCS/PHP/SQL/Python/Powershell</p>
+                        <p>D&eacute;veloppement progiciel de monitoring en HTML/CCS/PHP/SQL/Python/Powershell</p>
                     </span>                  
                 </div>
               </div>
@@ -362,16 +362,16 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                         <div class="info-left">
                             <p>Pour ce cursus ing&eacute;nieur, j'ai choisi de le faire en alternance au poste de DevOps.</p>
                             <br>
-                            <p>&Agrave; travers cette premi&egrave;re ann&eacute;e et ce d&egrave;but de seconde, j'ai pu appronfondir mes connaissances en :</p>
+                            <p>&Agrave; travers cette premi&egrave;re ann&eacute;e et ce d&eacute;but de seconde, j'ai pu approfondir mes connaissances en :</p>
                             <ul>
                                 <li>R&eacute;seaux</li>
                                 <li>DevOps avec CI/CD & GitHub </li>
-                                <li>Langage de programmationC avec un projet sur la gestion de microcontroleur, un robot</li>
+                                <li>Langage de programmation C avec un projet sur la gestion de microcontr&ocirc;leur, un robot</li>
                                 <li>Langage Bash</li>
-                                <li>Lagage de programmation Java avec un projet sur la gestion des commentaires dans un gestionnaire d'application</li>
+                                <li>Langage de programmation Java avec un projet sur la gestion des commentaires dans un gestionnaire d'application</li>
                             </ul>
                             <br>
-                            <p>J'ai &eacute;galement pu appronfondir mes connaissances sur la physique des signaux avec les CAN, CNA ou encore sur la technologie Lifi</p>
+                            <p>J'ai &eacute;galement pu approfondir mes connaissances sur la physique des signaux avec les CAN, CNA ou encore sur la technologie Lifi</p>
                         </div>
                         <aside class="aside-right">
                             <div class="imgContainer">
@@ -396,7 +396,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                         <div class="info-left">
                             <p>Pendant cette ann&eacute;e de mise &agrave; niveau, j'ai pu d&eacute;velopper une m&eacute;thode de travail plus solide</p>
                             <br>
-                            <p>C'est &agrave; travers les mati&egrave;res suivantes que j'ai pu approfondir cela et &eacute;galement accroitre mes connaissances dans ces domaines :</p>
+                            <p>C'est &agrave; travers les mati&egrave;res suivantes que j'ai pu approfondir cela et &eacute;galement accro&icirc;tre mes connaissances dans ces domaines :</p>
                             <ul>
                                 <li>Math&eacute;matique</li> 
                                 <li>Physiques</li>
@@ -405,7 +405,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                                 <li>La langue anglaise</li>
                             </ul>
                             <br>
-                            <p>C'est suite &agrave; la r&eacute;ussite du concours de fin de classe pr&eacute;paratoire, que j'int&egrave;gre une &eacute;cole d'ing&eacute;nieur</p>
+                            <p>C'est suite &agrave; la r&eacute;ussite du concours de fin de classe pr&eacute;paratoire que j'int&egrave;gre une &eacute;cole d'ing&eacute;nieur</p>
                         </div>
                         <aside class="aside-right">
                             <div class="imgContainer">
@@ -428,7 +428,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                     <h3>D&eacute;tails sur Universit&eacute; des Pays de l'Adour</h3>
                     <div class="modal-body">
                         <div class="info-left">
-                            <p>Durant 2 ann&eacute;es, j'ai pu d&eacute;couvrir les interconnexions de r&eacute;seaux et la t&eacute;l&eacute;communications</p>
+                            <p>Durant 2 ann&eacute;es, j'ai pu d&eacute;couvrir les interconnexions de r&eacute;seaux et les t&eacute;l&eacute;communications</p>
                             <p>J'ai notamment manipul&eacute; :</p>
                             <ul>
                                 <li>Des switchs</li>
@@ -445,7 +445,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                                 
                             </ul>
                             <br>
-                            <p>D&eacute;sireux d'un apprendre plus sur l'univers programmatique, je souhaite poursuivre vers un dipl&ocirc;me d'ing&eacute;nieur, en int&eacute;grant au pr&eacute;alable une classe pr&eacute;paratoire de mise &agrave; niveau</p>
+                            <p>D&eacute;sireux d'en apprendre plus sur l'univers programmatique, je souhaite poursuivre vers un dipl&ocirc;me d'ing&eacute;nieur, en int&eacute;grant au pr&eacute;alable une classe pr&eacute;paratoire de mise &agrave; niveau</p>
                         </div>
                         <aside class="aside-right">
                             <div class="imgContainer">
@@ -468,14 +468,14 @@ export const pages: { [key: string]: { [key: string]: string } } = {
                     <h3>D&eacute;tails sur Lyc&eacute;e Chevrollier</h3>
                     <div class="modal-body">
                         <div class="info-left">
-                            <p>Au lyc&eacute;e chevrollier, j'ai obtenu mon Baccalaur&eacute;at scientifique avec une option sciences de l'ing&eacute;nieur</p>
+                            <p>Au lyc&eacute;e Chevrollier, j'ai obtenu mon Baccalaur&eacute;at scientifique avec une option sciences de l'ing&eacute;nieur</p>
                             <br>
                             <p>J'ai notamment d&eacute;couvert les bases dans les mati&egrave;res :</p>
                             <ul>
                                  <li>Math&eacute;matiques</li>
                                  <li>Physiques</li>
                                  <li>M&eacute;canique & &eacute;lectronique</li>
-                                 <li>Programmation en python</li>                       
+                                 <li>Programmation en Python</li>                       
                             </ul>
                             <br>
                             <p>C'est avec toutes ces connaissances que j'ai souhait&eacute; m'orienter vers un dipl&ocirc;me universitaire dans les r&eacute;seaux et les t&eacute;l&eacute;communications</p>

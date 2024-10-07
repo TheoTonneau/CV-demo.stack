@@ -7,7 +7,13 @@
 
 
 ## Build lambda
+
+```bash
 npm run build
+```
 
 ## Build app
+
+```bash
 npm run build-app
+```

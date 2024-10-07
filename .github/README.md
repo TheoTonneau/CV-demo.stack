@@ -20,8 +20,8 @@ The folder contains all files for GitHub Actions
 ```
 
 ## Workflows
-- **test-on-push.yml** :arrow: Test the format of the Terraform code
-- **manual_deployment.yml** :arrow: Build the app and deploy on AWS
+- **test-on-push.yml** :arrow_right: Test the format of the Terraform code
+- **manual_deployment.yml** :arrow_right: Build the app and deploy on AWS
 
 ## Triggers
 - **on push** for tests

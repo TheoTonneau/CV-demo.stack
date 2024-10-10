@@ -10,8 +10,8 @@ langButtons.forEach((button: Element) => {
         this.classList.add('active');
         currentLang = this.id;
         setCookie('lang', currentLang , 10);
-        updateNav();
         navigate(currentPage, currentLang);
+        updateNav();
     });
 });
 

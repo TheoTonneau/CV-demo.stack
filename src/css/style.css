@@ -770,6 +770,7 @@ nav ul li {
     max-height: 90%;
     width: 90%;
     border-radius: 10px;
+    transform: translate(0, 50%);
 }
 
 .close {

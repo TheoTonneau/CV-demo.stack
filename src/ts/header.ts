@@ -56,7 +56,7 @@ export function updateNav(): void {
             navigate(newPage, currentLang);
             const navBar: HTMLElement | null = document.getElementById('navBar');
             if (navBar) {
-                navBar.classList.toggle('');
+                navBar.classList.toggle('active');
             }
         });
     });

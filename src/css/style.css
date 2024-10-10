@@ -909,7 +909,7 @@ nav ul li {
         width: 100%;
         height: auto;
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         justify-content: flex-start;
         align-items: center;
         padding: 10px;

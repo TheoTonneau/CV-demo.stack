@@ -61,6 +61,10 @@ export function updateNav(): void {
         });
     });
 
+    const menuToggle: HTMLElement | null = document.getElementById('menuToggle');
+    const newToggle = menuToggle.cloneNode(true); // Clone l'élément pour enlever tous les anciens événements
+    menuToggle.replaceWith(newToggle); // Remplace l'ancien bouton par le nouveau (sans événements)
+
     document.getElementById('menuToggle')!.addEventListener('click', function() {
         const navBar: HTMLElement | null = document.getElementById('navBar');
         if (navBar) {

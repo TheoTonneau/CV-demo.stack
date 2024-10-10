@@ -900,6 +900,10 @@ nav ul li {
     .navPage:hover {
         background-color: #444;
     }
+
+
+
+
     .timeline-container {
         position: relative;
         width: 100%;
@@ -908,25 +912,70 @@ nav ul li {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding: 20px 0;
-        overflow: hidden;
+        padding: 10px;
     }
 
+    /* Track */
     .timeline-track {
-        display: none; /* Cache la ligne de timeline pour un design vertical */
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: #ccc;
+        z-index: 1;
+        width: 100%;
+        max-width: 1200px;
+        display: none;
     }
 
+    .timeline-track .year {
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+        z-index: 3;
+        white-space: nowrap;
+    }
+
+    .timeline-track .year h3 {
+        background-color: snow;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    .point {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        background-color: #008CBA;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        z-index: 2;
+    }
+
+    /* Experiences */
     .timeline-item {
-        width: 100%;
-        max-width: 600px;
+        position: relative;
+        max-width: 100%;
+        width: 90%;
         margin: 20px 0;
+    }
+
+    .timeline-item.top {
+        align-self: flex-start;
+    }
+
+    .timeline-item.bottom {
+        align-self: flex-end;
     }
 
     .content-box {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 15px;
+        padding: 10px;
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -942,30 +991,23 @@ nav ul li {
 
     .timeline-header h3 {
         margin: 0;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .description h4 {
-        font-size: 16px;
+        font-size: 14px;
         margin-bottom: 5px;
     }
 
     .description p {
-        font-size: 14px;
+        font-size: 12px;
         margin: 5px 0;
     }
 
-    .point {
-        position: relative;
-        width: 20px;
-        height: 20px;
-        background-color: #008CBA;
-        border-radius: 50%;
-        margin-bottom: 20px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+    .line {
+        display: none;
     }
-
-
 
 /*
     .timeline-item .content-box h4 {

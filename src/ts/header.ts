@@ -40,7 +40,7 @@ export function updateNav(): void {
             a.textContent = header[page][languageSelected];
             a.setAttribute('class', 'pageNav');
             a.setAttribute('data-pageselected', page);
-            a.setAttribute('style', 'color:white');
+            a.setAttribute('style', 'color:white;cursor:pointer');
 
             li.appendChild(a);
             ul.appendChild(li);

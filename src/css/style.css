@@ -753,22 +753,22 @@ nav ul li {
 
 /* Style pour la modale */
 .modalWebsite {
-    display: none; /* Caché par défaut */
+    display: none;
     position: fixed;
-    z-index: 1000; /* Au-dessus des autres éléments */
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.modal-content {
+.modal-content-website {
     margin: auto;
     display: block;
-    max-width: 90%; /* Limite la largeur de l'image à 90% de la fenêtre */
-    max-height: 90%; /* Limite la hauteur de l'image à 90% de la fenêtre */
+    max-height: 90%;
+    width: 90%;
     border-radius: 10px;
 }
 

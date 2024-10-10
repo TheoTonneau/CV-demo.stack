@@ -859,7 +859,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
         
             <div id="imageModal" class="modalWebsite">
                 <span class="close">&times;</span>
-                <img class="modal-content" id="modalImage">
+                <img class="modal-content-website" id="modalImage">
             </div>
         `,
         en: `
@@ -897,7 +897,7 @@ export const pages: { [key: string]: { [key: string]: string } } = {
         
             <div id="imageModal" class="modalWebsite">
                 <span class="close">&times;</span>
-                <img class="modal-content" id="modalImage">
+                <img class="modal-content-website" id="modalImage">
             </div>
         `
     },

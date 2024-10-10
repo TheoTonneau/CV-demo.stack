@@ -291,7 +291,7 @@ nav ul li {
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
+    width: 70%;
     text-align: center;
     position: relative;
     animation: slideDown 0.5s ease;
@@ -346,6 +346,7 @@ nav ul li {
     text-align: justify;
     position: relative;
     margin-left: 20%;
+    font-size: 2rem;
 }
 
 

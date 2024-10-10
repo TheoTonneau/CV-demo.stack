@@ -478,6 +478,110 @@ nav ul li {
 
 
 
+
+
+
+.timeline-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* Track */
+.timeline-track {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #ccc;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.timeline-track .year {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    z-index: 3;
+    white-space: nowrap;
+}
+
+.timeline-track .year h3 {
+    background-color: snow;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.point {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #008CBA;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+/* Experiences */
+.timeline-item {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+.timeline-item.top {
+    align-self: flex-start;
+}
+
+.timeline-item.bottom {
+    align-self: flex-end;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.timeline-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.timeline-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.description h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.description p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/*
+
 .timeline-container {
     position: relative;
     width: 100%;
@@ -616,7 +720,7 @@ nav ul li {
     background-color: #008CBA;
     transform-origin: left center;
 }
-
+*/
 
 
 
@@ -901,7 +1005,36 @@ nav ul li {
         background-color: #444;
     }
 
+    .timeline-container {
+        padding: 10px;
+    }
 
+    .timeline-track {
+        display: none;
+    }
+
+    .timeline-item {
+        max-width: 100%;
+        width: 90%;
+    }
+
+    .content-box {
+        padding: 10px;
+    }
+
+    .timeline-header h3 {
+        font-size: 16px;
+    }
+
+    .description h4 {
+        font-size: 14px;
+    }
+
+    .description p {
+        font-size: 12px;
+    }
+
+/*
     .timeline-item .content-box h4 {
         font-size: 16px;
     }
@@ -970,7 +1103,7 @@ nav ul li {
         background-color: #008CBA;
         transform-origin: left center;
     }
-
+*/
 
     .container {
         flex-direction: column;
@@ -1115,4 +1248,13 @@ nav ul li {
     }
 }
 
+@media (max-width: 480px) {
+    .timeline-item {
+        margin: 15px 0;
+    }
 
+    .point {
+        width: 16px;
+        height: 16px;
+    }
+}

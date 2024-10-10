@@ -54,14 +54,25 @@ export function updateNav(): void {
             let newPage: string = this.dataset.pageselected;
             setCurrentPage(newPage);
             navigate(newPage, currentLang);
+            toggle();
         });
     });
+    toggle();
+/*
+    document.getElementById('menuToggle')!.addEventListener('click', function() {
+        const navBar: HTMLElement | null = document.getElementById('navBar');
+        if (navBar) {
+            navBar.classList.toggle('active');
+        }
+    });*/
 
+}
+
+function toggle() {
     document.getElementById('menuToggle')!.addEventListener('click', function() {
         const navBar: HTMLElement | null = document.getElementById('navBar');
         if (navBar) {
             navBar.classList.toggle('active');
         }
     });
-
 }

@@ -853,9 +853,14 @@ export const pages: { [key: string]: { [key: string]: string } } = {
             </section>
     
             <section class="schema">
-                <h3>Sch&eacute;ma de l'infrastructure</h3>
-                <img src="./img/website/infrastructure.png" alt="INFRASTRUCTURE" />
+                <h3>Schéma de l'infrastructure</h3>
+                <img src="./img/website/infrastructure.png" alt="INFRASTRUCTURE" class="clickable-image">
             </section>
+        
+            <div id="imageModal" class="modalWebsite">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
         `,
         en: `
             <h2>This website</h2>
@@ -886,9 +891,14 @@ export const pages: { [key: string]: { [key: string]: string } } = {
             </section>
     
             <section class="schema">
-                <h3>Infrastructure diagram</h3>
-                <img src="./img/website/infrastructure.png" alt="INFRASTRUCTURE" />
+                <h3>Schéma de l'infrastructure</h3>
+                <img src="./img/website/infrastructure.png" alt="INFRASTRUCTURE" class="clickable-image">
             </section>
+        
+            <div id="imageModal" class="modalWebsite">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
         `
     },
     contact: {

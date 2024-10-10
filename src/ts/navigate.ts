@@ -100,6 +100,37 @@ export function navigate(page: string, lang: string): void {
         window.onresize = drawAllLines;
 
 
+        const modal: HTMLElement | null = document.getElementById("imageModal");
+        const img: HTMLElement | null = document.querySelector(".clickable-image");
+        const modalImg: HTMLImageElement | null = document.getElementById("modalImage") as HTMLImageElement;
+        const closeModal: HTMLElement | null = document.querySelector(".modalWebsite .close");
+
+        if (img) {
+            img.onclick = function() {
+                if (modal && modalImg) {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                }
+            }
+        }
+
+        if (closeModal) {
+            closeModal.onclick = function() {
+                if (modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+
+        if (modal) {
+            modal.onclick = function(event: MouseEvent) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+
+
     }
 }
 

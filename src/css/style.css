@@ -995,7 +995,7 @@ nav ul li {
     }
 
     .description h4 {
-        font-size: 14px;
+        font-size: 16px;
         margin-bottom: 5px;
     }
 
@@ -1008,6 +1008,8 @@ nav ul li {
     .line {
         display: none;
     }
+
+
 
 /*
     .timeline-item .content-box h4 {

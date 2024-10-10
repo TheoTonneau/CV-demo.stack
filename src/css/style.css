@@ -900,35 +900,72 @@ nav ul li {
     .navPage:hover {
         background-color: #444;
     }
-
     .timeline-container {
-        padding: 10px;
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px 0;
+        overflow: hidden;
     }
 
     .timeline-track {
-        display: none;
+        display: none; /* Cache la ligne de timeline pour un design vertical */
     }
 
     .timeline-item {
-        max-width: 100%;
-        width: 90%;
+        width: 100%;
+        max-width: 600px;
+        margin: 20px 0;
     }
 
     .content-box {
-        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+    }
+
+    .timeline-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 10px;
     }
 
     .timeline-header h3 {
-        font-size: 16px;
+        margin: 0;
+        font-size: 18px;
     }
 
     .description h4 {
-        font-size: 14px;
+        font-size: 16px;
+        margin-bottom: 5px;
     }
 
     .description p {
-        font-size: 12px;
+        font-size: 14px;
+        margin: 5px 0;
     }
+
+    .point {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        background-color: #008CBA;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+
 
 /*
     .timeline-item .content-box h4 {
@@ -1144,6 +1181,7 @@ nav ul li {
     }
 }
 
+
 @media (max-width: 480px) {
     .timeline-item {
         margin: 15px 0;
@@ -1152,5 +1190,17 @@ nav ul li {
     .point {
         width: 16px;
         height: 16px;
+    }
+
+    .timeline-header h3 {
+        font-size: 16px;
+    }
+
+    .description h4 {
+        font-size: 14px;
+    }
+
+    .description p {
+        font-size: 12px;
     }
 }

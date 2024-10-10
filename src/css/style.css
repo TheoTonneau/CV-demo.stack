@@ -997,6 +997,7 @@ nav ul li {
     .description h4 {
         font-size: 16px;
         margin-bottom: 5px;
+        font-weight: bold;
     }
 
     .description p {

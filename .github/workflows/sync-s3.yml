@@ -1,5 +1,5 @@
-name: 'MANUAL DEPLOYMENT'
-run-name: 'Manual deployment on environment ${{ inputs.environment }} from branch ${{github.ref_name}} execute by @${{ github.actor }}'
+name: 'SYNC-S3'
+run-name: 'Sync-S3 on environment ${{ inputs.environment }} from branch ${{github.ref_name}} execute by @${{ github.actor }}'
 
 on:
   workflow_dispatch:

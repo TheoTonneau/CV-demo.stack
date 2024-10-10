@@ -51,13 +51,13 @@ export function updateNav(): void {
 
     pageNavButtons.forEach((button: Element) => {
         button.addEventListener('click', function (this: HTMLElement): void {
+            let newPage: string = this.dataset.pageselected;
+            setCurrentPage(newPage);
+            navigate(newPage, currentLang);
             const navBar: HTMLElement | null = document.getElementById('navBar');
             if (navBar) {
                 navBar.classList.toggle('');
             }
-            let newPage: string = this.dataset.pageselected;
-            setCurrentPage(newPage);
-            navigate(newPage, currentLang);
         });
     });
 

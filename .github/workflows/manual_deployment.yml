@@ -118,7 +118,7 @@ jobs:
         working-directory: ./iac/
     environment:
       name: ${{ github.event.inputs.environment }}
-      url: "https://cv-demo-${{ github.event.inputs.environment }}.theo-tonneau.com"
+      url: ${{ github.event.inputs.environment == 'prod' && 'https://cv-demo.theo-tonneau.com' || 'https://cv-demo-test.theo-tonneau.com' }}
     steps:
 
       - name: checkout

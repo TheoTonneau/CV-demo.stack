@@ -11,7 +11,7 @@ resource "aws_cloudfront_distribution" "cv_demo" {
   comment             = "Distribution of S3 cv-demo"
   default_root_object = "index.html"
 
-  aliases = ["cv-demo-${var.environment}.theo-tonneau.com"]
+  aliases = [ var.environment == "prod" ? "cv-demo.theo-tonneau.com" : "cv-demo-${var.environment}.theo-tonneau.com" ]
 
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]

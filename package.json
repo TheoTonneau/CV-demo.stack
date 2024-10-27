@@ -9,7 +9,7 @@
     "lint-fix": "eslint --fix src/**/*.ts",
     "prebuild": "rm -f lambda/build/index.js",
     "build": "esbuild `find ./lambda/src -name '*.ts'` --minify --bundle --platform=node --target=es2020 --outdir=lambda/build && zip lambda/build/index.zip lambda/build/index.js",
-    "build-app": "npx ts-node ./src/ts/encrypt.ts && esbuild `find ./src/ts -name 'index.ts'` --minify --bundle --platform=node --target=es2020 --outdir=src/js"
+    "build-app": "npx ts-node ./src/ts/encrypt.ts && esbuild `find ./src/ts -name 'index.ts'` --minify --bundle --platform=node --target=es2020 --outdir=src/js && esbuild `find ./src/ts -name 'cookie.ts'` --minify --bundle --platform=node --target=es2020 --outdir=src/js"
   },
   "repository": {
     "type": "git",

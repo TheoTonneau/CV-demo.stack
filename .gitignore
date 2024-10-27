@@ -59,3 +59,4 @@ node_modules/
 **/**/.DS_Store
 **/.DS_Store
 /src/ts/encrypt.ts
+srcPrevious/

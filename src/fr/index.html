@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script type="module" src="../js/index.js"></script>
     <title>CV TONNEAU</title>
 </head>
 <body>
@@ -230,16 +231,17 @@
             </svg>
         </div>
         <div class="backSkills">
-            <div class="displaytext" style="transform: translate3d(0%, -270.507px, 0px);">
+            <div class="displaytext" id="displayText">
                 <p style="top: 50px; left: 100%; font-size: 23px;">HTML5</p>
-                <p style="top: 0px; left: 0px; font-size: 25px;">AWS</p>
+                <p style="top: 0; left: 0; font-size: 25px;">AWS</p>
                 <p style="top: 200px; left: -60px; font-size: 14px;">CSS3</p>
-                <p style="top: 30%; left: 35%; font-size: 18px;">GitHub</p>
-                <p style="top: 40px; left: 75%; font-size: 12px;">Actions</p>
-                <p style="top: 380px; left: 85%; font-size: 18px;">Terraform</p>
-                <p style="top: 320px; left: 65%; font-size: 18px;">YAML</p>
+                <p style="top: 30%; left: 35%; font-size: 18px;">Actions</p>
+                <p style="top: 40px; left: 75%; font-size: 25px;">GitHub</p>
+                <p style="top: 380px; left: 85%; font-size: 25px;">Terraform</p>
+                <p style="top: 320px; left: 65%; font-size: 15px;">YAML</p>
                 <p style="top: 350px; left: 150px; font-size: 20px;">Javascript</p>
-                <p style="top: 120px; left: 22%; font-size: 12px;">Git</p>
+                <p style="top: 120px; left: 22%; font-size: 15px;">Git</p>
+                <p style="top: 200px; left: 47%; font-size: 20px;">SQL</p>
             </div>
         </div>
         <section class="skillsDetails">
@@ -249,7 +251,7 @@
                     <p>
                         Fran&ccedil;ais : Langue maternelle
                         <br>
-                        Anglais : Niveau B2 - TOEIC 870 points (<a href="./img/certification/TOEIC.pdf" target="_blank">Voir
+                        Anglais : Niveau B2 - TOEIC 870 points (<a href="../img/certification/TOEIC.pdf" target="_blank">Voir
                         le certificat TOEIC</a>)
                     </p>
                     <h3>Langages de programmation</h3>
@@ -303,46 +305,36 @@
         <h2 class="title">Formations</h2>
         <div class="backAbout"></div>
         <div class="formationWrapper">
-            <div class="slider-container">
-                <div class="slides">
-                    <div class="slide" id="s1">
-                        <h3>ParticleBrush</h3>
-                        <p>Amazing Drawing App With Particles. Lots Of Colorful Particles.</p>
-                        <div class="buttons">
-                            <a href="#" class="live-demo">Live Demo</a>
-                            <a href="#" class="github-link">
-                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="fa-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="..."></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slide" id="s2">
-                        <h3>CanvasFun</h3>
-                        <p>Collection of CreativeCoding projects.</p>
-                        <div class="buttons">
-                            <a href="#" class="live-demo">Live Demo</a>
-                            <a href="#" class="github-link">
-                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="fa-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="..."></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slide" id="s3">
-                        <h3>Creative Chat</h3>
-                        <p>Creative Chat is a realtime fun chatting app where users can draw with colors in the canvas and communicate through art.</p>
-                        <div class="buttons">
-                            <a href="#" class="live-demo">Live Demo</a>
-                            <a href="#" class="github-link">
-                                <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="fa-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="..."></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="slider">
 
-                <!-- Dots navigation -->
-                <div class="slider-dots">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
+                <div class="slideList">
+                    <div class="slideTrack">
+                        <div class="slideDiv"></div>
+                        <div class="slideDiv"></div>
+                        <div class="slideDiv"></div>
+                        <div class="slideDiv"></div>
+                        <div class="slideDiv"></div>
+                        <div class="slideDiv"></div>
+                        <div class="slideDiv"></div>
+                        <div class="slideDiv"></div>
+                        <div class="slideDiv"></div>
+                    </div>
                 </div>
+                <ul class="slideDots">
+                    <li class="">
+                        <button>•</button>
+                    </li>
+                    <li class="">
+                        <button>•</button>
+                    </li>
+                    <li class="">
+                        <button>•</button>
+                    </li>
+                    <li class="">
+                        <button>•</button>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </section>

@@ -519,14 +519,14 @@ nav {
     color: rgba(0, 0, 0, 0.6);
 }
 
-.linkedInInfos a{
+.linkedInInfos a {
     font-size: 0.9rem;
     line-height: 1.33333;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.6);
 }
 
-.linkedInInfos a:hover{
+.linkedInInfos a:hover {
     text-decoration: underline;
 }
 
@@ -616,6 +616,15 @@ nav {
     margin-bottom: 200px;
 }
 
+.displaytext {
+    z-index: -1;
+    font-size: 24px;
+    position: relative;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+    perspective: 1000px;
+}
+
 .displaytext p {
     position: absolute;
     color: rgb(199, 208, 255);
@@ -668,11 +677,11 @@ nav {
 
 }
 
-.skillsDetails .Wrapper .text p{
+.skillsDetails .Wrapper .text p {
     font-size: 1rem;
 }
 
-.skillsDetails .Wrapper .text p a:hover{
+.skillsDetails .Wrapper .text p a:hover {
     text-decoration: underline;
 }
 
@@ -708,113 +717,106 @@ nav {
     border: 0;
 }
 
-
+#formations {
+    margin-bottom: 100px;
+    margin-top: 100px;
+    width: 100%;
+    height: 100%;
+}
 
 .formationWrapper {
-    padding: 190px 0;
-    width: 80%;
+    padding-top: 190px;
+    padding-right: 0;
+    width: 100vw;
     position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
-
-.slider-container {
+.slider {
     position: relative;
-    width: max-content;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    touch-action: pan-y;
+}
+
+.slideList {
+    position: relative;
+    display: block;
     overflow: hidden;
+    margin: 0;
+    transform: translateZ(0);
+    padding: 0 15px;
 }
 
-.slides {
-    display: flex;
-    width: 300%; /* 100% for each slide */
-    animation: slide-animation 9s infinite;
-}
-
-.slide {
-    width: 100%; /* 100% of container */
-    flex: 1 0 100%;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.slideDots {
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
     text-align: center;
+    font-size: 14px;
+    line-height: 150%;
 }
 
-.slide h3 {
-    font-size: 1.5em;
-    color: #333;
-}
-
-.slide p {
-    margin: 10px 0;
-    color: #666;
-}
-
-.buttons {
-    margin-top: 15px;
-}
-
-.live-demo, .github-link {
+.slideDots li {
+    text-align: match-parent;
+    cursor: pointer;
+    position: relative;
     display: inline-block;
-    background-color: #4a90e2;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin: 5px;
-}
-
-.github-link svg {
-    width: 20px;
-    height: 20px;
-    fill: white;
-    vertical-align: middle;
-}
-
-/* Dot navigation */
-.slider-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #ccc;
     margin: 0 5px;
-    cursor: default;
-    transition: background-color 0.3s;
+    padding: 0;
 }
 
-/*
-@keyframes slide-animation {
-    0% { transform: translateX(0); }
-    33% { transform: translateX(-100%); }
-    66% { transform: translateX(-200%); }
-    100% { transform: translateX(0); }
+.slideDots li button {
+    font-size: 30px;
+    line-height: 0;
+    opacity: .25;
+    display: block;
+    padding: 5px;
+    color: #000;
+    border: 0;
+    outline: none;
+    background: transparent;
 }
 
-@keyframes dot-animation {
-    0%, 100% { background-color: #ccc; }
-    33% { background-color: #4a90e2; }
-    66% { background-color: #4a90e2; }
+.dotsActive {
+    transform: scale(1.5);
+    opacity: 1;
 }
 
-.slides {
-    animation: slide-animation 9s infinite;
+.slideTrack {
+    width: 4344px;
+    opacity: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.dot:nth-child(1) {
-    animation: dot-animation 9s infinite;
+.slideTrack::before, .slideTrack::after {
+    display: table;
+    content: "";
 }
 
-.dot:nth-child(2) {
-    animation: dot-animation 9s infinite 3s;
+.slideTrack::after {
+    clear: both;
 }
 
-.dot:nth-child(3) {
-    animation: dot-animation 9s infinite 6s;
+.slideDiv {
+    outline: currentcolor;
+    width: 362px;
+    padding-top: 10px;
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
 }
-
-*/

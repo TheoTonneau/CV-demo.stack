@@ -410,11 +410,22 @@
         <script>
           document.addEventListener("DOMContentLoaded", function() {
             let index = 0;
+            const carousel = document.querySelector('.carousel');
+
             const slides = document.querySelectorAll('.carousel-slide');
             const totalSlides = slides.length;
 
             const firstSlideClone = slides[0].cloneNode(true);
-            document.querySelector('.carousel').appendChild(firstSlideClone);
+            carousel.appendChild(firstSlideClone);
+            const lastSlideClone = slides[totalSlides - 1].cloneNode(true);
+            carousel.insertBefore(lastSlideClone, slides[0]);
+
+            const y = firstSlideClone.offsetTop + firstSlideClone.offsetHeight;
+            carousel.style.transform = `translateX(upx)`;
+
+            //const center = (document.body.offsetWidth + document.querySelector('.carousel-slide').offsetWidth )/2;
+            //carousel.style.transform = `translateX(-${center}px)`;
+
 
             function showNextSlide() {
               index++;
@@ -424,15 +435,16 @@
                 index = 0;
                 document.querySelector('.carousel').style.transform = `translateX(0)`;
                 setTimeout(() => {
-                  document.querySelector('.carousel').style.transition = 'transform 0.5s ease-in-out';
+                  document.querySelector('.carousel').style.transition = 'transform 1s ease-in-out';
                   index++;
-                  document.querySelector('.carousel').style.transform = `translateX(-${index * 100}%)`;
+                  const offset = document.querySelector('.carousel-slide').offsetWidth + 20;
+                  document.querySelector('.carousel').style.transform = `translateX(-${offset}px)`;
                 }, 20);
                 return;
               }
 
-              const offset = -index * 100 ;
-              document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
+              const offset = document.querySelector('.carousel-slide').offsetWidth + 20;
+              document.querySelector('.carousel').style.transform = `translateX(-${offset}px)`;
             }
 
             setInterval(showNextSlide, 5000);

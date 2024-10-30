@@ -304,20 +304,89 @@
     <section id="formations">
         <h2 class="title">Formations</h2>
         <div class="backAbout"></div>
+        <!--
         <div class="formationWrapper">
             <div class="slider">
 
                 <div class="slideList">
                     <div class="slideTrack">
-                        <div class="slideDiv"></div>
-                        <div class="slideDiv"></div>
-                        <div class="slideDiv"></div>
-                        <div class="slideDiv"></div>
-                        <div class="slideDiv"></div>
-                        <div class="slideDiv"></div>
-                        <div class="slideDiv"></div>
-                        <div class="slideDiv"></div>
-                        <div class="slideDiv"></div>
+                        <div class="slideDiv" data-index="-3">
+                            <div></div>
+                        </div>
+                        <div class="slideDiv" data-index="-2">
+                            <div>
+                                <div class="slideContent">
+                                    <h3>2023 - Present : ESIGELEC</h3>
+                                    <p>Some content</p>
+                                    <div>
+                                        <a href="https://linkedin.com/school/esigelec"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideDiv" data-index="-1">
+                            <div>
+                                <div class="slideContent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideDiv" data-index="0">
+                            <div>
+                                <div class="slideContent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideDiv" data-index="1">
+                            <div>
+                                <div class="slideContent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideDiv" data-index="2">
+                            <div>
+                                <div class="slideContent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideDiv" data-index="3">
+                            <div>
+                                <div class="slideContent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideDiv" data-index="4">
+                            <div>
+                                <div class="slideContent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideDiv" data-index="5">
+                            <div>
+                                <div class="slideContent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideDiv" data-index="6">
+                            <div>
+                                <div class="slideContent">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slideDiv" data-index="7">
+                            <div>
+                                <div class="slideContent">
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <ul class="slideDots">
@@ -335,6 +404,76 @@
                     </li>
                 </ul>
 
+            </div>
+        </div>
+        -->
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            let index = 0;
+            const slides = document.querySelectorAll('.carousel-slide');
+            const totalSlides = slides.length;
+
+            const firstSlideClone = slides[0].cloneNode(true);
+            document.querySelector('.carousel').appendChild(firstSlideClone);
+
+            function showNextSlide() {
+              index++;
+
+              if (index > totalSlides) {
+                document.querySelector('.carousel').style.transition = 'none';
+                index = 0;
+                document.querySelector('.carousel').style.transform = `translateX(0)`;
+                setTimeout(() => {
+                  document.querySelector('.carousel').style.transition = 'transform 0.5s ease-in-out';
+                  index++;
+                  document.querySelector('.carousel').style.transform = `translateX(-${index * 100}%)`;
+                }, 20);
+                return;
+              }
+
+              const offset = -index * 100 ;
+              document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
+            }
+
+            setInterval(showNextSlide, 5000);
+          });
+
+
+        </script>
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <h3>Diapositive 1</h3>
+                    <p>Description pour la diapositive 1.</p>
+                    <div class="links">
+                        <a href="#" class="button">Démo</a>
+                        <a href="#" class="button">GitHub</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <h3>Diapositive 2</h3>
+                    <p>Description pour la diapositive 2.</p>
+                    <div class="links">
+                        <a href="#" class="button">Démo</a>
+                        <a href="#" class="button">GitHub</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <h3>Diapositive 3</h3>
+                    <p>Description pour la diapositive 3.</p>
+                    <div class="links">
+                        <a href="#" class="button">Démo</a>
+                        <a href="#" class="button">GitHub</a>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <h3>Diapositive 4</h3>
+                    <p>Description pour la diapositive 4.</p>
+                    <div class="links">
+                        <a href="#" class="button">Démo</a>
+                        <a href="#" class="button">GitHub</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

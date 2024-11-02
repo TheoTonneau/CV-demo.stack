@@ -1,0 +1,115 @@
+.losangeExperiences {
+    position: absolute;
+    left: -500px;
+    width: 200%;
+    min-height: 500px;
+    background: linear-gradient(134deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 99%);
+    transform: rotate(-9deg) skewX(78deg);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.gridExperience {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100vw;
+    max-width: 100%;
+}
+
+.cardExp {
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.cardExp:hover {
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: transform;
+    transform: translateY(-5px);
+}
+
+.expDetails {
+    color: #000;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.expDetails h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.expDetails h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.expDetails p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.expDetails ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.expDetails li {
+    margin-bottom: 15px;
+}
+
+.linkedinExp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+}
+
+.linkedinExp h4 {
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.linkedinExp a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.linkedinExp a:hover {
+    text-decoration: underline;
+}
+
+.cardExp#soregies::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    background-image: url('../img/company/soregies.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: 1;
+    transition: filter 0.3s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.cardExp#soregies:hover::before {
+    filter: grayscale(20%);
+}

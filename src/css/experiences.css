@@ -1,10 +1,10 @@
 .losangeExperiences {
     position: absolute;
-    left: -500px;
-    width: 200%;
-    min-height: 500px;
+/*    left: -28%; */
+    width: 100%;
+    min-height: 800px;
     background: linear-gradient(134deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 99%);
-    transform: rotate(-9deg) skewX(78deg);
+    transform: rotate(-9deg) skewX(40deg);
     z-index: -1;
     pointer-events: none;
 }
@@ -100,6 +100,7 @@
     left: 0;
     width: 100%;
     height: 90%;
+    margin-top: -30px;
     background-image: url('../img/company/soregies.png');
     background-size: contain;
     background-position: center;
@@ -111,5 +112,71 @@
 }
 
 .cardExp#soregies:hover::before {
+    filter: grayscale(20%);
+}
+
+.cardExp#credit-agricole::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 20px;
+    height: 60%;
+    background-image: url('../img/company/credit-agricole.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: 1;
+    transition: filter 0.3s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.cardExp#credit-agricole:hover::before {
+    filter: grayscale(20%);
+}
+
+.cardExp#agi::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 20px;
+    height: 60%;
+    background-image: url('../img/company/agi.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: 1;
+    transition: filter 0.3s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.cardExp#agi:hover::before {
+    filter: grayscale(20%);
+}
+
+.cardExp#zed-multimedia::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: -45px;
+    height: 100%;
+    background-image: url('../img/company/zed-multimedia.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: 1;
+    transition: filter 0.3s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.cardExp#zed-multimedia:hover::before {
     filter: grayscale(20%);
 }

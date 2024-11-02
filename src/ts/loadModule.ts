@@ -48,3 +48,23 @@ fetch('./module/experiences.html')
         }
     })
     .catch((error: Error) => console.error('Erreur de chargement:', error));
+
+fetch('./module/website.html')
+    .then((response: Response) => response.text())
+    .then((data: string) => {
+        const homeElement: HTMLElement | null = document.getElementById('website');
+        if (homeElement) {
+            homeElement.innerHTML = data;
+        }
+    })
+    .catch((error: Error) => console.error('Erreur de chargement:', error));
+
+fetch('./module/contact.html')
+    .then((response: Response) => response.text())
+    .then((data: string) => {
+        const homeElement: HTMLElement | null = document.getElementById('contact');
+        if (homeElement) {
+            homeElement.innerHTML = data;
+        }
+    })
+    .catch((error: Error) => console.error('Erreur de chargement:', error));

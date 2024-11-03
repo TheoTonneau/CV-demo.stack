@@ -77,7 +77,10 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+}
 
+.links .btn:hover {
+    text-decoration: underline;
 }
 
 .social-links {
@@ -85,7 +88,7 @@
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-around;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .svg-inline--fa, svg:not(:root).svg-inline--fa {

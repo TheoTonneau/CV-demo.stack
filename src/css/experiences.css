@@ -7,6 +7,7 @@
     transform: rotate(-9deg) skewX(40deg);
     z-index: -1;
     pointer-events: none;
+    transition: background 0.2s ease;
 }
 
 .gridExperience {
@@ -23,6 +24,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    transition: background-color 0.2s ease;
 }
 
 .cardExp:hover {
@@ -47,16 +49,19 @@
     text-align: center;
     font-weight: normal;
     margin-bottom: 10px;
+    transition: color 0.2s ease;
 }
 
 .expDetails h4 {
     font-size: 1.3rem;
     margin-bottom: 10px;
+    transition: color 0.2s ease;
 }
 
 .expDetails p {
     margin-top: 10px;
     margin-bottom: 5px;
+    transition: color 0.2s ease;
 }
 
 .expDetails ul {
@@ -66,14 +71,16 @@
 
 .expDetails li {
     margin-bottom: 15px;
+    transition: color 0.2s ease;
 }
 
 .linkedinExp {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 10px 15px;
     background-color: #f9f9f9;
+    align-items: baseline;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .linkedinExp h4 {
@@ -93,6 +100,12 @@
     text-decoration: underline;
 }
 
+.cardExp#soregies {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
 .cardExp#soregies::before {
     content: "";
     position: absolute;
@@ -106,13 +119,19 @@
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.4;
-    z-index: 1;
+    z-index: -1;
     transition: filter 0.3s ease-in-out;
     filter: grayscale(100%);
 }
 
 .cardExp#soregies:hover::before {
     filter: grayscale(20%);
+}
+
+.cardExp#credit-agricole {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
 }
 
 .cardExp#credit-agricole::before {
@@ -128,13 +147,19 @@
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.2;
-    z-index: 1;
+    z-index: -1;
     transition: filter 0.3s ease-in-out;
     filter: grayscale(100%);
 }
 
 .cardExp#credit-agricole:hover::before {
     filter: grayscale(20%);
+}
+
+.cardExp#agi {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
 }
 
 .cardExp#agi::before {
@@ -150,13 +175,19 @@
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.3;
-    z-index: 1;
+    z-index: -1;
     transition: filter 0.3s ease-in-out;
     filter: grayscale(100%);
 }
 
 .cardExp#agi:hover::before {
     filter: grayscale(20%);
+}
+
+.cardExp#zed-multimedia {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
 }
 
 .cardExp#zed-multimedia::before {
@@ -172,7 +203,7 @@
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.4;
-    z-index: 1;
+    z-index: -1;
     transition: filter 0.3s ease-in-out;
     filter: grayscale(100%);
 }

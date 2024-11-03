@@ -13,7 +13,6 @@ toggleInput.addEventListener('change', (): void => {
     document.getElementById('overview1-p').classList.toggle('dark-mode', toggleInput.checked);
     document.getElementById('overview2-p').classList.toggle('dark-mode', toggleInput.checked);
     document.getElementById('overview3-p').classList.toggle('dark-mode', toggleInput.checked);
-    document.getElementById('backAbout').classList.toggle('dark-mode', toggleInput.checked);
     document.getElementById('github-1').classList.toggle('dark-mode', toggleInput.checked);
     document.getElementById('github-2').classList.toggle('dark-mode', toggleInput.checked);
     document.getElementById('linkedinHeader').classList.toggle('dark-mode', toggleInput.checked);
@@ -26,8 +25,12 @@ toggleInput.addEventListener('change', (): void => {
     document.getElementById('linkedInSchool').classList.toggle('dark-mode', toggleInput.checked);
     document.getElementById('linkedInCompany').classList.toggle('dark-mode', toggleInput.checked);
     document.getElementById('viewLinkedIn').classList.toggle('dark-mode', toggleInput.checked);
-
+    document.getElementById('formEmail').classList.toggle('dark-mode', toggleInput.checked);
     
+    
+    document.querySelectorAll('.backAbout').forEach((element: HTMLElement) => {
+        element.classList.toggle('dark-mode', toggleInput.checked);
+    });
     
     document.querySelectorAll('.title').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
@@ -50,6 +53,38 @@ toggleInput.addEventListener('change', (): void => {
     });
     
     document.querySelectorAll('.illustration').forEach((element: HTMLElement) => {
+        element.classList.toggle('dark-mode', toggleInput.checked);
+    });
+
+    document.querySelectorAll('.cardExp').forEach((element: HTMLElement) => {
+        element.classList.toggle('dark-mode', toggleInput.checked);
+    });
+    
+    document.querySelectorAll('.linkedinExp').forEach((element: HTMLElement) => {
+        element.classList.toggle('dark-mode', toggleInput.checked);
+    });
+    
+    document.querySelectorAll('.expDetails').forEach((element: HTMLElement) => {
+        element.classList.toggle('dark-mode', toggleInput.checked);
+    });
+    
+    document.querySelectorAll('.losangeExperiences').forEach((element: HTMLElement) => {
+        element.classList.toggle('dark-mode', toggleInput.checked);
+    });
+    
+    document.querySelectorAll('.slides').forEach((element: HTMLElement) => {
+        element.classList.toggle('dark-mode', toggleInput.checked);
+    });
+    
+    document.querySelectorAll('.links').forEach((element: HTMLElement) => {
+        element.classList.toggle('dark-mode', toggleInput.checked);
+    });
+    
+    document.querySelectorAll('.button').forEach((element: HTMLElement) => {
+        element.classList.toggle('dark-mode', toggleInput.checked);
+    });
+    
+    document.querySelectorAll('.logo-image').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
     

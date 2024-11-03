@@ -65,22 +65,14 @@
         "fName    name "
         "message  message"
         ".        button  ";
+    transition: background-color 0.2s ease;
 }
 
 #formEmail label span {
     font-size: 1.5rem;
     color: rgb(37, 37, 37);
+    transition: color 0.2s ease;
 }
-/*
-#formEmail label input {
-    font-size: 1.2rem;
-    padding: 10px 15px;
-    border-radius: 5px;
-    background-color: rgb(234, 234, 234);
-    border: medium;
-    margin: 10px 0;
-    width: 40vh;
-}*/
 
 .labelEmail {
     grid-area: email;

@@ -86,3 +86,62 @@ body.dark-mode {
     background-color: rgb(70, 70, 70) !important;
     box-shadow: rgba(248, 248, 248, 0.5) 0 5px 10px;
 }
+
+.cardExp.dark-mode {
+    background-color: rgb(70, 70, 70);
+    box-shadow: rgba(248, 248, 248, 0.5) 0 5px 5px;
+}
+
+.linkedinExp.dark-mode {
+    background-color: rgb(35, 35, 35);
+}
+
+.linkedinExp.dark-mode h4 {
+    color: rgb(248, 248, 248);
+}
+
+.expDetails.dark-mode h4, .expDetails.dark-mode h3, .expDetails.dark-mode li {
+    color: rgb(248, 248, 248);
+}
+
+.losangeExperiences.dark-mode {
+    background: rgb(60, 60, 60);
+}
+
+.slides.dark-mode {
+    background-color: rgb(70, 70, 70);
+    box-shadow: rgba(248, 248, 248, 0.5) 0 5px 5px;
+    color: rgb(248, 248, 248);
+}
+
+.slides.dark-mode h3, .slides.dark-mode p, .slides.dark-mode li {
+    color: rgb(248, 248, 248);
+}
+
+.button.dark-mode {
+    background-color: rgb(109, 131, 242);
+}
+
+.button.dark-mode:hover {
+    background-color: rgb(58, 79, 140);
+}
+
+#formEmail.dark-mode {
+    background-color: rgb(60, 60, 60);
+}
+
+#formEmail.dark-mode label span{
+    color: rgb(248, 248, 248);
+}
+
+.headerWrapper.dark-mode .navWrapper .leftNav a:hover{
+    color: rgb(248, 248, 248);
+}
+
+.headerWrapper.dark-mode .navWrapper nav .liNav a:hover{
+    color: rgb(248, 248, 248);
+}
+
+.logo-image.dark-mode {
+    background-image: url('../img/TONNEAU.dark.png');
+}

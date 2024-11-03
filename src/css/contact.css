@@ -34,6 +34,7 @@
 
 .leftContent h3 {
     color: rgb(248, 248, 248);
+    font-size: 1.7rem;
 }
 
 .leftContent p {
@@ -43,9 +44,10 @@
     font-family: "Karla", sans-serif;
     color: rgb(248, 248, 248);
     font-weight: lighter;
+    letter-spacing: 1px;
 }
 
-.formEmail {
+#formEmail {
     position: absolute;
     width: 70%;
     top: -50px;
@@ -65,23 +67,20 @@
         ".        button  ";
 }
 
-.formEmail label span {
-    font-size: 0.85em;
+#formEmail label span {
+    font-size: 1.5rem;
     color: rgb(37, 37, 37);
 }
-
-.formEmail label input {
+/*
+#formEmail label input {
+    font-size: 1.2rem;
     padding: 10px 15px;
     border-radius: 5px;
     background-color: rgb(234, 234, 234);
     border: medium;
-    margin: 10px 0px;
-    width: 100%;
-    font-family: inherit;
-    font-size: 100%;
-    line-height: 1.15;
-    overflow: visible;
-}
+    margin: 10px 0;
+    width: 40vh;
+}*/
 
 .labelEmail {
     grid-area: email;
@@ -101,4 +100,52 @@
 
 .labelMessage {
     grid-area: message;
+}
+
+#formEmail label input,
+#formEmail label textarea {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: rgb(234, 234, 234);
+    border: medium;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.labelMessage textarea {
+    grid-column: span 2;
+    height: 200px;
+    resize: none;
+}
+
+#submitButton {
+    justify-self: end;
+    width: fit-content;
+    grid-area: button;
+    background: linear-gradient(134deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 99%);
+    color: rgb(248, 248, 248);
+    border: medium;
+    cursor: pointer;
+    transition: 0.2s;
+    height: auto;
+    font-size: 1rem;
+    margin: 0;
+    padding: 12px;
+    border-radius: 5px;
+    -webkit-appearance: button;
+    letter-spacing: 1px;
+}
+
+#submitButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#submitButton:hover {
+    color: rgb(248, 248, 248);
+    background: linear-gradient(99deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 130%);
+    transform: scale(1.05);
+    transition: 0.2s;
 }

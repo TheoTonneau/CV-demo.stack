@@ -12,55 +12,41 @@
         <p>Envie d'en savoir plus ? ➡️</p>
     </div>
 
-    <form id="formEmail">
+    <form id="formEmail" method="post">
 
         <label class="labelEmail" for="email">
             <span>Email</span>
-            <input type="email" id="email" name="_replyto" required="" placeholder="example@gmail.com" value="">
+            <input type="email" id="email" name="email" placeholder="example@gmail.com" value="" required>
         </label>
 
-        <label for="company">
-
+        <label class="labelCompany" for="company">
+            <span>Entreprise</span>
+            <input type="text" id="company" name="company" placeholder="company" value="" required>
         </label>
 
-        <label for="name">
-
+        <label class="labelFirstName" for="firstName">
+            <span>Pr&eacute;nom</span>
+            <input type="text" id="firstName" name="firstName" placeholder="John" value="">
         </label>
 
-        <label for="firstName">
-
+        <label class="labelName" for="name">
+            <span>Nom</span>
+            <input type="text" id="name" name="name" placeholder="Doe" value="" required>
         </label>
 
-        <label for="message">
-
+        <label class="labelMessage" for="message">
+            <span>Message</span>
+            <textarea id="message" name="message" placeholder="Hey there!" required></textarea>
         </label>
-<!--
-        <div class="form-row">
-            <div class="half-width">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="half-width">
-                <label for="company">Entreprise:</label>
-                <input type="text" id="company" name="company" required>
-            </div>
-        </div>
 
-        <div class="form-row">
-            <div class="half-width">
-                <label for="firstName">Pr&eacute;nom:</label>
-                <input type="text" id="firstName" name="firstName">
-            </div>
-            <div class="half-width">
-                <label for="name">Nom:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-        </div>
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4" cols="50" required></textarea>
-
-        <button type="submit" id="submitButton">Envoyer</button>
-        -->
+        <button type="submit" id="submitButton">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="paper-plane"
+                 class="svg-inline--fa fa-paper-plane fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 512 512">
+                <path fill="currentColor"
+                      d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"></path>
+            </svg>
+            Envoyer
+        </button>
     </form>
 </div>

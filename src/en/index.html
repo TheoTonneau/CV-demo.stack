@@ -5,10 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../img/T.png">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dark-mode.css">
+    <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script type="module" src="../js/index.js"></script>
     <title>CV TONNEAU</title>
 </head>
 <body>
-
+<header>
+    <div class="headerWrapper" id="header">
+        <div class="navWrapper">
+            <div class="leftNav">
+                <a id="langButton">SITE EN FRAN&Ccedil;AIS</a>
+                <a href="#about">
+                    <div class="logo-image"></div>
+                </a>
+            </div>
+            <nav>
+                <ul class="ulNav">
+                    <li class="liNav"><a href="#home">Home</a></li>
+                    <li class="liNav"><a href="#about">&Agrave; propos</a></li>
+                    <li class="liNav"><a href="#skills">Comp&eacute;tences</a></li>
+                    <li class="liNav"><a href="#experiences">Exp&eacute;riences</a></li>
+                    <li class="liNav"><a href="#formations">Formations</a></li>
+                    <li class="liNav"><a href="#website">Ce site</a></li>
+                    <li class="liNav"><a href="#contact">Contact</a></li>
+                    <li class="liNav">
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="toggle" class="toggle-input">
+                            <label for="toggle" class="toggle-label">
+                                <span class="toggle-ball"></span>
+                                <span class="toggle-text toggle-text-left">DARK</span>
+                                <span class="toggle-text toggle-text-right">LIGHT</span>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<main>
+    <section id="home" class="homeWrapper"></section>
+    <section id="about"></section>
+    <section id="skills"></section>
+    <section id="experiences"></section>
+    <section id="formations"></section>
+    <section id="website"></section>
+    <section id="contact"></section>
+</main>
+<footer>
+    <div>
+        <img src="../img/T.png" alt="logo">
+        <p>Actuellement &agrave; la recherche d'un stage &agrave; l'&eacute;tranger, n'h&eacute;sitez pas &agrave; me
+            contacter</p>
+    </div>
+</footer>
 </body>
 </html>

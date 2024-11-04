@@ -1,4 +1,25 @@
+function setCookie(name: string, value: string, days: number): void {
+    const date: Date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires: string = "expires=" + date.toUTCString();
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
 setTimeout(function() {
+
+
+    const englishButton: HTMLInputElement = document.getElementById('langButton') as HTMLInputElement;
+
+    englishButton.addEventListener('click', (): void => {
+        if (document.documentElement.lang === 'fr') {
+            setCookie('lang', 'en', 365);
+        } else {
+            setCookie('lang', 'fr', 365);
+        }
+        document.location.href='../index.html';
+    });
+
+
     fetch('./module/homeWrapper.html')
     .then((response: Response) => response.text())
     .then((data: string) => {

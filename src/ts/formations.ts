@@ -36,5 +36,5 @@ window.addEventListener("load", function() {
             }
         }
         setInterval(showNextSlide, 5000);
-    }, 100);
+    }, 200);
 });

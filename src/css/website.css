@@ -41,3 +41,13 @@
     padding: 20px;
     height: auto;
 }
+
+.wrapperWebsite p{
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.text-haut .text, .text-bas .text {
+    text-align: justify;
+    width: 85%;
+}

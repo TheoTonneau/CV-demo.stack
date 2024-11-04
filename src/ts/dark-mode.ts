@@ -2,6 +2,7 @@ const toggleInput: HTMLInputElement = document.getElementById('toggle') as HTMLI
 
 toggleInput.addEventListener('change', (): void => {
     document.body.classList.toggle('dark-mode', toggleInput.checked);
+    document.querySelector('footer').classList.toggle('dark-mode', toggleInput.checked);
     document.getElementById('header').classList.toggle('dark-mode', toggleInput.checked);
     document.getElementById('code-background').classList.toggle('dark-mode', toggleInput.checked);
     document.getElementById('introText-h1').classList.toggle('dark-mode', toggleInput.checked);

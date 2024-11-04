@@ -145,3 +145,7 @@ body.dark-mode {
 .logo-image.dark-mode {
     background-image: url('../img/TONNEAU.dark.png');
 }
+
+footer.dark-mode {
+    background: rgb(35, 35, 35);
+}

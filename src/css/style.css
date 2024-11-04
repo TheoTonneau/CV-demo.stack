@@ -86,3 +86,30 @@ a {
     letter-spacing: 1px;
     transition: color 0.2s ease;
 }
+
+footer {
+    width: 100vw;
+    padding: 10px;
+    background: linear-gradient(134deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 99%);
+    transition: background 0.2s ease;
+}
+
+footer div {
+    margin: auto;
+    width: 80%;
+}
+
+footer div img {
+    border-style: none;
+    width: 35px;
+    filter: invert(100%);
+}
+
+footer div p {
+    float: right;
+    font-size: 1rem;
+    line-height: 35px;
+    color: white;
+    margin: 0;
+    font-family: "Karla", sans-serif;
+}

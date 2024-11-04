@@ -1,13 +1,16 @@
 .losangeExperiences {
     position: absolute;
-/*    left: -28%; */
+    left: -3%;
     width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
     min-height: 800px;
     background: linear-gradient(134deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 99%);
     transform: rotate(-9deg) skewX(40deg);
     z-index: -1;
     pointer-events: none;
     transition: background 0.2s ease;
+    /*clip-path: polygon(0 0, 100% 0, 70vw 100%, 0 100%); /* Ajustez 50px selon vos besoins */
 }
 
 .gridExperience {

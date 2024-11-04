@@ -179,15 +179,20 @@ jobs:
 
       - name: sync-s3
         run: |
-          aws s3 cp ../src/ s3://cv-demo-tonneau-${{ github.event.inputs.environment }}/ --recursive \
+          aws s3 cp ../src/ s3://cv-demo-tonneau-test/ --recursive \
           --exclude "*" \
           --include "index.html" \
+          --include "fr/index.html" \
+          --include "fr/module/*" \
+          --include "en/index.html" \
+          --include "en/module/*" \
           --include "img/*" \
           --include "img/certification/*" \
-          --include "img/education/*" \
+          --include "img/company/*" \
           --include "img/website/*" \
           --include "js/index.js" \
-          --include "css/style.css" \
+          --include "js/cookie.js" \
+          --include "css/*" \
           --exclude "ts/*"
         shell: bash
         

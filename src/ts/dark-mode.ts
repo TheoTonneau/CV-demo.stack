@@ -88,7 +88,13 @@ toggleInput.addEventListener('change', (): void => {
     document.querySelectorAll('.logo-image').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
+
+    document.querySelectorAll('.text-haut').forEach((element: HTMLElement) => {
+        element.classList.toggle('dark-mode', toggleInput.checked);
+    });
     
-    
+    document.querySelectorAll('.text-bas').forEach((element: HTMLElement) => {
+        element.classList.toggle('dark-mode', toggleInput.checked);
+    });
 
 });

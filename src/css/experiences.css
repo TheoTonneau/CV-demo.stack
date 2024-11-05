@@ -13,6 +13,11 @@
     /*clip-path: polygon(0 0, 100% 0, 70vw 100%, 0 100%); /* Ajustez 50px selon vos besoins */
 }
 
+#containerLosange {
+    position: absolute;
+    width: 70%;
+}
+
 .gridExperience {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

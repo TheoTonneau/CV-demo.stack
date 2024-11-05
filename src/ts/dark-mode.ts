@@ -1,4 +1,4 @@
-const toggleInput: HTMLInputElement = document.getElementById('toggle') as HTMLInputElement;
+const toggleInput: HTMLInputElement = window.innerWidth > 1024 ? document.getElementById('toggle') as HTMLInputElement : document.getElementById('darkmode-input') as HTMLInputElement;
 
 function setCookie(name: string, value: string, days: number): void {
     const date: Date = new Date();

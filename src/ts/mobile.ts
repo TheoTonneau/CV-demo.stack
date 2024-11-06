@@ -2,11 +2,11 @@ const burger: HTMLInputElement = document.getElementById('burger') as HTMLInputE
 
 burger.addEventListener('click', (): void => {
     const ul: HTMLInputElement = document.getElementById('ulMobile') as HTMLInputElement;
-    if (ul.style.opacity === '1') {
-        ul.style.opacity = '0';
+    if (ul.style.display === 'flex') {
+        ul.style.display = 'none';
         burger.classList.remove('active');
     } else {
-        ul.style.opacity = '1';
+        ul.style.display = 'flex';
         burger.classList.add('active');
     }
 });

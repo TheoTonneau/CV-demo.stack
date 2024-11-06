@@ -149,8 +149,13 @@ nav {
     .ulNav {
         padding-inline-start: 10px;
     }
+
     .headerWrapper{
         font-size: 1.1rem;
+    }
+
+    .leftContent {
+        margin-left: 2% !important;
     }
 }
 

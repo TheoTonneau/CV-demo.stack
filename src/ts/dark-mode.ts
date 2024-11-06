@@ -1,4 +1,5 @@
-const toggleInput: HTMLInputElement = window.innerWidth > 1024 ? document.getElementById('toggle') as HTMLInputElement : document.getElementById('darkmode-input') as HTMLInputElement;
+let toggleInput: HTMLInputElement = window.innerWidth > 1024 ? document.getElementById('toggle') as HTMLInputElement : document.getElementById('darkmode-input') as HTMLInputElement;
+
 
 function setCookie(name: string, value: string, days: number): void {
     const date: Date = new Date();
@@ -23,8 +24,8 @@ function getCookie(name: string): string {
     return "";
 }
 
-window.onload = function(): void {
-    setTimeout(function() {
+window.onload = function (): void {
+    setTimeout(function () {
         const darkModeCookie = getCookie('darkMode');
         if (darkModeCookie === 'true') {
             toggleInput.checked = true;
@@ -123,11 +124,10 @@ window.onload = function(): void {
             document.querySelectorAll('.text-bas').forEach((element: HTMLElement) => {
                 element.classList.add('dark-mode');
             });
-        }
-        else {
+        } else {
             toggleInput.checked = false;
         }
-    }, 100);
+    }, 200);
 };
 
 toggleInput.addEventListener('change', (): void => {
@@ -162,16 +162,16 @@ toggleInput.addEventListener('change', (): void => {
     document.getElementById('linkedInCompany').classList.toggle('dark-mode', toggleInput.checked);
     document.getElementById('viewLinkedIn').classList.toggle('dark-mode', toggleInput.checked);
     document.getElementById('formEmail').classList.toggle('dark-mode', toggleInput.checked);
-    
-    
+
+
     document.querySelectorAll('.backAbout').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
-    
+
     document.querySelectorAll('.title').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
-    
+
     document.querySelectorAll('.text').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
@@ -179,15 +179,15 @@ toggleInput.addEventListener('change', (): void => {
     document.querySelectorAll('.text h3').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
-    
+
     document.querySelectorAll('.text p').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
-    
+
     document.querySelectorAll('.Iframe').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
-    
+
     document.querySelectorAll('.illustration').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
@@ -195,31 +195,31 @@ toggleInput.addEventListener('change', (): void => {
     document.querySelectorAll('.cardExp').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
-    
+
     document.querySelectorAll('.linkedinExp').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
-    
+
     document.querySelectorAll('.expDetails').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
-    
+
     document.querySelectorAll('.losangeExperiences').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
-    
+
     document.querySelectorAll('.slides').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
-    
+
     document.querySelectorAll('.links').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
-    
+
     document.querySelectorAll('.button').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
-    
+
     document.querySelectorAll('.logo-image').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
@@ -227,7 +227,7 @@ toggleInput.addEventListener('change', (): void => {
     document.querySelectorAll('.text-haut').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });
-    
+
     document.querySelectorAll('.text-bas').forEach((element: HTMLElement) => {
         element.classList.toggle('dark-mode', toggleInput.checked);
     });

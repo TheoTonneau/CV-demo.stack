@@ -1,4 +1,4 @@
-function setCookie(name: string, value: string, days: number): void {
+function setCookieLang(name: string, value: string, days: number): void {
     const date: Date = new Date();
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
     const expires: string = "expires=" + date.toUTCString();
@@ -7,14 +7,13 @@ function setCookie(name: string, value: string, days: number): void {
 
 setTimeout(function() {
 
-
-    const englishButton: HTMLInputElement = document.getElementById('langButton') as HTMLInputElement;
+    let englishButton: HTMLInputElement = window.innerWidth > 1024 ? document.getElementById('langButton') as HTMLInputElement : document.getElementById('lang-input') as HTMLInputElement;
 
     englishButton.addEventListener('click', (): void => {
         if (document.documentElement.lang === 'fr') {
-            setCookie('lang', 'en', 365);
+            setCookieLang('lang', 'en', 365);
         } else {
-            setCookie('lang', 'fr', 365);
+            setCookieLang('lang', 'fr', 365);
         }
         document.location.href='../index.html';
     });

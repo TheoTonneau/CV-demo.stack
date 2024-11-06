@@ -7,7 +7,6 @@ interface Data {
 }
 
 const data: Data = require('../js/data.json')!;
-console.log(data);
 setTimeout(function() {
     const form: HTMLFormElement | null = document.getElementById('formEmail') as HTMLFormElement;
     if (form) {

@@ -361,4 +361,8 @@
     .introCode {
         text-align: left;
     }
+
+    .leftContent {
+        margin-left: 2% !important;
+    }
 }

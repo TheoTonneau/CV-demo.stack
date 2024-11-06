@@ -144,3 +144,32 @@ nav {
 .toggle-input:checked + .toggle-label .toggle-ball {
     transform: translateX(25px);
 }
+
+@media (max-width: 1140px) {
+    .ulNav {
+        padding-inline-start: 10px;
+    }
+    .headerWrapper{
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    .ulNav {
+        padding-inline-start: 0;
+    }
+
+    .leftNav a {
+        margin-right: 0;
+    }
+
+    .headerWrapper{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1065px) and (min-width: 1024px) {
+    .headerWrapper{
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,184 @@
+.homeWrapper {
+    margin-bottom: 100px;
+    margin-top: 125px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: all;
+}
+
+.svg-rect {
+    width: 40%;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: -1;
+}
+
+.intro {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-around;
+    height: calc(-100px + 80vh);
+    margin-bottom: 150px;
+}
+
+.introText {
+    margin-top: 200px;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    z-index: 1;
+}
+
+.introText p {
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    transition: color 0.2s ease;
+}
+
+.introText h1 {
+    margin-top: -4px;
+    margin-bottom: -4px;
+    font-size: 3.5rem;
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 3px;
+    transition: color 0.2s ease;
+}
+
+.adjust {
+    font-size: 2.2rem;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.links {
+    width: max-content;
+}
+
+.links .btn {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-image: linear-gradient(134deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 99%);
+    color: rgb(248, 248, 248);
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    font-size: 1.2rem;
+    padding: 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.links .btn:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    color: rgb(109, 131, 242);
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-around;
+    font-size: 28px;
+}
+
+.svg-inline--fa, svg:not(:root).svg-inline--fa {
+    overflow: visible;
+}
+
+.svg-inline--fa.fa-w-16 {
+    width: 1em;
+}
+
+.svg-inline--fa {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    vertical-align: -.125em;
+}
+
+.introCode {
+    margin-top: 200px;
+    position: relative;
+}
+
+.code-background {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 35px;
+    padding-left: 35px;
+    border-radius: 10px;
+    background-color: rgb(248, 248, 248);
+    box-shadow: rgba(0, 0, 0, 0.05) 0 5px 10px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.code-background pre {
+    font-size: 1.4rem;
+    font-family: Montserrat, sans-serif;
+    color: rgb(109, 131, 242);
+}
+
+.overview {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cardOverview {
+    margin: 10px;
+    flex: 1 1 200px;
+    max-width: 300px;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(248, 248, 248);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cardOverview div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(134deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 99%);
+    color: rgb(248, 248, 248);
+}
+
+.cardOverview div svg {
+    width: 1.75em;
+    height: 100px;
+    line-height: 100px;
+    font-size: 2.2rem;
+    display: inline-block;
+    vertical-align: -.125em;
+}
+
+.cardOverview h3 {
+    font-weight: normal;
+    color: rgb(109, 131, 242);
+}
+
+.cardOverview p {
+    font-size: 14px;
+    transition: color 0.2s ease;
+}

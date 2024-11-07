@@ -1,7 +1,6 @@
-import './onload';
-import './lang';
-import  './header';
-import './pages';
-import './cookie';
-import './navigate';
-//import './sendForm';
+import './loadModule';
+import './skills';
+import './formations';
+import './sendForm';
+import './dark-mode';
+import './mobile';

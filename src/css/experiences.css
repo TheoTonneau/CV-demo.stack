@@ -1,0 +1,221 @@
+.losangeExperiences {
+    position: absolute;
+    left: -3%;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    min-height: 800px;
+    background: linear-gradient(134deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 99%);
+    transform: rotate(-9deg) skewX(40deg);
+    z-index: -1;
+    pointer-events: none;
+    transition: background 0.2s ease;
+    /*clip-path: polygon(0 0, 100% 0, 70vw 100%, 0 100%); /* Ajustez 50px selon vos besoins */
+}
+
+#containerLosange {
+    position: absolute;
+    width: 70%;
+}
+
+.gridExperience {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100vw;
+    max-width: 100%;
+}
+
+.cardExp {
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: background-color 0.2s ease;
+}
+
+.cardExp:hover {
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    transition-property: transform;
+    transform: translateY(-5px);
+}
+
+.expDetails {
+    color: #000;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.expDetails h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+}
+
+.expDetails h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+}
+
+.expDetails p {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    transition: color 0.2s ease;
+}
+
+.expDetails ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.expDetails li {
+    margin-bottom: 15px;
+    transition: color 0.2s ease;
+}
+
+.linkedinExp {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+    align-items: baseline;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.linkedinExp h4 {
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.linkedinExp a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.linkedinExp a:hover {
+    text-decoration: underline;
+}
+
+.cardExp#soregies {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.cardExp#soregies::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    margin-top: -30px;
+    background-image: url('../img/company/soregies.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    z-index: -1;
+    transition: filter 0.3s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.cardExp#soregies:hover::before {
+    filter: grayscale(20%);
+}
+
+.cardExp#credit-agricole {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.cardExp#credit-agricole::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 20px;
+    height: 60%;
+    background-image: url('../img/company/credit-agricole.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: -1;
+    transition: filter 0.3s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.cardExp#credit-agricole:hover::before {
+    filter: grayscale(20%);
+}
+
+.cardExp#agi {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.cardExp#agi::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 20px;
+    height: 60%;
+    background-image: url('../img/company/agi.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: -1;
+    transition: filter 0.3s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.cardExp#agi:hover::before {
+    filter: grayscale(20%);
+}
+
+.cardExp#zed-multimedia {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.cardExp#zed-multimedia::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: -45px;
+    height: 100%;
+    background-image: url('../img/company/zed-multimedia.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    z-index: -1;
+    transition: filter 0.3s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.cardExp#zed-multimedia:hover::before {
+    filter: grayscale(20%);
+}

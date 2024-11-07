@@ -1,11 +1,13 @@
-export function setCookie(name: string, value: string, days: number): void {
-    const date: Date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    const expires: string = "expires=" + date.toUTCString();
-    document.cookie = name + "=" + value + ";" + expires + ";path=/";
-}
+window.onload = function(): void {
+    const savedLang: string = getCookie('lang');
+    if (savedLang !== "") {
+        savedLang === "fr" ? window.location.href = 'fr/index.html' : window.location.href = 'en/index.html';
+    } else {
+        window.location.href = 'fr/index.html';
+    }
+};
 
-export function getCookie(name: string): string {
+function getCookie(name: string): string {
     const cname: string = name + "=";
     const decodedCookie: string = decodeURIComponent(document.cookie);
     const cookieArray: string[] = decodedCookie.split(';');

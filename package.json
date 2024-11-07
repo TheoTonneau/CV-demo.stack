@@ -9,7 +9,7 @@
     "lint-fix": "eslint --fix src/**/*.ts",
     "prebuild": "rm -f lambda/build/index.js",
     "build": "esbuild `find ./lambda/src -name '*.ts'` --minify --bundle --platform=node --target=es2020 --outdir=lambda/build && zip lambda/build/index.zip lambda/build/index.js",
-    "build-app": "npx ts-node ./src/ts/encrypt.ts && esbuild `find ./src/ts -name 'index.ts'` --minify --bundle --platform=node --target=es2020 --outdir=src/js"
+    "build-app": "npx ts-node ./src/ts/encrypt.ts && esbuild `find ./src/ts -name 'index.ts'` --minify --bundle --platform=node --target=es2020 --outdir=src/js && esbuild `find ./src/ts -name 'cookie.ts'` --minify --bundle --platform=node --target=es2020 --outdir=src/js"
   },
   "repository": {
     "type": "git",
@@ -18,13 +18,17 @@
   "private": true,
   "dependencies": {
     "@aws-sdk/client-sns": "^3.645.0",
+    "@sabfry/avatarium": "^1.0.5",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "aws-sdk": "^2.1691.0",
+    "axios": "^1.7.7",
     "crypto": "^1.0.1",
     "eslint": "^8.28.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "eslint-plugin-import": "^2.26.0",
+    "formik": "^2.4.6",
+    "react-router-dom": "^6.27.0"
   },
   "devDependencies": {
     "@types/aws-lambda": "~8.10.140",
@@ -35,6 +39,7 @@
     "esbuild": "^0.23.1",
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
+    "react": "^18.3.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }

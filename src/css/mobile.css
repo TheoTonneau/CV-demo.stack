@@ -725,13 +725,17 @@
         align-items: center;
     }
 
-    .slides {
-        min-width: 90%; /* Utilise une largeur plus petite pour chaque slide */
-        margin: 10px 0;
-        padding: 15px;
+    .slideDef {
+        margin-left: 90%;
     }
 
-    /* Skills Section */
+    .slides {
+        width: 23% !important;
+        margin: 10px 0;
+        padding: 15px;
+        min-width: 0 !important;
+    }
+
     .logoSkills {
         flex-wrap: wrap;
         justify-content: center;
@@ -829,6 +833,10 @@
         font-size: 1rem;
     }
 
+    #formEmail {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
     .introCode {
         text-align: left;
     }
@@ -844,7 +852,7 @@
     }
 
     .slides p, .slides li, .slides {
-        font-size: 1rem !important;
+        font-size: 0.8rem !important;
     }
 
     .text-haut {

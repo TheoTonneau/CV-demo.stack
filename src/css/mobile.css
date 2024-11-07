@@ -9,7 +9,7 @@
     z-index: 1000;
 }
 
-.navMobileButton{
+.navMobileButton {
     width: 70px;
     height: 70px;
     background: linear-gradient(134deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 99%);
@@ -43,18 +43,18 @@
     position: relative;
 }
 
-#burger.active  .burger{
+#burger.active .burger {
     transform: translate3d(0px, -10px, 0px) rotate(45deg);
     transition-timing-function: cubic-bezier(0.215, 0.61, 0.35, 1);
 }
 
-#burger.active  .burger::before{
+#burger.active .burger::before {
     top: 0;
     transform: rotate(90deg);
     transition: top 0.1s cubic-bezier(0.3, 0, 0.6, 0.3) 0.16s, transform 0.13s cubic-bezier(0.215, 0.61, 0.35, 1) 0.25s;
 }
 
-#burger.active  .burger::after{
+#burger.active .burger::after {
     top: 0;
     opacity: 0;
     transition: top 0.2s cubic-bezier(0.3, 0, 0.6, 0.3), opacity 0.1s linear 0.22s;
@@ -346,7 +346,7 @@
         padding: 20px !important;
         gap: 15px !important;
         width: 100% !important;
-        box-shadow: rgb(106, 152, 240) 1px 1px 2px  10px !important;
+        box-shadow: rgb(106, 152, 240) 1px 1px 2px 10px !important;
     }
 
     #formEmail label input,
@@ -367,7 +367,7 @@
     }
 
     .cardExp {
-        box-shadow: rgb(106, 152, 240) 1px 1px 2px  10px !important;
+        box-shadow: rgb(106, 152, 240) 1px 1px 2px 10px !important;
         width: 95%;
     }
 
@@ -379,6 +379,710 @@
 }
 
 @media (max-width: 810px) {
+
+    .headerWrapper {
+        display: none;
+    }
+
+    .headerWrapperMobile {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        right: 60px;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .navMobileButton {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(134deg, rgb(106, 152, 240), rgb(73, 97, 220));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .ulNavMobile {
+        transform: translateY(-20px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        bottom: 35px;
+        padding: 0;
+        background: transparent;
+        border-radius: 8px;
+    }
+
+    .liNavMobile a {
+        display: block;
+        padding: 10px 15px;
+        color: rgb(106, 152, 240);
+        font-weight: 400;
+        border-bottom: 1px solid rgba(106, 152, 240, 0.2);
+        text-align: center;
+        width: 100%;
+        background: linear-gradient(134deg, rgb(106, 152, 240), rgb(73, 97, 220));
+        color: white;
+        border-radius: 5px;
+    }
+
+    /* Section principale */
+    main {
+        margin-top: 50px;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+
+    .svg-rect {
+        top: 0 !important;
+    }
+
+    /* Intro Section */
+    .homeWrapper {
+        margin-top: 0 !important;
+    }
+
+    .links {
+        width: auto !important;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    .introText {
+        margin-top: 400px !important;
+        text-align: center;
+    }
+
+    .introText h1 {
+        font-size: 2.5rem; /* Ajuste la taille des titres */
+        margin: 5px 0;
+        line-height: 1.2;
+    }
+
+    .introText p {
+        font-size: 1.2rem;
+    }
+
+    /* Formation Section */
+    .formationWrapper {
+        padding-top: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .slideContainer {
+        padding: 30px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slides {
+        min-width: 90%; /* Utilise une largeur plus petite pour chaque slide */
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    /* Skills Section */
+    .logoSkills {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .skillsDetails .Wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .skillsDetails .Wrapper .text {
+        padding: 30px;
+        font-size: 1rem;
+    }
+
+    .skillsDetails .Wrapper .illustration {
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    footer {
+        padding: 20px;
+        text-align: center;
+        width: 95vw;
+    }
+
+    footer div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer div p {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+
+    .devAbout {
+        margin-top: 150px !important;
+    }
+
+    .devAbout p {
+        font-size: 1.2rem !important;
+    }
+
+    .logoSkills svg {
+        font-size: 8rem !important;
+    }
+
+    .overview {
+        justify-content: center !important;
+    }
+
+    .cardOverview {
+        flex: 1 1 100%;
+        margin: 20px auto;
+        max-width: 90%;
+    }
+
+    #formEmail label input,
+    #formEmail label textarea {
+        font-size: 1rem;
+    }
+
+    .introCode {
+        text-align: left;
+    }
+
+    .skillsDetails .Wrapper .text p {
+        width: 70%;
+    }
+
+    .gridExperience {
+        grid-template-columns: repeat(1, 1fr) !important;
+        margin-bottom: 50px;
+    }
+
+    .slides h3 {
+        font-size: 1.1rem;
+    }
+
+    .slides p, .slides li, .slides {
+        font-size: 1rem !important;
+    }
+
+    .text-haut {
+        grid-area: 1 / 1 / 2 / 3 !important;
+    }
+
+    .text-bas {
+        grid-area: 3 / 1 / 3 / 3 !important;
+    }
+
+    .illustration {
+        grid-area: 2 / 1 / 3 / 4 !important;
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .headerWrapper {
+        display: none;
+    }
+
+    .headerWrapperMobile {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        right: 60px;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .navMobileButton {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(134deg, rgb(106, 152, 240), rgb(73, 97, 220));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .ulNavMobile {
+        transform: translateY(-20px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        bottom: 35px;
+        padding: 0;
+        background: transparent;
+        border-radius: 8px;
+    }
+
+    .liNavMobile a {
+        display: block;
+        padding: 10px 15px;
+        color: rgb(106, 152, 240);
+        font-weight: 400;
+        border-bottom: 1px solid rgba(106, 152, 240, 0.2);
+        text-align: center;
+        width: 100%;
+        background: linear-gradient(134deg, rgb(106, 152, 240), rgb(73, 97, 220));
+        color: white;
+        border-radius: 5px;
+    }
+
+    /* Section principale */
+    main {
+        margin-top: 50px;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+
+    .svg-rect {
+        top: 0 !important;
+    }
+
+    /* Intro Section */
+    .homeWrapper {
+        margin-top: 0 !important;
+    }
+
+    .links {
+        width: auto !important;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    .introText {
+        margin-top: 600px !important;
+        text-align: center;
+    }
+
+    .introText h1 {
+        font-size: 2.5rem; /* Ajuste la taille des titres */
+        margin: 5px 0;
+        line-height: 1.2;
+    }
+
+    .introText p {
+        font-size: 1.2rem;
+    }
+
+
+    .introCode {
+        margin-top: 100px !important;
+    }
+
+    .introCode pre {
+        font-size: 1rem !important;
+    }
+
+    #overview {
+        margin-top: 400px;
+    }
+
+    #aboutBack {
+        height: 100%;
+    }
+
+    .formationWrapper {
+        padding-top: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .slideContainer {
+        padding: 30px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slides {
+        min-width: 90%; /* Utilise une largeur plus petite pour chaque slide */
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    /* Skills Section */
+    .logoSkills {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .skillsDetails .Wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .skillsDetails .Wrapper .text {
+        padding: 30px;
+        font-size: 1rem;
+    }
+
+    .skillsDetails .Wrapper .illustration {
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    footer {
+        padding: 20px;
+        text-align: center;
+        width: 91vw;
+    }
+
+    footer div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer div p {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+
+    .devAbout div:first-child {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .devAbout {
+        display: grid !important;
+        margin-top: 150px !important;
+    }
+
+    .devAbout p {
+        font-size: 1.2rem !important;
+        text-align: justify;
+    }
+
+    .backSkills {
+        display: none;
+    }
+
+    .skillsDetails .Wrapper .text {
+        grid-area: 1 / 1 / 1 / 4 !important;
+    }
+
+    .skillsDetails .Wrapper .text p {
+        width: 100% !important;
+        font-size: 0.8rem;
+    }
+
+    .Iframe img {
+        height: auto;
+        width: 100%;
+    }
+
+    #certification {
+        grid-area: 1 / 2 / 1 / 4 !important;
+        margin-top: 200px;
+        margin-left: -5px;
+    }
+
+    .logoSkills svg {
+        font-size: 8rem !important;
+    }
+
+    .overview {
+        justify-content: center !important;
+    }
+
+    .cardOverview {
+        flex: 1 1 100%;
+        margin: 20px auto;
+        max-width: 90%;
+    }
+
+    #formEmail label input,
+    #formEmail label textarea {
+        font-size: 1rem;
+    }
+
+    .introCode {
+        text-align: left;
+    }
+
+    .gridExperience {
+        grid-template-columns: repeat(1, 1fr) !important;
+        margin-bottom: 50px;
+        margin-left: 2%;
+    }
+
+    .slides h3 {
+        font-size: 1.1rem;
+    }
+
+    .slides p, .slides li, .slides {
+        font-size: 1rem !important;
+    }
+
+    .text-haut {
+        grid-area: 1 / 1 / 2 / 3 !important;
+    }
+
+    .text-bas {
+        grid-area: 3 / 1 / 3 / 3 !important;
+    }
+
+    .illustration {
+        grid-area: 2 / 1 / 3 / 4 !important;
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .headerWrapper {
+        display: none;
+    }
+
+    .headerWrapperMobile {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        right: 60px;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .navMobileButton {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(134deg, rgb(106, 152, 240), rgb(73, 97, 220));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .ulNavMobile {
+        transform: translateY(-20px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        bottom: 35px;
+        padding: 0;
+        background: transparent;
+        border-radius: 8px;
+    }
+
+    .liNavMobile a {
+        display: block;
+        padding: 10px 15px;
+        color: rgb(106, 152, 240);
+        font-weight: 400;
+        border-bottom: 1px solid rgba(106, 152, 240, 0.2);
+        text-align: center;
+        width: 100%;
+        background: linear-gradient(134deg, rgb(106, 152, 240), rgb(73, 97, 220));
+        color: white;
+        border-radius: 5px;
+    }
+
+    /* Section principale */
+    main {
+        margin-top: 50px;
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+
+    .svg-rect {
+        top: 0 !important;
+    }
+
+    /* Intro Section */
+    .homeWrapper {
+        margin-top: 0 !important;
+    }
+
+    .links {
+        width: auto !important;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    .introText {
+        margin-top: 400px !important;
+        text-align: center;
+    }
+
+    .introText h1 {
+        font-size: 2.5rem; /* Ajuste la taille des titres */
+        margin: 5px 0;
+        line-height: 1.2;
+    }
+
+    .introText p {
+        font-size: 1.2rem;
+    }
+
+    /* Formation Section */
+    .formationWrapper {
+        padding-top: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .slideContainer {
+        padding: 30px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slides {
+        min-width: 90%; /* Utilise une largeur plus petite pour chaque slide */
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    /* Skills Section */
+    .logoSkills {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .skillsDetails .Wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .skillsDetails .Wrapper .text {
+        padding: 30px;
+        font-size: 1rem;
+    }
+
+    .skillsDetails .Wrapper .illustration {
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    footer {
+        padding: 20px;
+        text-align: center;
+        width: 95vw;
+    }
+
+    footer div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer div p {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+
+    .devAbout {
+        margin-top: 150px !important;
+    }
+
+    .devAbout p {
+        font-size: 1.2rem !important;
+    }
+
+    .logoSkills svg {
+        font-size: 8rem !important;
+    }
+
+    .overview {
+        justify-content: center !important;
+    }
+
+    .cardOverview {
+        flex: 1 1 100%;
+        margin: 20px auto;
+        max-width: 90%;
+    }
+
+    #formEmail label input,
+    #formEmail label textarea {
+        font-size: 1rem;
+    }
+
+    .introCode {
+        text-align: left;
+    }
+
+    .skillsDetails .Wrapper .text p {
+        width: 70%;
+    }
+
+    .gridExperience {
+        grid-template-columns: repeat(1, 1fr) !important;
+        margin-bottom: 50px;
+    }
+
+    .slides h3 {
+        font-size: 1.1rem;
+    }
+
+    .slides p, .slides li, .slides {
+        font-size: 1rem !important;
+    }
+
+    .text-haut {
+        grid-area: 1 / 1 / 2 / 3 !important;
+    }
+
+    .text-bas {
+        grid-area: 3 / 1 / 3 / 3 !important;
+    }
+
+    .illustration {
+        grid-area: 2 / 1 / 3 / 4 !important;
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 320px) {
 
     .headerWrapper {
         display: none;

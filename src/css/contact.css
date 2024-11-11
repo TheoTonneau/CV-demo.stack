@@ -1,0 +1,143 @@
+#contact {
+    margin-bottom: 200px;
+    height: 100%;
+}
+
+.contactContainer {
+    width: calc(100% - 30px);
+    position: relative;
+    height: 400px;
+    margin-bottom: 50px;
+    margin-top: 150px;
+    background-image: linear-gradient(134deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 99%);
+    padding-top: 20px;
+    border-radius: 10px;
+}
+
+.leftContent {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 6%;
+    width: fit-content;
+    text-align: center;
+    color: rgb(248, 248, 248);
+}
+
+.leftContent svg {
+    width: 1.25em;
+    display: inline-block;
+    font-size: 5em;
+    height: 1em;
+    vertical-align: -.125em;
+}
+
+.leftContent h3 {
+    color: rgb(248, 248, 248);
+    font-size: 1.7rem;
+}
+
+.leftContent p {
+    font-size: 16px;
+    margin: 0;
+    line-height: 150%;
+    font-family: "Karla", sans-serif;
+    color: rgb(248, 248, 248);
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+#formEmail {
+    position: absolute;
+    width: 70%;
+    top: -50px;
+    right: -40px;
+    padding: 50px 30px;
+    background: rgb(248, 248, 248);
+    border-radius: 10px;
+    min-height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0 5px 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "email    company "
+        "fName    name "
+        "message  message"
+        ".        button  ";
+    transition: background-color 0.2s ease;
+}
+
+#formEmail label span {
+    font-size: 1.5rem;
+    color: rgb(37, 37, 37);
+    transition: color 0.2s ease;
+}
+
+.labelEmail {
+    grid-area: email;
+}
+
+.labelCompany {
+    grid-area: company;
+}
+
+.labelFirstName {
+    grid-area: fName;
+}
+
+.labelName {
+    grid-area: name;
+}
+
+.labelMessage {
+    grid-area: message;
+}
+
+#formEmail label input,
+#formEmail label textarea {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: rgb(234, 234, 234);
+    border: medium;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.labelMessage textarea {
+    grid-column: span 2;
+    height: 200px;
+    resize: none;
+}
+
+#submitButton {
+    justify-self: end;
+    width: fit-content;
+    grid-area: button;
+    background: linear-gradient(134deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 99%);
+    color: rgb(248, 248, 248);
+    border: medium;
+    cursor: pointer;
+    transition: 0.2s;
+    height: auto;
+    font-size: 1rem;
+    margin: 0;
+    padding: 12px;
+    border-radius: 5px;
+    -webkit-appearance: button;
+    letter-spacing: 1px;
+}
+
+#submitButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+#submitButton:hover {
+    color: rgb(248, 248, 248);
+    background: linear-gradient(99deg, rgb(106, 152, 240) 0%, rgb(73, 97, 220) 130%);
+    transform: scale(1.05);
+    transition: 0.2s;
+}

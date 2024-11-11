@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="../css/contact.css">
+<h2 class="title">Contact</h2>
+<div class="contactContainer">
+    <div class="leftContent">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="handshake"
+             class="svg-inline--fa fa-handshake fa-w-20 fa-5x " role="img" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 640 512">
+            <path fill="currentColor"
+                  d="M434.7 64h-85.9c-8 0-15.7 3-21.6 8.4l-98.3 90c-.1.1-.2.3-.3.4-16.6 15.6-16.3 40.5-2.1 56 12.7 13.9 39.4 17.6 56.1 2.7.1-.1.3-.1.4-.2l79.9-73.2c6.5-5.9 16.7-5.5 22.6 1 6 6.5 5.5 16.6-1 22.6l-26.1 23.9L504 313.8c2.9 2.4 5.5 5 7.9 7.7V128l-54.6-54.6c-5.9-6-14.1-9.4-22.6-9.4zM544 128.2v223.9c0 17.7 14.3 32 32 32h64V128.2h-96zm48 223.9c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zM0 384h64c17.7 0 32-14.3 32-32V128.2H0V384zm48-63.9c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16c0-8.9 7.2-16 16-16zm435.9 18.6L334.6 217.5l-30 27.5c-29.7 27.1-75.2 24.5-101.7-4.4-26.9-29.4-24.8-74.9 4.4-101.7L289.1 64h-83.8c-8.5 0-16.6 3.4-22.6 9.4L128 128v223.9h18.3l90.5 81.9c27.4 22.3 67.7 18.1 90-9.3l.2-.2 17.9 15.5c15.9 13 39.4 10.5 52.3-5.4l31.4-38.6 5.4 4.4c13.7 11.1 33.9 9.1 45-4.7l9.5-11.7c11.2-13.8 9.1-33.9-4.6-45.1z"></path>
+        </svg>
+        <h3>Merci</h3>
+        <p>Envie d'en savoir plus ? ➡️</p>
+    </div>
+
+    <form id="formEmail" method="post">
+
+        <label class="labelEmail" for="email">
+            <span>Email</span>
+            <input type="email" id="email" name="email" placeholder="example@gmail.com" value="" required>
+        </label>
+
+        <label class="labelCompany" for="company">
+            <span>Entreprise</span>
+            <input type="text" id="company" name="company" placeholder="company" value="" required>
+        </label>
+
+        <label class="labelFirstName" for="firstName">
+            <span>Pr&eacute;nom</span>
+            <input type="text" id="firstName" name="firstName" placeholder="John" value="">
+        </label>
+
+        <label class="labelName" for="name">
+            <span>Nom</span>
+            <input type="text" id="name" name="name" placeholder="Doe" value="" required>
+        </label>
+
+        <label class="labelMessage" for="message">
+            <span>Message</span>
+            <textarea id="message" name="message" placeholder="Hey there!" required></textarea>
+        </label>
+
+        <button type="submit" id="submitButton">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="paper-plane"
+                 class="svg-inline--fa fa-paper-plane fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 512 512">
+                <path fill="currentColor"
+                      d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"></path>
+            </svg>
+            Envoyer
+        </button>
+    </form>
+</div>

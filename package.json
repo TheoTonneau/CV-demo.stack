@@ -28,7 +28,7 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "formik": "^2.4.6",
-    "react-router-dom": "^6.27.0"
+    "react-router-dom": "^6.30.3"
   },
   "devDependencies": {
     "@types/aws-lambda": "~8.10.140",
